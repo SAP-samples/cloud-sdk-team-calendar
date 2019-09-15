@@ -1,6 +1,6 @@
 # Create a read request to SAP S/4HANA
 ## Implement the read request
-Solution to [this exercise](README.md#implement-the-read-request)
+Solution to [this exercise](02-create-read-request.md#implement-the-read-request)
 ```ts
 export async function readS4AppointmentsByPerson(person: Person, year: number): Promise<TimeSheetEntry[]> {
   const personId = person.s4ID;
@@ -21,7 +21,7 @@ export async function readS4AppointmentsByPerson(person: Person, year: number): 
 # Create a write request to SAP S/4HANA
 
 ## Build a TimeSheetEntry
-Solution to [this exercise](README.md#build-a-timesheetentry)
+Solution to [this exercise](03-create-write-rewuest.md#build-a-timesheetentry)
 ```ts
 export function buildTimeSheetEntry(appointment: Appointment, person: Person, day: Moment): TimeSheetEntry {
   const timeSheetDataFields = {
@@ -52,7 +52,7 @@ export function buildTimeSheetEntry(appointment: Appointment, person: Person, da
 ```
 
 ## Write a TimeSheetEntry
-Solution to [this exercise](README.md#write-a-timesheetentry)
+Solution to [this exercise](03-create-write-rewuest.md#write-a-timesheetentry)
 ```ts
 export async function writeTimeSheetEntry(entry: TimeSheetEntry): Promise<TimeSheetEntry> {
   return TimeSheetEntry.requestBuilder()
@@ -63,7 +63,7 @@ export async function writeTimeSheetEntry(entry: TimeSheetEntry): Promise<TimeSh
 
 # Create a request with your own OData client
 
-Solution to [this exercise](README.md#create-a-request-with-you-own-odata-client)
+Solution to [this exercise](06-use-odata-client.md#create-a-request-with-you-own-odata-client)
 ```ts
 export async function readSfsfAppointmentsByPerson(person: Person, year: number): Promise<EmployeeTime[]> {
   const timeType = "VACATION";
