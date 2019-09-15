@@ -1,0 +1,7 @@
+{
+  "ECTimeOff": {
+    "directoryName": "ec-time-off-service",
+    "servicePath": "/odata/v2",
+    "npmPackageName": "ec-time-off-service"
+  }
+}

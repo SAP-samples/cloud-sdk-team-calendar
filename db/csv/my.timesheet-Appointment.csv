@@ -1,0 +1,5 @@
+ID,START_DATE,START_TIME,END_DATE,END_TIME,TITLE,PROJECT,INFO,STATUS,TYPE,CALENDAR_YEAR,PERSON_ID
+1,2019-09-18,08:00:00,2019-09-20,10:00:00,Consultancy,Automotive Company Limited,Process Improvement,LOCAL,Project,2019,1
+2,2019-09-18,08:00:00,2019-09-23,12:00:00,Quality check,Gas Industry AG,Software Quality Checks,LOCAL,Project,2019,3
+3,2019-09-16,08:30:00,2019-09-18,10:30:00,Consultancy,IT Security SE,Business Process Analytics,LOCAL,Project,2019,4
+4,2019-09-23,13:00:00,2019-09-24,18:00:00,Administration,Aircraft Manufacturing Corp.,,LOCAL,Project,2019,4

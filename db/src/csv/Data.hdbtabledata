@@ -1,0 +1,60 @@
+{
+	"format_version": 1,
+	"imports": [
+		{
+			"target_table": "MY_TIMESHEET_APPOINTMENT",
+			"source_data": {
+			"data_type": "CSV",
+				"file_name": "Appointment.csv",
+				"has_header": true
+			},
+			"import_settings": {
+			"import_columns": [
+					"ID",
+					"START_DATE",
+					"START_TIME",
+					"END_DATE",
+					"END_TIME",
+					"TITLE",
+					"PROJECT",
+					"INFO",
+					"STATUS",
+					"TYPE",
+					"CALENDAR_YEAR",
+					"PERSON_ID"
+				]
+			}
+		},
+		{
+			"target_table": "MY_TIMESHEET_PERSON",
+			"source_data": {
+			"data_type": "CSV",
+				"file_name": "Person.csv",
+				"has_header": true
+			},
+			"import_settings": {
+			"import_columns": [
+					"ID",
+					"NAME",
+					"ROLE",
+					"S4ID",
+					"S4COMPANYCODE",
+					"SFSFID"
+				]
+			}
+		},
+		{
+			"target_table": "MY_TIMESHEET_TEAMCALENDAR",
+			"source_data": {
+			"data_type": "CSV",
+				"file_name": "Teamcalendar.csv",
+				"has_header": true
+			},
+			"import_settings": {
+			"import_columns": [
+					"YEAR"
+				]
+			}
+		}
+	]
+}

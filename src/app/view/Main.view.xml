@@ -1,0 +1,71 @@
+<mvc:View controllerName="com.sap.timesheet.controller.Main" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:unified="sap.ui.unified" xmlns:core="sap.ui.core">
+	<App id="idAppControl">
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<VBox class="sapUiSmallMargin">
+						<PlanningCalendar viewKey="Week" id="PC1" startDate="{path: '/startDate'}" rows="{/people}" appointmentsVisualization="Filled"
+							appointmentSelect="handleAppointmentSelect" showEmptyIntervalHeaders="false" intervalSelect="handleAppointmentAddWithContext" builtInViews="Week,One Month,Day">
+							<toolbarContent>
+								<Title text="{i18n>teamCalendar}" titleStyle="H4"/>
+								<ToolbarSpacer/>
+								<Button id="addButton" icon="sap-icon://add" press="handleAppointmentCreate" tooltip="Add"/>
+							</toolbarContent>
+							<rows>
+								<PlanningCalendarRow icon="{pic}" title="{name}" text="{role}" appointments="{path : 'appointments', templateShareable: 'true'}"
+									enableAppointmentsDragAndDrop="true" appointmentDrop="handleAppointmentDrop"
+									enableAppointmentsResize="true" appointmentResize="handleAppointmentResize" appointmentDragEnter="handleAppointmentDragEnter">
+									<appointments>
+										<unified:CalendarAppointment startDate="{start}" endDate="{end}" icon="{pic}" title="{title}" text="{info}" type="{type}"
+											tentative="{tentative}"></unified:CalendarAppointment>
+									</appointments>
+								</PlanningCalendarRow>
+							</rows>
+						</PlanningCalendar>
+						<Table id="idProductsTable" inset="false" items="{ path: '/appointmentsToApprove'}" noDataText="{i18n>noHoursMore}" >
+							<headerToolbar>
+								<Toolbar>
+									<content>
+										<Title text="{i18n>hoursLeaveApproveTitle}" level="H2"/>
+									</content>
+								</Toolbar>
+							</headerToolbar>
+							<columns>
+								<Column width="12em">
+									<Text text="{i18n>person}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>startWork}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>endWork}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>hours}"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true">
+									<Text text="{i18n>note}"/>
+								</Column>
+								<Column hAlign="End">
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<ObjectIdentifier title="{personName}" text="{title}"/>
+										<Text text="{path: 'start', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd MMM yyyy' }}"/>
+										<Text text="{path: 'end', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd MMM yyyy' }}"/>
+										<Text text="{parts: [{path: 'start'},{path: 'end'},{path: 'successfactors'}], formatter: '.formatter.calculateHoursBetween'}"/>
+										<Text text="{info}"/>
+										<Button text="{i18n>approve}" type="Accept" press="onApproveHours" />
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</VBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

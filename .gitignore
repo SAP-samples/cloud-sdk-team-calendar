@@ -1,0 +1,14 @@
+node_modules
+*.DS_Store
+dist
+*.idea
+/coverage
+/.nyc_output
+/.vscode
+**credentials.json
+/s4hana_pipeline
+deployment/
+srv/gen/
+db/*.db
+db/src/gen
+generator-input/*.edmx

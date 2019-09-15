@@ -1,0 +1,7 @@
+{
+  "inputDir": "./generator-input",
+  "outputDir": "./src/generated",
+  "generateNpmrc": false,
+  "generatePackageJson": false,
+  "clearOutputDir": true
+}

@@ -1,0 +1,12 @@
+applications:
+  - name: timesheet-codejam-<participantId>
+    path: deployment/
+    buildpacks:
+      - nodejs_buildpack
+    memory: 256M
+    command: node node_modules/@sap/hdi-deploy/deploy.js -t --verbose --root ./db & node dist/index.js
+    random-route: true
+    services:
+      - my-xsuaa
+      - my-destination
+      - timesheet-hdi-container-codejam-<participantId>
