@@ -10,7 +10,7 @@ Simply run
 git clone https://github.com/SAP-samples/cloud-sdk-team-calendar.git
 ```
 <!-- ```sh
-git clone -b cloud-sdk-team-calendar --single-branch https://github.com/SAP/cloud-s4sdk-book.git cloud-sdk-team-calendar
+git clone -b cloud-sdk-team-calendar --single-branch https://github.com/SAP/cloud-s4-sdk-book.git cloud-sdk-team-calendar
 ``` -->
 
 ## Fork / Duplicate repository
@@ -31,7 +31,7 @@ git clone --bare -b master --single-branch https://github.com/SAP-samples/cloud-
 ```
 
 <!-- ```sh
-git clone --bare -b cloud-sdk-team-calendar --single-branch https://github.com/SAP/cloud-s4sdk-book.git cloud-sdk-team-calendar.git
+git clone --bare -b cloud-sdk-team-calendar --single-branch https://github.com/SAP/cloud-s4-sdk-book.git cloud-sdk-team-calendar.git
 ``` -->
 This will clone the original repository to a *cloud-sdk-team-calendar.git* directory. Enter the directory:
 
