@@ -48,4 +48,4 @@ stages:
         apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
         appName: 'timesheet-codejam-<participantId>'
         manifest: 'manifest.yml'
-        credentialsId: 'cf-deploy-user'
+        credentialsId: 'SCP'

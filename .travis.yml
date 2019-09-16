@@ -1,0 +1,4 @@
+language: minimal
+services:
+- docker
+script: docker run -v /var/run/docker.sock:/var/run/docker.sock -v ${PWD}:/workspace -v /tmp -e CASC_JENKINS_CONFIG=/workspace/jenkins.yml -e SCP_USER -e SCP_PW -e BRANCH_NAME=$TRAVIS_BRANCH ppiper/jenkinsfile-runner

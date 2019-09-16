@@ -22,7 +22,7 @@ Open the form for creation of a new repository, by clicking *New*:
 <img src="images/open-new.png" alt="Open New" width="350px">
 
 Fill in the name of your new repository (e. g. *cloud-sdk-team-calendar*) and check the **Private** radio button. Click on *Create repository*.
-![Create New](images/Create-new.png)
+![Create New](images/create-new.png)
 
 ### Bare clone the original repository
 On your command line run:
