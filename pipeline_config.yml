@@ -19,7 +19,7 @@
 
 ### General project setup
 general:
-  productiveBranch: '<participantId>'
+  productiveBranch: 'master'
   projectName: 'timesheet-<participantId>'
 
 ### Step-specific configuration
@@ -43,9 +43,9 @@ stages:
 
   productionDeployment:
     cfTargets:
-      - org: 'TechEd2019_CAA360-TechEd2019'
-        space: 'caa371'
+      - org: '<your-trial-org>'
+        space: '<your-trial-space>'
         apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
-        appName: 'timesheet-caa371-<participantId>'
+        appName: 'timesheet-codejam-<participantId>'
         manifest: 'manifest.yml'
         credentialsId: 'cf-deploy-user'
