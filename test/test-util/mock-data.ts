@@ -76,7 +76,7 @@ export const s4Appointment = {
   end_time: null,
   title: "note",
   project: "wbs",
-  info: "note",
+  info: "Retrieved from SAP S/4HANA",
   status: "APPROVED",
   person_ID: "1",
   calendar_year: calendarYear,
@@ -103,7 +103,7 @@ export const sfsfAppointment = {
   end_time: "00:00:00",
   title: "Vacation",
   status: "APPROVED",
-  info: "Out of office",
+  info: "Retrieved from SAP SuccessFactors",
   person_ID: "1",
   calendar_year: calendarYear,
   type: "Vacation"

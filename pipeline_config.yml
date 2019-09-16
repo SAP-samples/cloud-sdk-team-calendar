@@ -18,9 +18,9 @@
 ###
 
 ### General project setup
-general:
-  productiveBranch: 'master'
-  projectName: 'timesheet-<participantId>'
+# general:
+#   productiveBranch: 'master'
+#   projectName: ''
 
 ### Step-specific configuration
 steps:
@@ -43,8 +43,8 @@ stages:
 
   productionDeployment:
     cfTargets:
-      - org: '<your-trial-org>'
-        space: '<your-trial-space>'
+      - org: '<my-trial-org>'
+        space: '<my-trial-space>'
         apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
         appName: 'timesheet-codejam-<participantId>'
         manifest: 'manifest.yml'

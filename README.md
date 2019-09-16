@@ -10,8 +10,8 @@ You will learn how to:
   * Create create requests using the SAP Cloud SDK for Javascript
   * Generate your own odata client for a service
   * Use your previously generated odata client
-  * Deploy your application locally and on CloudFoundry
-  <!-- * Automate your application deployment -->
+  * Deploy applications locally and on CloudFoundry
+  * Automate application deployment
 
 ## Exercises
 
@@ -21,6 +21,7 @@ You will learn how to:
 * Exercise 4: [Deploy your application to Cloud Foundry](exercises/04-deploy-to-cf.md)
 * Exercise 5: [Generate your own OData client](exercises/05-generate-odata-client.md)
 * Exercise 6: [Create a request with your own OData client](exercises/06-use-odata-client.md)
+* Exercise 7: [Automate deployment](exercises/07-automate-deployment.md)
 
 ## Requirements
 
@@ -45,5 +46,3 @@ Ask questions at the CodeJam itself or open a ticket in GitHub or Stackoverflow.
 Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
 
 This file is licensed under the Apache Software License, v. 2 except as noted otherwise in the [LICENSE](LICENSE) file.
-<!-- # Automate your deployment
-TODO: -->
