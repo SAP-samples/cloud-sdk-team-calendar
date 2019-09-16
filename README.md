@@ -5,22 +5,22 @@ Learn how to build a side-by-side extension to SAP S/4HANA and SAP SuccessFactor
 Start implementation using this sample and follow the given instructions.
 
 You will learn how to:
-  * setup and use some of the most common services on CloudFoundry
-  * create read requests using the SAP Cloud SDK for Javascript
-  * create create requests using the SAP Cloud SDK for Javascript
-  * generate your own odata client for a service
-  * use your previously generated odata client
-  * deploy your application locally and on CloudFoundry
-  * automate your application deployment
+  * Setup and use some of the most common services on CloudFoundry
+  * Create read requests using the SAP Cloud SDK for Javascript
+  * Create create requests using the SAP Cloud SDK for Javascript
+  * Generate your own odata client for a service
+  * Use your previously generated odata client
+  * Deploy your application locally and on CloudFoundry
+  <!-- * Automate your application deployment -->
 
-## Excercises
+## Exercises
 
-* Excercise 1: [Getting started](exercises/01-getting-started.md)
-* Excercise 2: [Create a read request to SAP S/4HANA](exercises/02-s4-read-request.md)
-* Excercise 3: [Create a write request to SAP S/4HANA](exercises/03-s4-write-request.md)
-* Excercise 4: [Deploy your application to Cloud Foundry](exercises/04-deploy-to-cf.md)
-* Excercise 5: [Generate your own OData client](exercises/05-generate-odata-client.md)
-* Excercise 6: [Create a request with your own OData client](exercises/06-use-odata-client.md)
+* Exercise 1: [Getting started](exercises/01-getting-started.md)
+* Exercise 2: [Create a read request to SAP S/4HANA](exercises/02-s4-read-request.md)
+* Exercise 3: [Create a write request to SAP S/4HANA](exercises/03-s4-write-request.md)
+* Exercise 4: [Deploy your application to Cloud Foundry](exercises/04-deploy-to-cf.md)
+* Exercise 5: [Generate your own OData client](exercises/05-generate-odata-client.md)
+* Exercise 6: [Create a request with your own OData client](exercises/06-use-odata-client.md)
 
 ## Requirements
 
