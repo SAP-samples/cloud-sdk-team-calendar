@@ -13,6 +13,15 @@ You will learn how to:
   * Deploy applications locally and on CloudFoundry
   * Automate application deployment
 
+## Requirements
+
+* Setup a [free trial](https://cloudplatform.sap.com/try.html) account for SAP Cloud Platform
+* [Install Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+* [Install git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+  * When working on Windows make sure you have the Git Bash installed and configured to be used with npm (`npm config script-shell <P:\ath\to\your\bash.exe>`)
+* [Install Visual Studio Code](https://code.visualstudio.com/download) or your favorite IDE for TypeScript
+* [Install the Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html)
+
 ## Exercises
 
 * Exercise 1: [Getting started](exercises/01-getting-started.md)
@@ -22,15 +31,6 @@ You will learn how to:
 * Exercise 5: [Generate your own OData client](exercises/05-generate-odata-client.md)
 * Exercise 6: [Create a request with your own OData client](exercises/06-use-odata-client.md)
 * Exercise 7: [Automate deployment](exercises/07-automate-deployment.md)
-
-## Requirements
-
-* Setup a [free trial](https://cloudplatform.sap.com/try.html) account for SAP Cloud Platform
-* [Install Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-* [Install git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-  * When working on Windows make sure you have the Git Bash installed and configured to be used with npm (`npm config script-shell <P:\ath\to\your\bash.exe>`)
-* [Install Visual Studio Code](https://code.visualstudio.com/download) or your favorite IDE for TypeScript
-* [Install the Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html)
 
 # Download and installation
 You do not need to download this repository nor install anything from it. You can just follow the exercises by visiting each of them as listed in the [exercises](#exercises) section.

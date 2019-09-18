@@ -1,4 +1,5 @@
 # Create a write request to SAP S/4HANA
+Approving locally stored appointments shall create an appointment in SAP S/4HANA. Let's write back to SAP S/4HANA. For that we need to create an entity to be written and then actually write it.
 
 ## Build a TimeSheetEntry
 Find the *TODO* in the `buildTimeSheetEntry` function in [src/write-appointments.ts](src/write-appointments.ts). Instead of returning `null` create a `TimeSheetEntry`. You can try to implement this on your own using the following hints or peek at the [solution](SOLUTION.md#build-a-timesheetentry) and copy the implementation.

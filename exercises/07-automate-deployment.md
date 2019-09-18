@@ -1,5 +1,5 @@
 # Automate deployment
-In a real world scenario you would only deploy your changes, once they have been tested for quality. You would execute the tests and check as well as the deployment automatically. Therefore, we provide the [SAP Cloud SDK Continuuous Delivery Toolkit](https://github.com/SAP/cloud-s4-sdk-pipeline) in addition to the libraries that you have seen before.
+In a real world scenario you would only deploy your changes, once they have been tested for quality. You would execute the tests and checks as well as the deployment automatically. Therefore, we provide the [SAP Cloud SDK Continuous Delivery Toolkit](https://github.com/SAP/cloud-s4-sdk-pipeline) in addition to the libraries that you have seen before.
 
 This toolkit allows you to easily setup and configure a continuuous delivery pipeline for Jenkins. It also supports Travis CI (less feature rich) and GitHub Actions (experimental).
 

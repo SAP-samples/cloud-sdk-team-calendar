@@ -1,68 +1,31 @@
 # Getting started
-In the following we describe two ways to start working with the repository.
-If you would like to automate your deployment in the end of this session, you will have to go through the longer process of [duplicating the repository](#fork-duplicate-repository).
+In the following we describe how to get started with this project.
+You will create a new **private** repository based on this repository and run the application locally to get familiar with it.
 
-If you are not planning on committing anything back to GitHub, you can just [clone this repository](#clone-repository) and skip the forking.
+> In the session, you will be handed out a participantId. If you go through the tasks on your own, make up your own id. We recommend to refrain from using personal data.
 
-## Clone repository
-Simply run
-```sh
-git clone https://github.com/SAP-samples/cloud-sdk-team-calendar.git
-```
-<!-- ```sh
-git clone -b cloud-sdk-team-calendar --single-branch https://github.com/SAP/cloud-s4-sdk-book.git cloud-sdk-team-calendar
-``` -->
+## Create a new repository based on this template
+Click the *Use this template* button on the top of the GitHub page.
+![Use Template](images/use-template.png)
 
-## Fork / Duplicate repository
-We recommend to duplicate this repository as a private repository as opposed to forking it as a public repository due to licensing constraints. In [exercise 5](05-generate-odata-client.md) we will generate an OData client for SAP SuccessFactors, that is subject to SAP Intellectual Property and should not be made available as Open Source. As long as you don't publish your changes, you can also just fork the repository.
-
-### Create a private repository
-For private duplication of a repository, first create a private repository on GitHub.
-Open the form for creation of a new repository, by clicking *New*:
-<img src="images/open-new.png" alt="Open New" width="350px">
-
-Fill in the name of your new repository (e. g. *cloud-sdk-team-calendar*) and check the **Private** radio button. Click on *Create repository*.
+Fill in the name of your new repository (e. g. *cloud-sdk-team-calendar*) and make sure to create a **private** repository. Click on *Create repository*.
 ![Create New](images/create-new.png)
 
-### Bare clone the original repository
-On your command line run:
-```sh
-git clone --bare -b master --single-branch https://github.com/SAP-samples/cloud-sdk-team-calendar.git
-```
+> ### Why private?
+> We recommend to create your project as a private repository due to licensing constraints. In [exercise 5](05-generate-odata-client.md) we will generate an OData client for SAP SuccessFactors, that is subject to SAP intellectual property and should not be made available as open source. As long as you don't publish these changes, feel free to create a public repository as well.
 
-<!-- ```sh
-git clone --bare -b cloud-sdk-team-calendar --single-branch https://github.com/SAP/cloud-s4-sdk-book.git cloud-sdk-team-calendar.git
-``` -->
-This will clone the original repository to a *cloud-sdk-team-calendar.git* directory. Enter the directory:
-
-```sh
-cd cloud-sdk-team-calendar.git
-```
-
-### Mirror bare clone to your private repository
-Mirror this bare repository to your previously created private repository. Don't forget to replace your GitHub username (and repository name if you chose a different one):
-```sh
-git push --mirror https://github.com/<your-github-username>/cloud-sdk-team-calendar.git
-```
-
-Now, you can delete the original clone:
-```sh
-cd ..
-rm -rf cloud-sdk-team-calendar.git
-```
-
-### Clone your own repository
+## Clone your repository
+On your laptop open a command line and enter the following command. Don't forget to replace your username (and repository name should you have chosen a different one):
 ```sh
 git clone https://github.com/<your-github-username>/cloud-sdk-team-calendar.git
 ```
 
 ## Start the application locally
-Enter your project directory:
-```sh
-cd cloud-sdk-team-calendar
-```
+Open the project in your IDE. For the remainder of this course we will assume you are using Visual Studio Code. Please adapt accordingly if you are using a different IDE.
 
-Let's check that everything works and run the application locally. First, install the dependencies:
+To open the project go to *File > Open...* and select the folder you just cloned from GitHub.
+
+Let's check that everything works and run the application locally. First, open the command line with *Terminal > New Terminal*. Then, install the dependencies:
 
 ```sh
 npm install

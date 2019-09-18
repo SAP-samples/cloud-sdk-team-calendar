@@ -22,7 +22,7 @@ Add the following **filters**:
 
 This time, execute this request against the destination with the `destinationName` *SFSF*.
 
-Reload your application in the browser and check, whether there are new appointments, especially vacations.
+Reload your locally deployed application in the browser and check, whether there are new appointments, especially vacations.
 
 ![Read SFSF](images/read-sfsf.png)
 
