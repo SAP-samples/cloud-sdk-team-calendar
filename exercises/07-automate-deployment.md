@@ -9,18 +9,18 @@ Let's configure Travis CI as a lightweight solution today.
 Go to https://travis-ci.com/ and login / signup with your GitHub account.
 You might need to activate the GitHub apps integration:
 
-![GitHub Apps Integration](activate-github-apps-integration.png)
+![GitHub Apps Integration](images/activate-github-apps-integration.png)
 
 Choose the repositories you want to activate this for (or just activate for all repositories):
-![Approve and Install](approve-install.png)
+![Approve and Install](images/approve-install.png)
 
 ## Set credentials for deployment
 Now set your credentials in Travis CI. Go to the settings of your application:
-![Travis Settings](travis-settings.png)
+![Travis Settings](images/travis-settings.png)
 
-Set two environment variables *SCP_USER* with your user name and *SCP_PW* with your password. Note that the *DISPLAY VALUE IN BUILD LOG* switch should be turned off, so that nobody can see your password or username. These variables will be used for the automatic deployment of your application.
+Set two environment variables *SCP_USER* with your user name and *SCP_PW* with your password. Note that the *DISPLAY VALUE IN BUILD LOG* switch should be turned off, so that nobody can see your password or username. However, unfortunately, while entering your credentials they are visible. These variables will be used for the automatic deployment of your application.
 
-![Travis Environment Variables](env-variables.png)
+![Travis Environment Variables](images/env-variables.png)
 
 ## Review the CI / CD configuration
 Let's take a look at some configuration files.
@@ -39,7 +39,7 @@ Also, replace your participantId for the `appName`.
 ## Publish your changes
 Commit your changes by executing:
 ```sh
-git commit -am "Implement appointment retrieval"
+git commit -am "Connect remote systems"
 ```
 
 Publish your commit:
@@ -50,4 +50,8 @@ git push
 Go back to Travis CI and check whether your build has been started. This will take a few minutes.
 You can take a look at the logs. If anything fails try to figure out what went wrong and fix it.
 
+![Build Success](images/build-success.png)
+
 If all checks pass, reload your Cloud Foundry application. It should now contain vacation data, too.
+
+**Congratulations!** You solved all exercises!
