@@ -1,4 +1,4 @@
-# SAP Cloud SDK Team Calendar
+# SAP Cloud SDK Team Calendar Sample
 ## Description
 Learn how to build a side-by-side extension to SAP S/4HANA and SAP SuccessFactors using the SAP Cloud SDK for Javascript.
 
