@@ -37,6 +37,11 @@ Go to the [pipeline_config.yml](pipeline_config.yml) file and adjust it to your 
 Also, replace your participantId for the `appName`.
 
 ## Publish your changes
+Stage all your changes in git:
+```sh
+git add .
+```
+
 Commit your changes by executing:
 ```sh
 git commit -am "Connect remote systems"
