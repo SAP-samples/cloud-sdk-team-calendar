@@ -32,6 +32,7 @@ stages:
       - 755
       - 782
       - 1065
+      - 1164
 #  integrationTests:
 #    credentials:
 #      - alias: 'mySystemAlias'
