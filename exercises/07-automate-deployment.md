@@ -16,6 +16,8 @@ Choose the repositories you want to activate this for (or just activate for all 
 ---
 <img src="images/approve-install.png" alt="Approve and Install" width="60%" border="10">
 
+---
+
 ## Set credentials for deployment
 Now set your credentials in Travis CI. Go to the settings of your application:
 ![Travis Settings](images/travis-settings.png)
