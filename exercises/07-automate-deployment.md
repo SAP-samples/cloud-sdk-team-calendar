@@ -9,10 +9,12 @@ Let's configure Travis CI as a lightweight solution today.
 Go to https://travis-ci.com/ and login / signup with your GitHub account.
 You might need to activate the GitHub apps integration:
 
-![GitHub Apps Integration](images/activate-github-apps-integration.png)
+<img src="images/activate-github-apps-integration.png" alt="GitHub Apps Integration" width="75%">
 
 Choose the repositories you want to activate this for (or just activate for all repositories):
-![Approve and Install](images/approve-install.png)
+
+---
+<img src="images/approve-install.png" alt="Approve and Install" width="60%" border="10">
 
 ## Set credentials for deployment
 Now set your credentials in Travis CI. Go to the settings of your application:
@@ -44,7 +46,7 @@ git add .
 
 Commit your changes by executing:
 ```sh
-git commit -am "Connect remote systems"
+git commit -m "Connect remote systems"
 ```
 
 Publish your commit:
