@@ -18,7 +18,8 @@ You will learn how to:
 * Setup a [free trial](https://cloudplatform.sap.com/try.html) account for SAP Cloud Platform
 * [Install Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 * [Install git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-  * When working on Windows make sure you have the Git Bash installed and configured to be used with npm (`npm config script-shell <P:\ath\to\your\bash.exe>`)
+  * When working on Windows make sure you have the Git Bash installed and configured to be used with npm
+  ```npm set config script-shell <P:\ath\to\your\bash.exe>```
 * [Install Visual Studio Code](https://code.visualstudio.com/download) or your favorite IDE for TypeScript
 * [Install the Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html)
 
