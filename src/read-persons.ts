@@ -1,4 +1,4 @@
-import { errorWithCause } from "@sap/cloud-sdk-util";
+import { errorWithCause } from "@sap-cloud-sdk/util";
 import { Person } from "./model/person";
 
 export async function personById(srv, personId: string): Promise<Person> {
