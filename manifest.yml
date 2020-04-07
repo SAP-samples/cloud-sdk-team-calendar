@@ -1,12 +1,12 @@
 applications:
-  - name: timesheet-codejam-<participantId>
+  - name: cloud-sdk-team-calendar-db-hdi-container
     path: deployment/
     buildpacks:
       - nodejs_buildpack
     memory: 256M
-    command: node node_modules/@sap/hdi-deploy/deploy.js -t --verbose --root ./db & node dist/index.js
+    command: node dist/index.js
     random-route: true
     services:
       - my-xsuaa
       - my-destination
-      - timesheet-hdi-container-codejam-<participantId>
+      - cloud-sdk-team-calendar-db-hdi-container

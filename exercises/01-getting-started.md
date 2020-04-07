@@ -2,8 +2,6 @@
 In the following we describe how to get started with this project.
 You will create a new **private** repository based on this repository and run the application locally to get familiar with it.
 
-> In the session, you will be handed out a participantId. If you go through the tasks on your own, make up your own id. We recommend to refrain from using personal data.
-
 ## Create a new repository based on this template
 Click the *Use this template* button on the top of the GitHub page.
 ![Use Template](images/use-template.png)

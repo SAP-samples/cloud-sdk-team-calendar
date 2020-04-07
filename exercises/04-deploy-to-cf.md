@@ -16,7 +16,7 @@ We will need some services for deployment to Cloud Foundry. We will need an HDI 
 ### HDI Container
 In this application we are storing / reading data from SAP S/4HANA, SAP SuccessFactors and a local database. Create an HDI container to store local data in. Don't forget to replace the participantId:
 ```sh
-cf create-service hanatrial hdi-shared timesheet-hdi-container-codejam-<participantId>
+cf create-service hanatrial hdi-shared cloud-sdk-team-calendar-db-hdi-container
 ```
 
 ### Authorization and Trust Management
