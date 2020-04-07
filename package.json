@@ -7,7 +7,7 @@
     "init": "npm i && node initialize.js",
     "preinstall": "rm -rf node_modules/@sap/cds-services",
     "cds-build": "npx cds build/all --clean",
-    "cds-deploy": "npx cds deploy",
+    "cds-deploy": "npx cds deploy --to hana",
     "generate": "npx generate-odata-client -c generator-config.json",
     "test": "nyc mocha -r ts-node/register -r dotenv/config --exit test/**/*.spec.ts",
     "test:debug": "npx mocha --inspect-brk -r ts-node/register -r dotenv/config --exit test/**/*.spec.ts",

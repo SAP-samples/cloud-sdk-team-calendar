@@ -48,7 +48,12 @@ Run the following to build and package your application:
 npm run ci-build && npm run ci-package
 ```
 
-Then push it to Cloud Foundry:
+Then deploy the data defined in the CSVs to the HDI container:
+```sh
+npm run cds-deploy
+```
+
+Eventually, push it to Cloud Foundry:
 ```sh
 cf push
 ```
