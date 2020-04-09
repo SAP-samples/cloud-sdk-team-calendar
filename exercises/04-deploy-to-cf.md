@@ -16,7 +16,7 @@ We will need some services for deployment to Cloud Foundry. We will need an HDI 
 ### HDI Container
 In this application we are storing / reading data from SAP S/4HANA, SAP SuccessFactors and a local database. Create an HDI container to store local data in. Don't forget to replace the participantId:
 ```sh
-cf create-service hanatrial hdi-shared cloud-sdk-team-calendar-db-hdi-container
+cf create-service hanatrial hdi-shared timesheet-hdi-container-codejam-<participantId>
 ```
 
 ### Authorization and Trust Management
@@ -38,9 +38,9 @@ This is what the service instances should look like in the SAP Cloud Platform co
 ![SCP Services](images/scp-services.png)
 
 ## Adjust the manifest.yml file
-Let's adjust the [manifest.yml](manifest.yml), the configuration file for your Cloud Foundry application.
+Let's adjust the [manifest.yml](../manifest.yml), the configuration file for your Cloud Foundry application.
 Take a look at the services section, where we reference the previously created services instances.
-Replace all occurences of `<participantId>` in the manifest.yml file.
+Replace all occurrences of `<participantId>` in the manifest.yml file.
 
 ## Build and push your application
 Run the following to build and package your application:
@@ -48,7 +48,7 @@ Run the following to build and package your application:
 npm run ci-build && npm run ci-package
 ```
 
-Then deploy the data defined in the CSVs to the HDI container:
+Then, open the [package.json](../package.json), replace the `<participantId>` in the script `cds-deploy:hana` and deploy the data defined in the CSVs to the HDI container:
 ```sh
 npm run cds-deploy:hana
 ```

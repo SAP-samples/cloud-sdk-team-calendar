@@ -8,7 +8,7 @@
     "preinstall": "rm -rf node_modules/@sap/cds-services",
     "cds-build": "npx cds build/all --clean",
     "cds-deploy:local": "npx cds deploy",
-    "cds-deploy:hana": "npx cds deploy --to hana",
+    "cds-deploy:hana": "npx cds deploy --to hana:timesheet-hdi-container-codejam-<participantId>",
     "generate": "npx generate-odata-client -c generator-config.json",
     "test": "nyc mocha -r ts-node/register -r dotenv/config --exit test/**/*.spec.ts",
     "test:debug": "npx mocha --inspect-brk -r ts-node/register -r dotenv/config --exit test/**/*.spec.ts",
