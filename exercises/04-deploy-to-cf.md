@@ -50,7 +50,7 @@ npm run ci-build && npm run ci-package
 
 Then deploy the data defined in the CSVs to the HDI container:
 ```sh
-npm run cds-deploy
+npm run cds-deploy:hana
 ```
 
 Eventually, push it to Cloud Foundry:

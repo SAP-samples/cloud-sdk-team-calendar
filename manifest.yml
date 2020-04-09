@@ -1,5 +1,5 @@
 applications:
-  - name: cloud-sdk-team-calendar-db-hdi-container
+  - name: timesheet-codejam-xsuaa-<participantId>
     path: deployment/
     buildpacks:
       - nodejs_buildpack

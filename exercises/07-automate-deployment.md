@@ -38,6 +38,7 @@ Those files are necessary to run the pipeline with Travis CI:
 
 ## Adjust pipeline configuration
 Go to the [pipeline_config.yml](pipeline_config.yml) file and adjust it to your project. Set the org and space for the `productionDeployment` as you have done before when logging in to Cloud Foundry (if you don't remember run `cf target` on the command line to get a summary).
+Also, replace your participantId for the `appName`.
 
 ## Publish your changes
 Stage all your changes in git:

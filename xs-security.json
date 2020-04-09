@@ -1,4 +1,4 @@
 {
-  "xsappname": "cloud-sdk-team-calendar-db-hdi-container",
+  "xsappname": "timesheet-codejam-xsuaa-<participantId>",
   "tenant-mode": "shared"
 }
