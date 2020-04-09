@@ -9,4 +9,4 @@ applications:
     services:
       - my-xsuaa
       - my-destination
-      - cloud-sdk-team-calendar-db-hdi-container
+      - timesheet-hdi-container-codejam-<participantId>
