@@ -2,7 +2,7 @@
 In the following we describe how to get started with this project.
 You will create a new **private** repository based on this repository and run the application locally to get familiar with it.
 
-> In the session, you will be handed out a participantId. If you go through the tasks on your own, make up your own id. We recommend to refrain from using personal data.
+> In the original session, the participants were handed out a participantId. If you go through the tasks on your own, make up your own id. We recommend to refrain from using personal data.
 
 ## Create a new repository based on this template
 Click the *Use this template* button on the top of the GitHub page.
@@ -33,7 +33,7 @@ npm install
 
 Deploy a local database (locally we use sqlite):
 ```sh
-npm run cds-deploy
+npm run cds-deploy:local
 ```
 
 And start the application in watch mode, so that every change you implement subsequently is reflected immediately:

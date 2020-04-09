@@ -38,9 +38,9 @@ This is what the service instances should look like in the SAP Cloud Platform co
 ![SCP Services](images/scp-services.png)
 
 ## Adjust the manifest.yml file
-Let's adjust the [manifest.yml](manifest.yml), the configuration file for your Cloud Foundry application.
+Let's adjust the [manifest.yml](../manifest.yml), the configuration file for your Cloud Foundry application.
 Take a look at the services section, where we reference the previously created services instances.
-Replace all occurences of `<participantId>` in the manifest.yml file.
+Replace all occurrences of `<participantId>` in the manifest.yml file.
 
 ## Build and push your application
 Run the following to build and package your application:
@@ -48,7 +48,12 @@ Run the following to build and package your application:
 npm run ci-build && npm run ci-package
 ```
 
-Then push it to Cloud Foundry:
+Then, open the [package.json](../package.json), replace the `<participantId>` in the script `cds-deploy:hana` and deploy the data defined in the CSVs to the HDI container:
+```sh
+npm run cds-deploy:hana
+```
+
+Eventually, push it to Cloud Foundry:
 ```sh
 cf push
 ```

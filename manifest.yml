@@ -4,7 +4,7 @@ applications:
     buildpacks:
       - nodejs_buildpack
     memory: 256M
-    command: node node_modules/@sap/hdi-deploy/deploy.js -t --verbose --root ./db & node dist/index.js
+    command: node dist/index.js
     random-route: true
     services:
       - my-xsuaa

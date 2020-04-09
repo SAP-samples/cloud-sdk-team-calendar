@@ -1,4 +1,4 @@
-import { Time } from "@sap/cloud-sdk-core";
+import { Time } from "@sap-cloud-sdk/core";
 import moment, { Moment } from "moment";
 import { Appointment } from "../model/appointment";
 

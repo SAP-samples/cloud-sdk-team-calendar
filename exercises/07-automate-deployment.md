@@ -29,15 +29,15 @@ Set two environment variables *SCP_USER* with your user name and *SCP_PW* with y
 ## Review the CI / CD configuration
 Let's take a look at some configuration files.
 Those files are the main configuration files and will be needed if you run an actual Jenkins server productively:
-* [JenkinsFile](JenkinsFile): All this file does is load a preconfigured Jenkins pipeline from GitHub.
-* [pipeline_config.yml](pipeline_config.yml): Configure the steps and stages of your pipeline.
+* [Jenkinsfile](../Jenkinsfile): All this file does is load a preconfigured Jenkins pipeline from GitHub.
+* [pipeline_config.yml](../pipeline_config.yml): Configure the steps and stages of your pipeline.
 
 Those files are necessary to run the pipeline with Travis CI:
-* [jenkins.yml](jenkins.yml): Jenkins configuration as code.
-* [.travis.yml](.travis.yml): This is the Travis CI configuration file. It starts a docker container, where we run our JenkinsFile.
+* [jenkins.yml](../jenkins.yml): Jenkins configuration as code.
+* [.travis.yml](../.travis.yml): This is the Travis CI configuration file. It starts a docker container, where we run our JenkinsFile.
 
 ## Adjust pipeline configuration
-Go to the [pipeline_config.yml](pipeline_config.yml) file and adjust it to your project. Set the org and space for the `productionDeployment` as you have done before when logging in to Cloud Foundry (if you don't remember run `cf target` on the command line to get a summary).
+Go to the [pipeline_config.yml](../pipeline_config.yml) file and adjust it to your project. Set the org and space for the `productionDeployment` as you have done before when logging in to Cloud Foundry (if you don't remember run `cf target` on the command line to get a summary).
 Also, replace your participantId for the `appName`.
 
 ## Publish your changes
