@@ -1,5 +1,5 @@
 applications:
-  - name: timesheet-codejam-<participantId>
+  - name: timesheet-codejam-d999999
     path: deployment/
     buildpacks:
       - nodejs_buildpack
@@ -9,4 +9,4 @@ applications:
     services:
       - my-xsuaa
       - my-destination
-      - timesheet-hdi-container-codejam-<participantId>
+      - timesheet-hdi-container-codejam-d999999
