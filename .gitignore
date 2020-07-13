@@ -9,6 +9,9 @@ dist
 /s4hana_pipeline
 deployment/
 srv/gen/
-db/*.db
+*.db
 db/src/gen
 generator-input/*.edmx
+
+# added by cds deploy
+default-env.json

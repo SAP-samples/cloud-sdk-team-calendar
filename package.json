@@ -4,11 +4,13 @@
   "description": "Timesheet app using the SAP Cloud SDK and Express.js",
   "main": "src/index.ts",
   "scripts": {
+    "megacleaninstall": "rm -f package-lock.json && find . -name \"node_modules\" -exec rm -rf '{}' + && find db/src -name \"gen\" -exec rm -rf '{}' + && find . -name \"sqlite.db\" -exec rm -rf '{}' + && npm i",
     "init": "npm i && node initialize.js",
     "preinstall": "rm -rf node_modules/@sap/cds-services",
     "cds-build": "npx cds build/all --clean",
-    "cds-deploy:local": "npx cds deploy",
+    "cds-deploy:local": "npx cds deploy --to sqlite",
     "cds-deploy:hana": "npx cds deploy --to hana:timesheet-hdi-container-codejam-d999999",
+    "cds-watch": "npx cds watch",
     "generate": "npx generate-odata-client -c generator-config.json",
     "test": "nyc mocha -r ts-node/register -r dotenv/config --exit test/**/*.spec.ts",
     "test:debug": "npx mocha --inspect-brk -r ts-node/register -r dotenv/config --exit test/**/*.spec.ts",
@@ -16,7 +18,7 @@
     "watch:local": "nodemon -e ts -w ./src -x npm run serve-debug",
     "serve-debug": "node -r ts-node/register -r dotenv/config --inspect src/index.ts",
     "ci-build": "npx tsc && npm run cds-build && cp -r src/app db srv dist/",
-    "ci-package": "mkdir -p deployment/ && cp -r dist package.json package-lock.json index.html dist/db dist/srv .cdsrc.prod.json deployment/ && mv deployment/.cdsrc.prod.json deployment/.cdsrc.json",
+    "ci-package": "mkdir -p deployment/ && cp -r dist package.json package-lock.json index.html dist/db dist/srv deployment/",
     "ci-backend-unit-test": "nyc --extension .ts --report-dir ./s4hana_pipeline/reports/coverage-reports/backend-unit/ --reporter cobertura mocha -r ts-node/register -r dotenv/config test/unit-tests/**/*.spec.ts test/unit-tests/*.spec.ts --reporter mocha-junit-reporter --reporter-options mochaFile=./s4hana_pipeline/reports/backend-unit/results.xml",
     "ci-integration-test": "npm run cds-deploy && nyc --extension .ts --report-dir ./s4hana_pipeline/reports/coverage-reports/backend-integration/ --reporter cobertura mocha -r ts-node/register -r dotenv/config test/integration-tests/**/*.spec.ts --reporter mocha-junit-reporter --reporter-options mochaFile=./s4hana_pipeline/reports/backend-integration/results.xml"
   },
@@ -46,15 +48,47 @@
   "dependencies": {
     "@sap/cds": "^3.34.2",
     "@sap/cds-services": "1.14.0",
+    "@sap/cds-dk": "^1.8.1",
     "@sap-cloud-sdk/core": "^1.18.0",
     "@sap/cloud-sdk-vdm-workforce-timesheet-service": "^1.18.0",
-    "@sap/hdi-deploy": "3.7.x",
     "express": "^4.16.4",
-    "hdb": "^0.17.0",
     "ts-node": "^8.0.3",
-    "typescript": "^3.3.4000"
+    "typescript": "^3.3.4000",
+    "@sap/hana-client": "^2.5.101"
   },
   "engines": {
     "node": ">=11.0.0"
+  },
+  "cds": {
+    "build": {
+      "target": ".",
+      "tasks": [
+        {
+          "src": "db",
+          "for": "hana",
+          "options": {
+            "model": [
+              "db",
+              "srv"
+            ]
+          }
+        },
+        {
+          "src": "srv",
+          "for": "node-cf",
+          "options": {
+            "model": [
+              "db",
+              "srv"
+            ]
+          }
+        }
+      ]
+    },
+    "requires": {
+      "db": {
+        "kind": "sqlite"
+      }
+    }
   }
 }
