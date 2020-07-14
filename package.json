@@ -9,7 +9,6 @@
     "preinstall": "rm -rf node_modules/@sap/cds-services",
     "cds-build": "npx cds build/all --clean",
     "cds-deploy:local": "npx cds deploy --to sqlite",
-    "cds-deploy:hana": "npx cds deploy --to hana:timesheet-hdi-container-codejam-d999999",
     "cds-watch": "npx cds watch",
     "generate": "npx generate-odata-client -c generator-config.json",
     "test": "nyc mocha -r ts-node/register -r dotenv/config --exit test/**/*.spec.ts",
@@ -17,7 +16,7 @@
     "start:local": "npx ts-node -r dotenv/config src/",
     "watch:local": "nodemon -e ts -w ./src -x npm run serve-debug",
     "serve-debug": "node -r ts-node/register -r dotenv/config --inspect src/index.ts",
-    "ci-build": "npx tsc && npm run cds-build && cp -r src/app db srv dist/",
+    "ci-build": "npx tsc && npm run cds-deploy:local && cp -r src/app db srv sqlite.db dist/",
     "ci-package": "mkdir -p deployment/ && cp -r dist package.json package-lock.json index.html dist/db dist/srv deployment/",
     "ci-backend-unit-test": "nyc --extension .ts --report-dir ./s4hana_pipeline/reports/coverage-reports/backend-unit/ --reporter cobertura mocha -r ts-node/register -r dotenv/config test/unit-tests/**/*.spec.ts test/unit-tests/*.spec.ts --reporter mocha-junit-reporter --reporter-options mochaFile=./s4hana_pipeline/reports/backend-unit/results.xml",
     "ci-integration-test": "npm run cds-deploy && nyc --extension .ts --report-dir ./s4hana_pipeline/reports/coverage-reports/backend-integration/ --reporter cobertura mocha -r ts-node/register -r dotenv/config test/integration-tests/**/*.spec.ts --reporter mocha-junit-reporter --reporter-options mochaFile=./s4hana_pipeline/reports/backend-integration/results.xml"
@@ -42,8 +41,7 @@
     "nodemon": "^1.18.10",
     "nyc": "^15.0.0",
     "sinon": "^7.4.1",
-    "sinon-chai": "^3.3.0",
-    "sqlite3": "^4.0.7"
+    "sinon-chai": "^3.3.0"
   },
   "dependencies": {
     "@sap/cds": "^3.34.2",
@@ -54,10 +52,11 @@
     "express": "^4.16.4",
     "ts-node": "^8.0.3",
     "typescript": "^3.3.4000",
-    "@sap/hana-client": "^2.5.101"
+    "@sap/hana-client": "^2.5.101",
+    "sqlite3": "^4.2.0"
   },
   "engines": {
-    "node": ">=11.0.0"
+    "node": "^12.0.0"
   },
   "cds": {
     "build": {
@@ -89,6 +88,9 @@
       "db": {
         "kind": "sqlite"
       }
+    },
+    "hana": {
+      "deploy-format": "hdbtable"
     }
   }
 }
