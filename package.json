@@ -16,8 +16,8 @@
     "start:local": "npx ts-node -r dotenv/config src/",
     "watch:local": "nodemon -e ts -w ./src -x npm run serve-debug",
     "serve-debug": "node -r ts-node/register -r dotenv/config --inspect src/index.ts",
-    "ci-build": "npx tsc && npm run cds-deploy:local && cp -r src/app db srv sqlite.db dist/",
-    "ci-package": "mkdir -p deployment/ && cp -r dist package.json package-lock.json index.html dist/db dist/srv deployment/",
+    "ci-build": "npx tsc && npm run cds-deploy:local && cp -r src/app db srv dist/",
+    "ci-package": "mkdir -p deployment/ && cp -r dist package.json package-lock.json index.html dist/db dist/srv sqlite.db deployment/",
     "ci-backend-unit-test": "nyc --extension .ts --report-dir ./s4hana_pipeline/reports/coverage-reports/backend-unit/ --reporter cobertura mocha -r ts-node/register -r dotenv/config test/unit-tests/**/*.spec.ts test/unit-tests/*.spec.ts --reporter mocha-junit-reporter --reporter-options mochaFile=./s4hana_pipeline/reports/backend-unit/results.xml",
     "ci-integration-test": "npm run cds-deploy && nyc --extension .ts --report-dir ./s4hana_pipeline/reports/coverage-reports/backend-integration/ --reporter cobertura mocha -r ts-node/register -r dotenv/config test/integration-tests/**/*.spec.ts --reporter mocha-junit-reporter --reporter-options mochaFile=./s4hana_pipeline/reports/backend-integration/results.xml"
   },
