@@ -88,9 +88,6 @@
       "db": {
         "kind": "sqlite"
       }
-    },
-    "hana": {
-      "deploy-format": "hdbtable"
     }
   }
 }

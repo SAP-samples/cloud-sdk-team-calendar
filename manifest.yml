@@ -9,4 +9,3 @@ applications:
     services:
       - my-xsuaa
       - my-destination
-      - timesheet-hdi-container-codejam-d999999
