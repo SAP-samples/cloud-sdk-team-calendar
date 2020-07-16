@@ -33,6 +33,14 @@ export async function readS4AppointmentsByPerson(person: Person, year: number): 
   const from = moment.utc(`${year}-01-01`);
   const to = moment.utc(`${year}-12-31`);
 
+  return TimeSheetEntry.requestBuilder()
+    .getAll()
+    .filter(
+      TimeSheetEntry.PERSON_WORK_AGREEMENT_EXTERNAL_ID.equals(personId),
+      TimeSheetEntry.TIME_SHEET_DATE.greaterOrEqual(from),
+      TimeSheetEntry.TIME_SHEET_DATE.lessOrEqual(to)
+    )
+    .execute({ destinationName: "S4HANA" });
   // TODO: Retrieve TimeSheetEntries from SAP S/4HANA here. Use the above variables for filtering.
   return [];
 }
@@ -43,6 +51,14 @@ export async function readSfsfAppointmentsByPerson(person: Person, year: number)
   const from = moment.utc(`${year}-01-01`);
   const to = moment.utc(`${year}-12-31`);
 
+  return TimeSheetEntry.requestBuilder()
+    .getAll()
+    .filter(
+      TimeSheetEntry.PERSON_WORK_AGREEMENT_EXTERNAL_ID.equals(personId),
+      TimeSheetEntry.TIME_SHEET_DATE.greaterOrEqual(from),
+      TimeSheetEntry.TIME_SHEET_DATE.lessOrEqual(to)
+    )
+    .execute({ destinationName: "SFSF" });
   // TODO: Retrieve EmployeeTime from SAP SuccessFactors here. Use the above variables for filtering.
   return [];
 }

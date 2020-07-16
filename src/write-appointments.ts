@@ -6,6 +6,9 @@ import { Person } from "./model/person";
 import { S4AppointmentStatus } from "./model/s4-appointment-status";
 
 export async function writeTimeSheetEntry(entry: TimeSheetEntry): Promise<TimeSheetEntry> {
+  return TimeSheetEntry.requestBuilder()
+    .create(entry)
+    .execute({ destinationName: "S4HANA" });
   // TODO: Update the TimeSheetEntry in S/4HANA here.
   return entry;
 }
@@ -25,6 +28,16 @@ export function buildTimeSheetEntry(appointment: Appointment, person: Person, da
   const isExecutedInTestRun = false;
   const operation = "C";
 
+  return TimeSheetEntry.builder()
+  .personWorkAgreementExternalId(externalId)
+  .timeSheetDataFields(timeSheetDataFields)
+  .companyCode(companyCode)
+  .timeSheetStatus(status)
+  .timeSheetDate(day)
+  .timeSheetIsReleasedOnSave(isReleasedOnSave)
+  .timeSheetIsExecutedInTestRun(isExecutedInTestRun)
+  .timeSheetOperation(operation)
+  .build();
   // TODO: Build a TimeSheetEntry here using the variables above.
   return null;
 }

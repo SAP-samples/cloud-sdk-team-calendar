@@ -11,13 +11,7 @@ cf login -a https://api.cf.eu10.hana.ondemand.com
 Enter your credentials and choose an organization and space if necessary.
 
 ## Create service instances
-We will need some services for deployment to Cloud Foundry. We will need an HDI container to store local data, a service for Authorization and Trust Management (XSUAA) and a destination service. Set them up as described in the following.
-
-### HDI Container
-In this application we are storing / reading data from SAP S/4HANA, SAP SuccessFactors and a local database. Create an HDI container to store local data in. Don't forget to replace the participantId:
-```sh
-cf create-service hanatrial hdi-shared timesheet-hdi-container-codejam-<participantId>
-```
+We will need some services for deployment to Cloud Foundry. We will need a service for Authorization and Trust Management (XSUAA) and a destination service. Set them up as described in the following.
 
 ### Authorization and Trust Management
 Take a look at the `xs-security.json` file. It contains some configuration for the XSUAA service. The `tenant-mode` indicates that we want to share the OAuth client secret for all subaccounts that subscribe to this service instance, allowing for multi-tenancy. The `xsappname` must be unique throughout all spaces. **Therefore, replace the `<participantId>` with your participantId.**
@@ -46,11 +40,6 @@ Replace all occurrences of `<participantId>` in the manifest.yml file.
 Run the following to build and package your application:
 ```sh
 npm run ci-build && npm run ci-package
-```
-
-Then, open the [package.json](../package.json), replace the `<participantId>` in the script `cds-deploy:hana` and deploy the data defined in the CSVs to the HDI container:
-```sh
-npm run cds-deploy:hana
 ```
 
 Eventually, push it to Cloud Foundry:
