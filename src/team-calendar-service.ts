@@ -1,4 +1,5 @@
 import { Appointment } from "./model/appointment";
+import { Person } from "./model/person";
 import { readAppointments } from "./read-appointments";
 import { personById } from "./read-persons";
 import { splitAppointmentIntoDays } from "./util/time-util";
@@ -26,9 +27,10 @@ export function serviceHandler(srv) {
       });
   });
 
-  srv.after("UPDATE", "Appointment", async ([appointment]: [Appointment]) => {
+  srv.after("UPDATE", "Appointment", async (appointment: Appointment, req) => {
     // split into multiple days and write in parallel
-    const person = await personById(srv, appointment.person_ID);
+    const tx = srv.transaction(req);
+    const person = await tx.run(SELECT.from ("Person"))
 
     return Promise.all(
       splitAppointmentIntoDays(appointment)
