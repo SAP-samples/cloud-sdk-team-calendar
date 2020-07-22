@@ -1,7 +1,5 @@
 import { Appointment } from "./model/appointment";
-import { Person } from "./model/person";
 import { readAppointments } from "./read-appointments";
-import { personById } from "./read-persons";
 import { splitAppointmentIntoDays } from "./util/time-util";
 import { buildTimeSheetEntry, writeTimeSheetEntry } from "./write-appointments";
 
@@ -28,20 +26,26 @@ export function serviceHandler(srv) {
   });
 
   srv.after("UPDATE", "Appointment", async (appointment: Appointment, req) => {
-    // split into multiple days and write in parallel
+    //the transaction joins the previous read request
     const tx = srv.transaction(req);
-    const person = await tx.run(SELECT.from ("Person"))
-
-    return Promise.all(
-      splitAppointmentIntoDays(appointment)
-        .map(day => buildTimeSheetEntry(appointment, person, day))
-        .map(writeTimeSheetEntry)
-    )
-    .then(() => {
-      return appointment;
-    })
-    .catch(error => {
-      throw Error(`Failed to create appointment! ${error.message}`);
-    });
+    const persons = await tx.run(SELECT.from ("Person").where({ID:appointment.person_ID}));
+    if (persons.length === 0) {
+      throw new Error(`No person found with ID ${appointment.person_ID}`);
+    }
+    else{
+      const [person] = persons;
+      // split into multiple days and write in parallel
+      return Promise.all(
+        splitAppointmentIntoDays(appointment)
+          .map(day => buildTimeSheetEntry(appointment, person, day))
+          .map(writeTimeSheetEntry)
+      )
+      .then(() => {
+        return appointment;
+      })
+      .catch(error => {
+        throw Error(`Failed to create appointment! ${error.message}`);
+      });
+    }
   });
 }
