@@ -28,16 +28,6 @@ export function buildTimeSheetEntry(appointment: Appointment, person: Person, da
   const isExecutedInTestRun = false;
   const operation = "C";
 
-  return TimeSheetEntry.builder()
-  .personWorkAgreementExternalId(externalId)
-  .timeSheetDataFields(timeSheetDataFields)
-  .companyCode(companyCode)
-  .timeSheetStatus(status)
-  .timeSheetDate(day)
-  .timeSheetIsReleasedOnSave(isReleasedOnSave)
-  .timeSheetIsExecutedInTestRun(isExecutedInTestRun)
-  .timeSheetOperation(operation)
-  .build();
   // TODO: Build a TimeSheetEntry here using the variables above.
   return null;
 }
