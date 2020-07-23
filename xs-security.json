@@ -1,4 +1,4 @@
 {
-  "xsappname": "timesheet-codejam-xsuaa-d999999",
+  "xsappname": "timesheet-codejam-xsuaa-<participantId>",
   "tenant-mode": "shared"
 }
