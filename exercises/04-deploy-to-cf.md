@@ -2,7 +2,7 @@
 Now, that you made some progress locally, let's make this application available in the cloud.
 
 ## Login to Cloud Foundry
-You can login to Cloud Foundry using the following command on the command line:
+Login to Cloud Foundry if you haven't already using the following command on the command line:
 
 ```sh
 cf login -a https://api.cf.eu10.hana.ondemand.com
