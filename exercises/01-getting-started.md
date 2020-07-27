@@ -43,5 +43,5 @@ npm run watch:local
 
 Now, you should find your application running at http://localhost:8080.
 
-All the data is in September:
+All data is in September:
 ![Local Deployment](images/local-deployment.png)
