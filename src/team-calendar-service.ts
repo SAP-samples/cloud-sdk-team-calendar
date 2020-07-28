@@ -32,20 +32,18 @@ export function serviceHandler(srv) {
     if (persons.length === 0) {
       throw new Error(`No person found with ID ${appointment.person_ID}`);
     }
-    else{
-      const [person] = persons;
-      // split into multiple days and write in parallel
-      return Promise.all(
-        splitAppointmentIntoDays(appointment)
-          .map(day => buildTimeSheetEntry(appointment, person, day))
-          .map(writeTimeSheetEntry)
-      )
-      .then(() => {
-        return appointment;
-      })
-      .catch(error => {
-        throw Error(`Failed to create appointment! ${error.message}`);
-      });
-    }
+    const [person] = persons;
+    // split into multiple days and write in parallel
+    return Promise.all(
+      splitAppointmentIntoDays(appointment)
+        .map(day => buildTimeSheetEntry(appointment, person, day))
+        .map(writeTimeSheetEntry)
+    )
+    .then(() => {
+      return appointment;
+    })
+    .catch(error => {
+      throw Error(`Failed to create appointment! ${error.message}`);
+    });
   });
 }

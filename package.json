@@ -4,11 +4,11 @@
   "description": "Timesheet app using the SAP Cloud SDK and Express.js",
   "main": "src/index.ts",
   "scripts": {
-    "megacleaninstall": "rm -f package-lock.json && find . -name \"node_modules\" -exec rm -rf '{}' + && find db/src -name \"gen\" -exec rm -rf '{}' + && find . -name \"sqlite.db\" -exec rm -rf '{}' + && npm i",
+    "clean": "rm -f package-lock.json && find . -name \"node_modules\" -exec rm -rf '{}' + && find db/src -name \"gen\" -exec rm -rf '{}' + && find . -name \"sqlite.db\" -exec rm -rf '{}' + && npm i",
     "init": "npm i && node initialize.js",
     "preinstall": "rm -rf node_modules/@sap/cds-services",
     "cds-build": "npx cds build/all --clean",
-    "cds-deploy:local": "npx cds deploy --to sqlite",
+    "cds-deploy": "npx cds deploy --to sqlite",
     "cds-watch": "npx cds watch",
     "generate": "npx generate-odata-client -c generator-config.json",
     "test": "nyc mocha -r ts-node/register -r dotenv/config --exit test/**/*.spec.ts",
