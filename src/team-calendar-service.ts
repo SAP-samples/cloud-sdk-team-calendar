@@ -28,24 +28,21 @@ export function serviceHandler(srv) {
   srv.after("UPDATE", "Appointment", async (appointment: Appointment, req) => {
     //the transaction joins the previous read request
     const tx = srv.transaction(req);
-    const persons = await tx.run(SELECT.from ("Person").where({ID:appointment.person_ID}));
-    if (persons.length === 0) {
+    const [person] = await tx.run(SELECT.from ("Person").where({ID:'a'}));
+    if (!person) {
       throw new Error(`No person found with ID ${appointment.person_ID}`);
     }
-    else{
-      const [person] = persons;
-      // split into multiple days and write in parallel
-      return Promise.all(
-        splitAppointmentIntoDays(appointment)
-          .map(day => buildTimeSheetEntry(appointment, person, day))
-          .map(writeTimeSheetEntry)
-      )
-      .then(() => {
-        return appointment;
-      })
-      .catch(error => {
-        throw Error(`Failed to create appointment! ${error.message}`);
-      });
-    }
+    // split into multiple days and write in parallel
+    return Promise.all(
+      splitAppointmentIntoDays(appointment)
+        .map(day => buildTimeSheetEntry(appointment, person, day))
+        .map(writeTimeSheetEntry)
+    )
+    .then(() => {
+      return appointment;
+    })
+    .catch(error => {
+      throw Error(`Failed to create appointment! ${error.message}`);
+    });
   });
 }
