@@ -29,7 +29,7 @@ export function serviceHandler(srv) {
     //the transaction joins the previous read request
     const tx = srv.transaction(req);
     const persons = await tx.run(SELECT.from ("Person").where({ID:appointment.person_ID}));
-    if (persons.length === 0) {
+    if (!persons.length) {
       throw new Error(`No person found with ID ${appointment.person_ID}`);
     }
     else{
