@@ -5,7 +5,17 @@ Let's write some code! The application is supposed to show appointments from thr
 
 Note: If you have access to an SAP S/4HANA Cloud system, you can skip this step.
 
-Download the [SAP S/4HANA mock server](https://github.wdf.sap.corp/MA/teched-mock-server) in a new folder.
+Download the [SAP S/4HANA mock server](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server) in a new folder.
+
+You need to add the two `EDMX` files [time-off](https://api.sap.com/api/API_MANAGE_WORKFORCE_TIMESHEET/overview) and [timesheet](https://api.sap.com/api/ECTimeOff/overview): Go to Details, then Download API Specification and choose EDMX.
+
+Put these files in folders `time-off` and `timeSheetEntryCollection` respectively.
+
+Generate the services by running these commands in the command line:
+```sh
+npm run generate-test-resources:calendar
+npm run generate-test-resources:time-off
+```
 
 Open the SAP [Cloud Platform Cockpit](https://account.hana.ondemand.com/) and navigate to the subaccount you are planning to deploy your application to. Click on “Overview” on the left and you can see the URL of the API endpoint.
 
