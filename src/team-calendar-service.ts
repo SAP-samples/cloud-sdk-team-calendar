@@ -28,7 +28,7 @@ export function serviceHandler(srv) {
   srv.after("UPDATE", "Appointment", async (appointment: Appointment, req) => {
     //the transaction joins the previous read request
     const tx = srv.transaction(req);
-    const [person] = await tx.run(SELECT.from ("Person").where({ID:'a'}));
+    const [person] = await tx.run(SELECT.from ("Person").where({ID:appointment.person_ID}));
     if (!person) {
       throw new Error(`No person found with ID ${appointment.person_ID}`);
     }
