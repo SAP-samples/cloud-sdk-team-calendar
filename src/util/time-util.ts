@@ -9,14 +9,11 @@ export function timeToString(time: Time): string | null {
 }
 
 export function dateToString(date: Moment): string | null {
-  var ret: string;
   if (date) {
     const year = moment().format('YYYY');
-    ret = date.add(year, 'years').format(year + "-MM-DD");
-  } else {
-    ret = null;
+    return date.format(year + "-MM-DD");
   }
-  return ret;
+  return null;
 }
 
 export function splitAppointmentIntoDays(appointment: Appointment): moment.Moment[] {
