@@ -30,8 +30,7 @@ export async function readAppointments(
 
 export async function readS4AppointmentsByPerson(person: Person, year: number): Promise<TimeSheetEntry[]> {
   const personId = person.s4ID;
-  //the appointments are in 2020 but are changed to the current year in util/time-util.ts
-  const from = moment.utc(`2020-01-01`);
+  const from = moment.utc(`${year}-01-01`);
   const to = moment.utc(`${year}-12-31`);
 
   // TODO: Retrieve TimeSheetEntries from SAP S/4HANA here. Use the above variables for filtering.
@@ -41,8 +40,7 @@ export async function readS4AppointmentsByPerson(person: Person, year: number): 
 export async function readSfsfAppointmentsByPerson(person: Person, year: number): Promise<EmployeeTime[]> {
   const timeType = "VACATION";
   const personId = person.sfsfID;
-  //the appointments are in 2019 but are changed to the current year in util/time-util.ts
-  const from = moment.utc(`2019-01-01`);
+  const from = moment.utc(`${year}-01-01`);
   const to = moment.utc(`${year}-12-31`);
 
   // TODO: Retrieve EmployeeTime from SAP SuccessFactors here. Use the above variables for filtering.
