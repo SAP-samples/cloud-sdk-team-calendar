@@ -7,9 +7,7 @@ Note: If you have access to an SAP S/4HANA Cloud system, you can skip this step.
 
 Download the [SAP S/4HANA mock server](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server) in a new folder.
 
-You need to add the two `EDMX` files [time-off](https://api.sap.com/api/API_MANAGE_WORKFORCE_TIMESHEET/overview) and [timesheet](https://api.sap.com/api/ECTimeOff/overview): Go to Details, then Download API Specification and choose EDMX.
-
-Put these files in folders `time-off` and `timeSheetEntryCollection` respectively.
+Add the `EDMX` files [time-off](https://api.sap.com/api/API_MANAGE_WORKFORCE_TIMESHEET/overview) and [timesheet](https://api.sap.com/api/ECTimeOff/overview), go to `Details`, then `Download API Specification` and choose `EDMX`. Put these files in folders `time-off` and `timeSheetEntryCollection` respectively.
 
 Generate the services by running these commands in the command line:
 ```sh
