@@ -44,9 +44,9 @@ stages:
 
   productionDeployment:
     cfTargets:
-      - org: '<my-trial-org>'
-        space: '<my-trial-space>'
-        apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
-        appName: 'timesheet-codejam-d999999'
+      - org: '10923517trial'
+        space: 'dev'
+        apiEndpoint: 'https://api.cf.us10.hana.ondemand.com'
+        appName: 'timesheet-codejam-10923517trial'
         manifest: 'manifest.yml'
         credentialsId: 'SCP'
