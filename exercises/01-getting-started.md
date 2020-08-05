@@ -26,8 +26,6 @@ Note: If you have access to an SAP S/4HANA Cloud system, you can skip this step.
 
 Follow these [instructions](https://github.com/CharlesDuboisSAP/cloud-s4-sdk-book/tree/mock-server#how-to-run-the-server) on how to setup your S4/HANA mock server and deploy it on SAP Cloud Platform, Cloud Foundry.
 
-Open the SAP [Cloud Platform Cockpit](https://account.hana.ondemand.com/) and navigate to the subaccount you are planning to deploy your application to. Click on “Overview” on the left and you can see the URL of the API endpoint.
-
 Open the SAP [Cloud Platform Cockpit](https://account.hana.ondemand.com/) and open your subaccount, if you have a trial account it should be called trial, then open your space, where your applications are deployed, you should find the newly deployed mock server.
 
 ![Space](images/space-S4.png)
