@@ -1,5 +1,6 @@
 import { TimeSheetEntry } from "@sap/cloud-sdk-vdm-workforce-timesheet-service";
-import moment from "moment";
+import { Moment } from "moment";
+var moment = require('moment');
 import { EmployeeTime } from "./generated/ec-time-off-service";
 import { Appointment } from "./model/appointment";
 import { Person } from "./model/person";
