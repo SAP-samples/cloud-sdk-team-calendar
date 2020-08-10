@@ -17,5 +17,5 @@ Reload your application in the browser and check, whether there are new appoinme
 ![Local Read](images/local-read.png)
 
 > ### Where is the data coming from?
-> Take a look at the [.env](../.env) file. It is used to set the *destinations* environment variable, that provides technical information on remote systems we want to connect to (SAP S/4HANA and SAP SuccessFactors in our case).
+> Go back to the [.env](../.env) file. It is used to set the *destinations* environment variable, that provides technical information on remote systems we want to connect to (SAP S/4HANA and SAP SuccessFactors in our case).
 > One of the destinations described here, has the name *S4HANA*. By executing your request and passing a `destinationName` you are implicitly using the technical information from the environment variable.
