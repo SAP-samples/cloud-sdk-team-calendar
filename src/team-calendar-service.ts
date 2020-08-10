@@ -11,7 +11,7 @@ export function serviceHandler(srv) {
     if (!year) {
       req.reject(
         400,
-        "No key found in the request URL! Please provide a key, e.g. by calling the endpoint like this: /TeamCalendar(2019)."
+        "No key found in the request URL! Please provide a key, e.g. by calling the endpoint like this: /TeamCalendar(2020)."
       );
     }
 
