@@ -20,17 +20,19 @@ On your laptop open a command line and enter the following command. Don't forget
 git clone https://github.com/<your-github-username>/cloud-sdk-team-calendar.git
 ```
 
-## Deploy the S/4HANA mock server (Optional)
+## Deploy the S/4HANA and SFSF mock server (Optional)
 
-Note: If you have access to an SAP S/4HANA Cloud system, you can skip this step.
+>Note: If you have access to both SAP S/4HANA and SAP Successfactors Cloud systems, you can skip this step.
 
-Follow these [instructions](https://github.com/CharlesDuboisSAP/cloud-s4-sdk-book/tree/mock-server#how-to-run-the-server) on how to setup your S4/HANA mock server and deploy it on SAP Cloud Platform, Cloud Foundry.
+Follow these [instructions](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server#how-to-run-the-server) on how to setup your S4/HANA / SFSF mock server and deploy it on SAP Cloud Platform, Cloud Foundry.
 
-Open the SAP [Cloud Platform Cockpit](https://account.hana.ondemand.com/) and open your subaccount, if you have a trial account it should be called trial, then open your space, where your applications are deployed, you should find the newly deployed mock server.
+## Setup the destination file
 
-![Space](images/space-S4.png)
+Retrieve the server's route, you can then replace the S4HANA and SFSF `url` in the [`.env`](../.env) file with the route url of the server. The `.env` file should have the same URLs if you use the mock server, because the mock server offers both services:
 
-Open it and copy the route, you can then replace the S4HANA `url` in the [`.env`](../.env) file with the route url of the server.
+```json
+destinations=[{"name":"S4HANA","url":"<S4-server-url>","authentication":"NoAuthentication"},{"name": "SFSF", "url": "<SFSF-server-url>","authentication":"NoAuthentication"}]
+```
 
 ## Start the application locally
 Open the project in your IDE. For the remainder of this course we will assume you are using Visual Studio Code. Please adapt accordingly if you are using a different IDE.
