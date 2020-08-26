@@ -26,7 +26,7 @@ describe("appointment transformation", () => {
   });
 
   it("dateToString for date", () => {
-    expect(dateToString(moment.utc("2019-01-01"))).to.equal("2019-01-01");
+    expect(dateToString(moment.utc("2020-01-01"))).to.equal("2020-01-01");
   });
 
   it("split appointment into days", () => {

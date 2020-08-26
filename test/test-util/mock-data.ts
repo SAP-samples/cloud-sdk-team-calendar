@@ -3,7 +3,7 @@ import moment from "moment";
 import { EmployeeTime } from "../../src/generated/ec-time-off-service";
 import { Appointment } from "../../src/model/appointment";
 
-export const calendarYear = 2019;
+export const calendarYear = 2020;
 
 export const person = {
   ID: "1",
