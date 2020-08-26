@@ -1,6 +1,6 @@
 {
   "extends": [
-    "tslint:latest",
+    "tslint:latest"
   ],
   "linterOptions": {
     "exclude": ["node_modules/**/*"]
