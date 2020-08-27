@@ -1,7 +1,0 @@
-
-npm ERR! 404 Not Found - GET https://registry.npmjs.org/@sap-cloud-sdk/generator/-/generator-1.24.1.tgz
-[2020-08-06T08:31:02.653Z] error npmExecuteScripts - npm ERR! 404 
-[2020-08-06T08:31:02.653Z] error npmExecuteScripts - npm ERR! 404  '@sap-cloud-sdk/generator@1.24.1' is not in the npm registry.
-
-ERROR: [npmExecuteScripts] Step execution failed (category: undefined). Error: running command 'npm' failed: cmd.Run() failed: exit status 1
-
