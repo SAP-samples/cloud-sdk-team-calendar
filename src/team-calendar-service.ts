@@ -3,6 +3,10 @@ import { readAppointments } from "./read-appointments";
 import { splitAppointmentIntoDays } from "./util/time-util";
 import { buildTimeSheetEntry, writeTimeSheetEntry } from "./write-appointments";
 
+//useful for the backend unit test
+import cds from '@sap/cds';
+const { SELECT } = cds.ql;
+
 export function serviceHandler(srv) {
   srv.on("READ", "TeamCalendar", req => {
     // enfore presence of key (for now)
@@ -11,18 +15,20 @@ export function serviceHandler(srv) {
     if (!year) {
       req.reject(
         400,
-        "No key found in the request URL! Please provide a key, e.g. by calling the endpoint like this: /TeamCalendar(2019)."
+        "No key found in the request URL! Please provide a key, e.g. by calling the endpoint like this: /TeamCalendar(2020)."
       );
     }
 
     return readAppointments(year, srv)
-      .then(req.reply)
-      .catch(error => {
-        req.reject(
-          500,
-          "An error occured while trying to read appointments: " + error.message
-        );
-      });
+    .then(
+      data => req.reply(data)
+    )
+    .catch(error => {
+      req.reject(
+        500,
+        "An error occured while trying to read appointments: " + error.message
+      );
+    });
   });
 
   srv.after("UPDATE", "Appointment", async (appointment: Appointment, req) => {

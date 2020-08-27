@@ -22,9 +22,9 @@ describe("GET /odata/v2/TeamCalendar", function () {
 
   it("returns all appointments for a given year", done => {
     axios
-      .get("http://localhost:8080/odata/v2/TimesheetService/TeamCalendar(2019)")
+      .get("http://localhost:8080/odata/v2/TimesheetService/TeamCalendar(2020)")
       .then(resp => {
-        expect(resp.data.year).to.equal(2019);
+        expect(resp.data.year).to.equal(2020);
         done();
       })
       .catch(done);
