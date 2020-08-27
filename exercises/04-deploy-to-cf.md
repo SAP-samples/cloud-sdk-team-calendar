@@ -2,7 +2,7 @@
 Now, that you made some progress locally, let's make this application available in the cloud.
 
 ## Login to Cloud Foundry
-You can login to Cloud Foundry using the following command on the command line:
+Login to Cloud Foundry using the following command on the command line (if you haven't logged in before):
 
 ```sh
 cf login -a https://api.cf.eu10.hana.ondemand.com
@@ -83,4 +83,3 @@ In the SAP Cloud Platform cockpit, go to the *Spaces* tab on the left and select
 ![SCP Application](images/scp-application.png)
 
 **Congratulations**, you deployed an extension to SAP S/4HANA to the SAP Cloud Platform!
-

@@ -1,5 +1,5 @@
 applications:
-  - name: timesheet-codejam-d999999
+  - name: timesheet-codejam-<participantId>
     path: deployment/
     buildpacks:
       - nodejs_buildpack

@@ -43,6 +43,6 @@ stages:
       - org: '<my-trial-org>'
         space: '<my-trial-space>'
         apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
-        appName: 'timesheet-codejam-<my-trial-org>'
+        appName: 'timesheet-codejam-<participantId>'
         manifest: 'manifest.yml'
         credentialsId: 'SCP'

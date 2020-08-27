@@ -4,8 +4,5 @@
   "scripts": {
     "postinstall": "node .build.js",
     "start": "node node_modules/@sap/hdi-deploy/deploy.js"
-  },
-  "devDependencies": {
-    "@sap/hdi-deploy": "^3.11.11"
   }
 }
