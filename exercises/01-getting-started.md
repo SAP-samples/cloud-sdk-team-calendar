@@ -26,16 +26,13 @@ git clone https://github.com/<your-github-username>/cloud-sdk-team-calendar.git
 
 Follow these [instructions](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server#how-to-run-the-server) on how to setup your S4/HANA / SFSF mock server and deploy it on SAP Cloud Platform, Cloud Foundry.
 
-## Setup the destination file
+## Setup the destinations environment variable
 
-Retrieve the server's route, you can then replace the S4HANA and SFSF `url` in the [`.env`](../.env) file with the route url of the server. The `.env` file should have the same URLs if you use the mock server, because the mock server offers both services:
+Replace the URL placeholders for the `S4HANA` and `SFSF` destinations in the [`.env`](../.env) file with the URL(s) of your mock server or your SAP S/4HANA and SAP SuccessFactors systems. If you are using the mock server, the URLs for both destinations are the same, because the mock server acts as both, a mocked SAP S4/HANA system and a mocked SAP SuccessFactors system.
 
-```json
-destinations=[{"name":"S4HANA","url":"<S4-server-url>","authentication":"NoAuthentication"},{"name": "SFSF", "url": "<SFSF-server-url>","authentication":"NoAuthentication"}]
-```
 
-> ### If you lost the mock server's route
-> Open the SAP [Cloud Platform Cockpit](https://account.hana.ondemand.com/) and open your subaccount, if you have a trial account it should be called trial, then open your space, where your applications are deployed, you should find the newly deployed mock server.
+> ### If you don't know your mock server's URL
+> Open the SAP [Cloud Platform Cockpit](https://account.hana.ondemand.com) and open the subaccount to which the mockserver was deployed. It should be called `trial`, if you are using your trial account. Open the space, where the mock server was deployed. You should find the URL to the mock server here.
 
 ## Start the application locally
 Open the project in your IDE. For the remainder of this course we will assume you are using Visual Studio Code. Please adapt accordingly if you are using a different IDE.
