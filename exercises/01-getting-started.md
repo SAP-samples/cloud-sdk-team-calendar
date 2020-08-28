@@ -34,6 +34,9 @@ Retrieve the server's route, you can then replace the S4HANA and SFSF `url` in t
 destinations=[{"name":"S4HANA","url":"<S4-server-url>","authentication":"NoAuthentication"},{"name": "SFSF", "url": "<SFSF-server-url>","authentication":"NoAuthentication"}]
 ```
 
+> ### If you lost the mock server's route
+> Open the SAP [Cloud Platform Cockpit](https://account.hana.ondemand.com/) and open your subaccount, if you have a trial account it should be called trial, then open your space, where your applications are deployed, you should find the newly deployed mock server.
+
 ## Start the application locally
 Open the project in your IDE. For the remainder of this course we will assume you are using Visual Studio Code. Please adapt accordingly if you are using a different IDE.
 
