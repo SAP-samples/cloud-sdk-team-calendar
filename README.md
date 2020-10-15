@@ -1,4 +1,7 @@
 # SAP Cloud SDK Team Calendar Sample
+
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/cloud-sdk-team-calendar)](https://api.reuse.software/info/github.com/SAP-samples/cloud-sdk-team-calendar)
+
 ## Description
 Learn how to build a side-by-side extension to SAP S/4HANA and SAP SuccessFactors using the SAP Cloud SDK for Javascript.
 
@@ -45,4 +48,4 @@ All known issues will be listed here.
 Ask questions at the CodeJam itself or open a ticket in GitHub or Stackoverflow.
 
 # License
-Copyright © 2020 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSE) file.
+Copyright © 2020 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSES/Apache-2.0.txt) file.
