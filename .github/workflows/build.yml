@@ -1,0 +1,33 @@
+on:
+  push:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm ci
+      - name: Static code checks
+        run: npm run ci-lint
+      - name: Build
+        run: npm run ci-build
+      - name: Unit tests
+        run: npm run ci-backend-unit-test
+      - name: Integration tests
+        run: npm run ci-it-backend
+      - name: Package
+        run: npm run ci-package
+      - name: Install CF CLI
+        run: |
+          wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
+          echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
+          sudo apt-get -y update
+          sudo apt-get -y install cf-cli
+      - name: Deploy
+        uses: SAP/project-piper-action@v1
+        with:
+          command: cloudFoundryDeploy
+        env:
+          PIPER_username: ${{ secrets.CF_USER }}
+          PIPER_password: ${{ secrets.CF_PASSWORD }}
+      
