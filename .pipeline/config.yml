@@ -24,6 +24,12 @@
 
 ### Step-specific configuration
 steps:
+  cloudFoundryDeploy:
+    org: '<my-trial-org>'
+    space: '<my-trial-space>'
+    apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
+    appName: 'timesheet-codejam-<participantId>'
+    manifest: 'manifest.yml'
 
 ### Stage-specific configuration
 stages:
@@ -36,11 +42,4 @@ stages:
 #    nonErpDestinations:
 #      - 'myCustomDestination'
 
-  productionDeployment:
-    cfTargets:
-      - org: '<my-trial-org>'
-        space: '<my-trial-space>'
-        apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
-        appName: 'timesheet-codejam-<participantId>'
-        manifest: 'manifest.yml'
-        credentialsId: 'SCP'
+  
