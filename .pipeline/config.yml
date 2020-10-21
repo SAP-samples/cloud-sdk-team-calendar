@@ -27,8 +27,6 @@ steps:
 
 ### Stage-specific configuration
 stages:
-  npmAudit:
-    auditedAdvisories:
 #  integrationTests:
 #    credentials:
 #      - alias: 'mySystemAlias'
