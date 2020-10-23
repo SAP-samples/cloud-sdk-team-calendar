@@ -16,7 +16,7 @@ You will learn how to:
   * Deploy applications locally and on CloudFoundry
   * Automate application deployment
 
-## Requirements
+## Prerequisites
 
 * Setup a [free trial](https://cloudplatform.sap.com/try.html) account for SAP Cloud Platform
 * [Install Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
