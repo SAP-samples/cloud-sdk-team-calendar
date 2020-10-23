@@ -60,4 +60,5 @@ Now, you should find your application running at http://localhost:8080.
 All data is in September:
 ![Local Deployment](images/local-deployment.png)
 
-> [Next Step: Create a read request](02-s4-read-request.md)
+## Next Step
+[Create a read request](02-s4-read-request.md)
