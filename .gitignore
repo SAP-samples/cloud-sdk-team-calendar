@@ -11,8 +11,6 @@ deployment/
 srv/gen/
 *.db
 db/src/gen
-generator-input/*.edmx
-src/generated
 
 # added by cds deploy
 default-env.json
