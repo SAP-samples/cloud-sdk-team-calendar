@@ -22,7 +22,7 @@ git clone https://github.com/<your-github-username>/cloud-sdk-team-calendar.git
 
 ## Deploy the S/4HANA and SFSF mock server (Optional)
 
->Note: If you have access to both SAP S/4HANA and SAP Successfactors Cloud systems, you can skip this step.
+>Note: If you have access to real SAP S/4HANA Cloud and SAP Successfactors Cloud systems, you may be able to skip this step.
 
 Follow these [instructions](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server#how-to-run-the-server) on how to setup your S/4HANA and SFSF mock server and deploy it on SAP Cloud Platform, Cloud Foundry.
 
