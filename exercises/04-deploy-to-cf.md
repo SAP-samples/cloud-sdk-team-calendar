@@ -83,3 +83,5 @@ In the SAP Cloud Platform cockpit, go to the *Spaces* tab on the left and select
 ![SCP Application](images/scp-application.png)
 
 **Congratulations**, you deployed an extension to SAP S/4HANA to the SAP Cloud Platform!
+
+## Next step: [Generate your own OData client](05-generate-odata-client.md)
