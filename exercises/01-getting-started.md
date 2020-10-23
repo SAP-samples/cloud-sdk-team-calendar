@@ -24,14 +24,14 @@ git clone https://github.com/<your-github-username>/cloud-sdk-team-calendar.git
 
 >Note: If you have access to both SAP S/4HANA and SAP Successfactors Cloud systems, you can skip this step.
 
-Follow these [instructions](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server#how-to-run-the-server) on how to setup your S4/HANA / SFSF mock server and deploy it on SAP Cloud Platform, Cloud Foundry.
+Follow these [instructions](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server#how-to-run-the-server) on how to setup your S/4HANA and SFSF mock server and deploy it on SAP Cloud Platform, Cloud Foundry.
 
 ## Setup the destinations environment variable
 
 Replace the URL placeholders for the `S4HANA` and `SFSF` destinations in the [`.env`](../.env) file with the URL(s) of your mock server or your SAP S/4HANA and SAP SuccessFactors systems. If you are using the mock server, the URLs for both destinations are the same, because the mock server acts as both, a mocked SAP S4/HANA system and a mocked SAP SuccessFactors system.
 
 
-> ### If you don't know your mock server's URL
+> ### How to find your mock server's URL
 > Open the SAP [Cloud Platform Cockpit](https://account.hana.ondemand.com) and open the subaccount to which the mockserver was deployed. It should be called `trial`, if you are using your trial account. Open the space, where the mock server was deployed. You should find the URL to the mock server here.
 
 ## Start the application locally
