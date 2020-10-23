@@ -24,7 +24,7 @@ jobs:
           sudo apt-get -y update
           sudo apt-get -y install cf-cli
       - name: Deploy
-        uses: SAP/project-piper-action@v1.0
+        uses: SAP/project-piper-action@master
         with:
           command: cloudFoundryDeploy
         env:
