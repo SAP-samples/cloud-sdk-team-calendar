@@ -60,4 +60,4 @@ Now, you should find your application running at http://localhost:8080.
 All data is in September:
 ![Local Deployment](images/local-deployment.png)
 
-## Next step: [Create a read request](02-s4-read-request.md)
+## Next step: [reate a read request to SAP S/4HANA](02-s4-read-request.md)

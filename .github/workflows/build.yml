@@ -1,3 +1,5 @@
+name: build
+
 on:
   push:
 jobs:
@@ -17,17 +19,11 @@ jobs:
         run: npm run ci-it-backend
       - name: Package
         run: npm run ci-package
-      - name: Install CF CLI
-        run: |
-          wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
-          echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
-          sudo apt-get -y update
-          sudo apt-get -y install cf-cli
       - name: Deploy
-        uses: SAP/project-piper-action@1.0
+        uses: SAP/project-piper-action@install-cf-cli
         with:
           command: cloudFoundryDeploy
         env:
           PIPER_username: ${{ secrets.CF_USER }}
           PIPER_password: ${{ secrets.CF_PASSWORD }}
-      
+

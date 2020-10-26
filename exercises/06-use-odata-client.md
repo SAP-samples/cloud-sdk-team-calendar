@@ -29,3 +29,5 @@ Reload your locally deployed application in the browser and check, whether there
 
 <!-- # Automate your deployment
 TODO: -->
+
+## Next step: [Automate deployment](07-automate-deployment.md)

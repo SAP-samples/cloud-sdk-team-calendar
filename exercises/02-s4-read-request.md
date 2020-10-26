@@ -20,4 +20,4 @@ Reload your application in the browser and check, whether there are new appoinme
 > Go back to the [.env](../.env) file. It is used to set the *destinations* environment variable, that provides technical information on remote systems we want to connect to (SAP S/4HANA and SAP SuccessFactors in our case).
 > One of the destinations described here, has the name *S4HANA*. By executing your request and passing a `destinationName` you are implicitly using the technical information from the environment variable.
 
-## Next step: [Create a write request](03-s4-write-request.md)
+## Next step: [Create a write request to SAP S/4HANA](03-s4-write-request.md)

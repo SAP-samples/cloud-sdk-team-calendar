@@ -12,3 +12,5 @@ In your [package.json](../package.json) you have already installed the `@sap/clo
 npx generate-odata-client -c generator-config.json
 ```
 Once this is completed you should find some generated code, your OData client, in the [src/generated/ec-time-off-service directory](../src/generated/ec-time-off-service). We will use this code to request additional appointments from SAP SuccessFactors.
+
+## Next step: [Create a request with your own OData client](06-use-odata-client.md)

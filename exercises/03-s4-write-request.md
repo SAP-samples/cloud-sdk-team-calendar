@@ -29,4 +29,4 @@ Execute this request against the destination with the `destinationName` *S4HANA*
 Refresh your application in the browser and try to approve a request. This request should now be written to SAP S/4HANA.
 ![Local Write](images/approve.png)
 
-## Next step: [Deploy to Cloud Foundry](04-deploy-to-cf.md)
+## Next step: [Deploy your application to Cloud Foundry](04-deploy-to-cf.md)
