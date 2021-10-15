@@ -23,12 +23,12 @@ cf create-service xsuaa application my-xsuaa -c xs-security.json
 ```
 
 ### Destination
-The [SAP Cloud Platform destination service](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/34010ace6ac84574a4ad02f5055d3597.html) serves technical information on remote services or systems. Create an instance of this service:
+The [SAP BTP destination service](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/34010ace6ac84574a4ad02f5055d3597.html) serves technical information on remote services or systems. Create an instance of this service:
 ```sh
 cf create-service destination lite my-destination
 ```
 
-This is what the service instances should look like in the SAP Cloud Platform cockpit:
+This is what the service instances should look like in the SAP BTP cockpit:
 ![SCP Services](images/scp-services.png)
 
 ## Adjust the manifest.yml file
@@ -48,8 +48,8 @@ cf push
 ```
 As this will take a moment, proceed to the next step in the mean time.
 
-## Configure Destinations on SAP Cloud Platform
-Login to the [SAP Cloud Platform cockpit](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trialhome) and find your subaccount. Check the *Connectivity* tab on the left. Here you will find your configuration for connectivity services: **destinations** and **cloud connectors**.
+## Configure Destinations on SAP BTP
+Login to the [SAP BTP cockpit](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trialhome) and find your subaccount. Check the *Connectivity* tab on the left. Here you will find your configuration for connectivity services: **destinations** and **cloud connectors**.
 You will need to [configure a cloud connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e6c7616abb5710148cfcf3e75d96d596.html) when you want to connect to an on premise system. Today, we will connect to a mocked cloud system and will therefore skip this step.
 
 As we will retrieve data from SAP S/4HANA and SAP SuccessFactors, we have to configure those systems as destinations.
@@ -73,15 +73,15 @@ SAP SuccessFactors destination:
 > Authentication: NoAuthentication
 >```
 
-This is what the configured destinations should look like in the SAP Cloud Platform cockpit:
+This is what the configured destinations should look like in the SAP BTP cockpit:
 ![SCP Destinations](images/scp-destinations.png)
 
 
-## Find your application running on SAP Cloud Platform
-In the SAP Cloud Platform cockpit, go to the *Spaces* tab on the left and select the space that you logged in to on the command line before. Select your application *timesheet-codejam-\<participantId>* and click on the application route to see the application running.
+## Find your application running on SAP BTP
+In the SAP BTP cockpit, go to the *Spaces* tab on the left and select the space that you logged in to on the command line before. Select your application *timesheet-codejam-\<participantId>* and click on the application route to see the application running.
 
 ![SCP Application](images/scp-application.png)
 
-**Congratulations**, you deployed an extension to SAP S/4HANA to the SAP Cloud Platform!
+**Congratulations**, you deployed an extension to SAP S/4HANA to the SAP BTP!
 
 ## Next step: [Generate your own OData client](05-generate-odata-client.md)
