@@ -17,7 +17,7 @@ Go to the [pipeline_config.yml](../pipeline_config.yml) file and adjust it to yo
 Also, replace your participantId for the `appName`.
 
 ## Set credentials for deployment
-Take a look at the `build.yml` file. The `Deploy` step will deploy your application to the SAP Cloud Platform. This step needs credentials.
+Take a look at the `build.yml` file. The `Deploy` step will deploy your application to the SAP BTP. This step needs credentials.
 To set your credentials in Github go to  "Settings" and then "Secrets":
 ![Github Secrets](images/github-secrets.png)
 
