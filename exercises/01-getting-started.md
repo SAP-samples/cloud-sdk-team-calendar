@@ -20,11 +20,11 @@ On your laptop open a command line and enter the following command. Don't forget
 git clone https://github.com/<your-github-username>/cloud-sdk-team-calendar.git
 ```
 
-## Deploy the S/4HANA and SFSF mock server (Optional)
+## Deploy the SAP S/4HANA and SAP SuccessFactors mock server (Optional)
 
->Note: If you have access to real SAP S/4HANA Cloud and SAP Successfactors Cloud systems, you may be able to skip this step.
+>Note: If you have access to real SAP S/4HANA Cloud and SAP SuccessFactors (SFSF) Cloud systems, you may be able to skip this step.
 
-Follow these [instructions](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server#how-to-run-the-server) on how to setup your S/4HANA and SFSF mock server and deploy it on SAP Cloud Platform, Cloud Foundry.
+Follow these [instructions](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server#how-to-run-the-server) on how to setup your SAP S/4HANA and SFSF mock server and deploy it on SAP Business Technology Platform (SAP BTP), Cloud Foundry environment.
 
 ## Setup the destinations environment variable
 
@@ -32,7 +32,7 @@ Replace the URL placeholders for the `S4HANA` and `SFSF` destinations in the [`.
 
 
 > ### How to find your mock server's URL
-> Open the SAP [Cloud Platform Cockpit](https://account.hana.ondemand.com) and open the subaccount to which the mockserver was deployed. It should be called `trial`, if you are using your trial account. Open the space, where the mock server was deployed. You should find the URL to the mock server here.
+> Open the [SAP BTP Cockpit](https://account.hana.ondemand.com) and open the subaccount to which the mockserver was deployed. Open the space, where the mock server was deployed. You should find the URL to the mock server here.
 
 ## Start the application locally
 Open the project in your IDE. For the remainder of this course we will assume you are using Visual Studio Code. Please adapt accordingly if you are using a different IDE.
