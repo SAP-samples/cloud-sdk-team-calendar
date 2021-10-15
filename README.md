@@ -18,7 +18,7 @@ You will learn how to:
 
 ## Prerequisites
 
-* Setup a [free trial](https://cloudplatform.sap.com/try.html) account for SAP Cloud Platform
+* Setup a [free](https://developers.sap.com/tutorials/btp-cockpit-setup.html) account for SAP BTP
 * [Install Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 * [Install git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
   * When working on Windows make sure you have the Git Bash installed and configured to be used with npm
