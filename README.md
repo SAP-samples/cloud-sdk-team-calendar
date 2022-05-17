@@ -50,5 +50,10 @@ Ask questions at the CodeJam itself or open a ticket in GitHub or Stackoverflow.
 # License
 Copyright © 2020 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](./LICENSE) file.
 
-## Contribute
-Want to contribute? Check out our [contribution](./CONTRIBUTING.md) guide and follow our [code of conduct](./CODE_OF_CONDUCT).
+## Contributing
+If you wish to contribute code, offer fixes or improvements, please send a pull request.
+Due to legal reasons, contributors will be asked to accept a DCO when they create the first pull request to this project.
+This happens in an automated fashion during the submission process. SAP uses [the standard DCO text of the Linux Foundation](https://developercertificate.org/).
+
+## Code of Conduct
+For this repository the [code of conduct](./CODE_OF_CONDUCT.md) of the samples repository applies.
