@@ -7,4 +7,4 @@ namespace my.timesheet;
 using from './data-model';
 
 // 2) In addition, generic service providers need views for exposed entities
-using from '../srv/cat-service';
+using from '../srv/timesheet-service';

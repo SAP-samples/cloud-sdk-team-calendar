@@ -1,7 +1,7 @@
 {
-  "name": "cloud-sdk-timesheet-app",
+  "name": "cloud-sdk-team-calendar-app",
   "version": "1.0.0",
-  "description": "Timesheet app using the SAP Cloud SDK and Express.js",
+  "description": "Team Calender app using the SAP Cloud SDK and CAP",
   "main": "src/index.ts",
   "scripts": {
     "lint": "tslint -c tslint.json 'api/src/**/*.ts' 'app/src/**/*.ts'",
@@ -25,7 +25,7 @@
     "ci-lint": "npm run lint"
   },
   "author": "",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@sap-cloud-sdk/generator": "1.18.1",
@@ -48,11 +48,11 @@
     "tslint": "^6.1.3"
   },
   "dependencies": {
-    "@sap/cds": "^3.34.2",
-    "@sap/cds-dk": "^1.8.1",
+    "@sap/cds": "^6.1.0",
+    "@sap/cds-dk": "^6.1.1",
     "@sap/cds-services": "1.14.0",
     "@sap/cloud-sdk-vdm-workforce-timesheet-service": "1.18.0",
-    "@sap/hana-client": "^2.5.105",
+    "@sap/hana-client": "^2.13.22",
     "bignumber.js": "8.1.1",
     "express": "^4.17.1",
     "moment": "^2.27.0",
@@ -91,7 +91,10 @@
     },
     "requires": {
       "db": {
-        "kind": "sqlite"
+        "kind": "sqlite",
+        "credentials": {
+          "database": "sqlite.db"
+        }
       }
     }
   }

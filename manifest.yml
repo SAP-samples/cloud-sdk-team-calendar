@@ -1,5 +1,5 @@
 applications:
-  - name: timesheet-codejam-<participantId>
+  - name: team-calendar-<participantId>
     path: deployment/
     buildpacks:
       - nodejs_buildpack

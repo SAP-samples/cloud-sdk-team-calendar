@@ -1,8 +1,14 @@
 # Create a read request to SAP S/4HANA
+
 ## Implement the read request
+
 Solution to [this exercise](02-s4-read-request.md#implement-the-read-request)
+
 ```ts
-export async function readS4AppointmentsByPerson(person: Person, year: number): Promise<TimeSheetEntry[]> {
+export async function readS4AppointmentsByPerson(
+  person: Person,
+  year: number
+): Promise<TimeSheetEntry[]> {
   const personId = person.s4ID;
   const from = moment.utc(`${year}-01-01`);
   const to = moment.utc(`${year}-12-31`);
@@ -14,20 +20,26 @@ export async function readS4AppointmentsByPerson(person: Person, year: number): 
       TimeSheetEntry.TIME_SHEET_DATE.greaterOrEqual(from),
       TimeSheetEntry.TIME_SHEET_DATE.lessOrEqual(to)
     )
-    .execute({ destinationName: "S4HANA" });
+    .execute({ destinationName: 'S4HANA' });
 }
 ```
 
 # Create a write request to SAP S/4HANA
 
 ## Build a TimeSheetEntry
+
 Solution to [this exercise](03-s4-write-request.md#build-a-timesheetentry)
+
 ```ts
-export function buildTimeSheetEntry(appointment: Appointment, person: Person, day: Moment): TimeSheetEntry {
+export function buildTimeSheetEntry(
+  appointment: Appointment,
+  person: Person,
+  day: Moment
+): TimeSheetEntry {
   const timeSheetDataFields = {
-    activityType: "T001",
-    wbsElement: "Teched2019.1.1",
-    workItem: "P002",
+    activityType: 'T001',
+    wbsElement: 'Teched2019.1.1',
+    workItem: 'P002',
     recordedHours: new BigNumber(8),
     timeSheetNote: appointment.title
   };
@@ -36,7 +48,7 @@ export function buildTimeSheetEntry(appointment: Appointment, person: Person, da
   const status = S4AppointmentStatus.APPROVED;
   const isReleasedOnSave = true;
   const isExecutedInTestRun = false;
-  const operation = "C";
+  const operation = 'C';
 
   return TimeSheetEntry.builder()
     .personWorkAgreementExternalId(externalId)
@@ -52,21 +64,29 @@ export function buildTimeSheetEntry(appointment: Appointment, person: Person, da
 ```
 
 ## Write a TimeSheetEntry
+
 Solution to [this exercise](03-s4-write-request.md#write-a-timesheetentry)
+
 ```ts
-export async function writeTimeSheetEntry(entry: TimeSheetEntry): Promise<TimeSheetEntry> {
+export async function writeTimeSheetEntry(
+  entry: TimeSheetEntry
+): Promise<TimeSheetEntry> {
   return TimeSheetEntry.requestBuilder()
     .create(entry)
-    .execute({ destinationName: "S4HANA" });
+    .execute({ destinationName: 'S4HANA' });
 }
 ```
 
 # Create a request with your own OData client
 
 Solution to [this exercise](06-use-odata-client.md#create-a-request-with-your-own-odata-client)
+
 ```ts
-export async function readSfsfAppointmentsByPerson(person: Person, year: number): Promise<EmployeeTime[]> {
-  const timeType = "VACATION";
+export async function readSfsfAppointmentsByPerson(
+  person: Person,
+  year: number
+): Promise<EmployeeTime[]> {
+  const timeType = 'VACATION';
   const personId = person.sfsfID;
   const from = moment.utc(`${year}-01-01`);
   const to = moment.utc(`${year}-12-31`);
@@ -88,6 +108,6 @@ export async function readSfsfAppointmentsByPerson(person: Person, year: number)
       EmployeeTime.START_DATE.greaterOrEqual(from),
       EmployeeTime.END_DATE.lessOrEqual(to)
     )
-    .execute({ destinationName: "SFSF" });
+    .execute({ destinationName: 'SFSF' });
 }
 ```
