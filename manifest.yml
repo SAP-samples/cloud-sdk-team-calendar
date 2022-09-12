@@ -1,5 +1,5 @@
 applications:
-  - name: team-calendar-<participantId>
+  - name: team-calendar
     path: deployment/
     buildpacks:
       - nodejs_buildpack
