@@ -4,9 +4,9 @@ There are many scenarios where you have either your own OData service or want to
 
 ## Download EDMX file
 
-Download the service specification file for the [Employee Central Time Off service](https://api.sap.com/api/ECTimeOff/overview) from the SAP Business API Hub and put it into the [generator-input directory](../generator-input/).
+Download the service specification file for the [Employee Central Time Off service](https://api.sap.com/api/ECTimeOff/overview) from the SAP Business API Hub and put it into the [/resources/service-specs directory](../resources/service-specs).
 
-In this directory you will also find the [service mapping file](../generator-input/service-mapping.json), that contains some extra configuration for the generated service(s), like the directory name and service path for the service.
+In this directory you will also find the [service mapping file](../resources/service-mapping.json), that contains some extra configuration for the generated service(s), like the directory name and service path for the service.
 
 ## Run the generation
 

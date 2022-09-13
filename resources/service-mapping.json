@@ -1,0 +1,12 @@
+{
+  "API_MANAGE_WORKFORCE_TIMESHEET": {
+    "directoryName": "workforce-timesheet-service",
+    "servicePath": "/sap/opu/odata/sap/API_MANAGE_WORKFORCE_TIMESHEET",
+    "npmPackageName": "workforce-timesheet-service"
+  },
+  "ECTimeOff": {
+    "directoryName": "ec-time-off-service",
+    "servicePath": "/odata/v2",
+    "npmPackageName": "ec-time-off-service"
+  }
+}

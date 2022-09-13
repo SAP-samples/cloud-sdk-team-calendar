@@ -1,24 +1,24 @@
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
 import { BigNumber } from 'bignumber.js';
-import { RequestBuilder, GetAllRequestBuilder, GetByKeyRequestBuilder, CreateRequestBuilder, UpdateRequestBuilder, DeleteRequestBuilder } from '@sap-cloud-sdk/core';
+import { DefaultDeSerializers, DeSerializers, GetAllRequestBuilder, GetByKeyRequestBuilder, CreateRequestBuilder, UpdateRequestBuilder, DeleteRequestBuilder, DeserializedType, RequestBuilder } from '@sap-cloud-sdk/odata-v2';
 import { EmployeeTimeEsp } from './EmployeeTimeEsp';
 
 /**
- * Request builder class for operations supported on the [[EmployeeTimeEsp]] entity.
+ * Request builder class for operations supported on the {@link EmployeeTimeEsp} entity.
  */
-export class EmployeeTimeEspRequestBuilder extends RequestBuilder<EmployeeTimeEsp> {
+export class EmployeeTimeEspRequestBuilder<T extends DeSerializers = DefaultDeSerializers> extends RequestBuilder<EmployeeTimeEsp<T>, T> {
   /**
    * Returns a request builder for retrieving one `EmployeeTimeEsp` entity based on its keys.
-   * @param employeeTimeExternalCode Key property. See [[EmployeeTimeEsp.employeeTimeExternalCode]].
-   * @param externalCode Key property. See [[EmployeeTimeEsp.externalCode]].
+   * @param employeeTimeExternalCode Key property. See {@link EmployeeTimeEsp.employeeTimeExternalCode}.
+   * @param externalCode Key property. See {@link EmployeeTimeEsp.externalCode}.
    * @returns A request builder for creating requests to retrieve one `EmployeeTimeEsp` entity based on its keys.
    */
-  getByKey(employeeTimeExternalCode: string, externalCode: BigNumber): GetByKeyRequestBuilder<EmployeeTimeEsp> {
-    return new GetByKeyRequestBuilder(EmployeeTimeEsp, {
+  getByKey(employeeTimeExternalCode: DeserializedType<T, 'Edm.String'>, externalCode: DeserializedType<T, 'Edm.Int64'>): GetByKeyRequestBuilder<EmployeeTimeEsp<T>, T> {
+    return new GetByKeyRequestBuilder<EmployeeTimeEsp<T>, T>(this.entityApi, {
       EmployeeTime_externalCode: employeeTimeExternalCode,
       externalCode: externalCode
     });
@@ -28,8 +28,8 @@ export class EmployeeTimeEspRequestBuilder extends RequestBuilder<EmployeeTimeEs
    * Returns a request builder for querying all `EmployeeTimeEsp` entities.
    * @returns A request builder for creating requests to retrieve all `EmployeeTimeEsp` entities.
    */
-  getAll(): GetAllRequestBuilder<EmployeeTimeEsp> {
-    return new GetAllRequestBuilder(EmployeeTimeEsp);
+  getAll(): GetAllRequestBuilder<EmployeeTimeEsp<T>, T> {
+    return new GetAllRequestBuilder<EmployeeTimeEsp<T>, T>(this.entityApi);
   }
 
   /**
@@ -37,8 +37,8 @@ export class EmployeeTimeEspRequestBuilder extends RequestBuilder<EmployeeTimeEs
    * @param entity The entity to be created
    * @returns A request builder for creating requests that create an entity of type `EmployeeTimeEsp`.
    */
-  create(entity: EmployeeTimeEsp): CreateRequestBuilder<EmployeeTimeEsp> {
-    return new CreateRequestBuilder(EmployeeTimeEsp, entity);
+  create(entity: EmployeeTimeEsp<T>): CreateRequestBuilder<EmployeeTimeEsp<T>, T> {
+    return new CreateRequestBuilder<EmployeeTimeEsp<T>, T>(this.entityApi, entity);
   }
 
   /**
@@ -46,25 +46,25 @@ export class EmployeeTimeEspRequestBuilder extends RequestBuilder<EmployeeTimeEs
    * @param entity The entity to be updated
    * @returns A request builder for creating requests that update an entity of type `EmployeeTimeEsp`.
    */
-  update(entity: EmployeeTimeEsp): UpdateRequestBuilder<EmployeeTimeEsp> {
-    return new UpdateRequestBuilder(EmployeeTimeEsp, entity);
+  update(entity: EmployeeTimeEsp<T>): UpdateRequestBuilder<EmployeeTimeEsp<T>, T> {
+    return new UpdateRequestBuilder<EmployeeTimeEsp<T>, T>(this.entityApi, entity);
   }
 
   /**
    * Returns a request builder for deleting an entity of type `EmployeeTimeEsp`.
-   * @param employeeTimeExternalCode Key property. See [[EmployeeTimeEsp.employeeTimeExternalCode]].
-   * @param externalCode Key property. See [[EmployeeTimeEsp.externalCode]].
+   * @param employeeTimeExternalCode Key property. See {@link EmployeeTimeEsp.employeeTimeExternalCode}.
+   * @param externalCode Key property. See {@link EmployeeTimeEsp.externalCode}.
    * @returns A request builder for creating requests that delete an entity of type `EmployeeTimeEsp`.
    */
-  delete(employeeTimeExternalCode: string, externalCode: BigNumber): DeleteRequestBuilder<EmployeeTimeEsp>;
+  delete(employeeTimeExternalCode: string, externalCode: BigNumber): DeleteRequestBuilder<EmployeeTimeEsp<T>, T>;
   /**
    * Returns a request builder for deleting an entity of type `EmployeeTimeEsp`.
    * @param entity Pass the entity to be deleted.
    * @returns A request builder for creating requests that delete an entity of type `EmployeeTimeEsp` by taking the entity as a parameter.
    */
-  delete(entity: EmployeeTimeEsp): DeleteRequestBuilder<EmployeeTimeEsp>;
-  delete(employeeTimeExternalCodeOrEntity: any, externalCode?: BigNumber): DeleteRequestBuilder<EmployeeTimeEsp> {
-    return new DeleteRequestBuilder(EmployeeTimeEsp, employeeTimeExternalCodeOrEntity instanceof EmployeeTimeEsp ? employeeTimeExternalCodeOrEntity : {
+  delete(entity: EmployeeTimeEsp<T>): DeleteRequestBuilder<EmployeeTimeEsp<T>, T>;
+  delete(employeeTimeExternalCodeOrEntity: any, externalCode?: BigNumber): DeleteRequestBuilder<EmployeeTimeEsp<T>, T> {
+    return new DeleteRequestBuilder<EmployeeTimeEsp<T>, T>(this.entityApi, employeeTimeExternalCodeOrEntity instanceof EmployeeTimeEsp ? employeeTimeExternalCodeOrEntity : {
       EmployeeTime_externalCode: employeeTimeExternalCodeOrEntity!,
       externalCode: externalCode!
     });

@@ -1,24 +1,24 @@
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
 import { BigNumber } from 'bignumber.js';
-import { RequestBuilder, GetAllRequestBuilder, GetByKeyRequestBuilder } from '@sap-cloud-sdk/core';
+import { DefaultDeSerializers, DeSerializers, GetAllRequestBuilder, GetByKeyRequestBuilder, DeserializedType, RequestBuilder } from '@sap-cloud-sdk/odata-v2';
 import { EmployeeTimeCol } from './EmployeeTimeCol';
 
 /**
- * Request builder class for operations supported on the [[EmployeeTimeCol]] entity.
+ * Request builder class for operations supported on the {@link EmployeeTimeCol} entity.
  */
-export class EmployeeTimeColRequestBuilder extends RequestBuilder<EmployeeTimeCol> {
+export class EmployeeTimeColRequestBuilder<T extends DeSerializers = DefaultDeSerializers> extends RequestBuilder<EmployeeTimeCol<T>, T> {
   /**
    * Returns a request builder for retrieving one `EmployeeTimeCol` entity based on its keys.
-   * @param employeeTimeExternalCode Key property. See [[EmployeeTimeCol.employeeTimeExternalCode]].
-   * @param externalCode Key property. See [[EmployeeTimeCol.externalCode]].
+   * @param employeeTimeExternalCode Key property. See {@link EmployeeTimeCol.employeeTimeExternalCode}.
+   * @param externalCode Key property. See {@link EmployeeTimeCol.externalCode}.
    * @returns A request builder for creating requests to retrieve one `EmployeeTimeCol` entity based on its keys.
    */
-  getByKey(employeeTimeExternalCode: string, externalCode: BigNumber): GetByKeyRequestBuilder<EmployeeTimeCol> {
-    return new GetByKeyRequestBuilder(EmployeeTimeCol, {
+  getByKey(employeeTimeExternalCode: DeserializedType<T, 'Edm.String'>, externalCode: DeserializedType<T, 'Edm.Int64'>): GetByKeyRequestBuilder<EmployeeTimeCol<T>, T> {
+    return new GetByKeyRequestBuilder<EmployeeTimeCol<T>, T>(this.entityApi, {
       EmployeeTime_externalCode: employeeTimeExternalCode,
       externalCode: externalCode
     });
@@ -28,7 +28,7 @@ export class EmployeeTimeColRequestBuilder extends RequestBuilder<EmployeeTimeCo
    * Returns a request builder for querying all `EmployeeTimeCol` entities.
    * @returns A request builder for creating requests to retrieve all `EmployeeTimeCol` entities.
    */
-  getAll(): GetAllRequestBuilder<EmployeeTimeCol> {
-    return new GetAllRequestBuilder(EmployeeTimeCol);
+  getAll(): GetAllRequestBuilder<EmployeeTimeCol<T>, T> {
+    return new GetAllRequestBuilder<EmployeeTimeCol<T>, T>(this.entityApi);
   }
 }
