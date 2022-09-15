@@ -1,29 +1,29 @@
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { RequestBuilder, GetAllRequestBuilder, GetByKeyRequestBuilder } from '@sap-cloud-sdk/core';
+import { DefaultDeSerializers, DeSerializers, GetAllRequestBuilder, GetByKeyRequestBuilder, DeserializedType, RequestBuilder } from '@sap-cloud-sdk/odata-v2';
 import { HolidayCalendar } from './HolidayCalendar';
 
 /**
- * Request builder class for operations supported on the [[HolidayCalendar]] entity.
+ * Request builder class for operations supported on the {@link HolidayCalendar} entity.
  */
-export class HolidayCalendarRequestBuilder extends RequestBuilder<HolidayCalendar> {
+export class HolidayCalendarRequestBuilder<T extends DeSerializers = DefaultDeSerializers> extends RequestBuilder<HolidayCalendar<T>, T> {
   /**
    * Returns a request builder for retrieving one `HolidayCalendar` entity based on its keys.
-   * @param externalCode Key property. See [[HolidayCalendar.externalCode]].
+   * @param externalCode Key property. See {@link HolidayCalendar.externalCode}.
    * @returns A request builder for creating requests to retrieve one `HolidayCalendar` entity based on its keys.
    */
-  getByKey(externalCode: string): GetByKeyRequestBuilder<HolidayCalendar> {
-    return new GetByKeyRequestBuilder(HolidayCalendar, { externalCode: externalCode });
+  getByKey(externalCode: DeserializedType<T, 'Edm.String'>): GetByKeyRequestBuilder<HolidayCalendar<T>, T> {
+    return new GetByKeyRequestBuilder<HolidayCalendar<T>, T>(this.entityApi, { externalCode: externalCode });
   }
 
   /**
    * Returns a request builder for querying all `HolidayCalendar` entities.
    * @returns A request builder for creating requests to retrieve all `HolidayCalendar` entities.
    */
-  getAll(): GetAllRequestBuilder<HolidayCalendar> {
-    return new GetAllRequestBuilder(HolidayCalendar);
+  getAll(): GetAllRequestBuilder<HolidayCalendar<T>, T> {
+    return new GetAllRequestBuilder<HolidayCalendar<T>, T>(this.entityApi);
   }
 }

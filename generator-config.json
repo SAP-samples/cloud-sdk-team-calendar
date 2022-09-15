@@ -1,7 +1,9 @@
 {
-  "inputDir": "./generator-input",
+  "inputDir": "./resources/service-specs",
+  "serviceMapping": "./resources/service-mapping.json",
   "outputDir": "./src/generated",
   "generateNpmrc": false,
+  "generateJs": false,
   "generatePackageJson": false,
   "clearOutputDir": true
 }

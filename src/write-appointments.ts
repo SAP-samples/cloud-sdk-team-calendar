@@ -1,5 +1,5 @@
-import { TimeSheetEntry } from '@sap/cloud-sdk-vdm-workforce-timesheet-service';
-import BigNumber from 'bignumber.js';
+import { TimeSheetEntry, workforceTimesheetService } from './generated/workforce-timesheet-service';
+import { BigNumber } from 'bignumber.js';
 import { Moment } from 'moment';
 import { Appointment } from './model/appointment';
 import { Person } from './model/person';
@@ -8,7 +8,8 @@ import { S4AppointmentStatus } from './model/s4-appointment-status';
 export async function writeTimeSheetEntry(
   entry: TimeSheetEntry
 ): Promise<TimeSheetEntry> {
-  return TimeSheetEntry.requestBuilder()
+  const { timeSheetEntryApi } = workforceTimesheetService();
+  return timeSheetEntryApi.requestBuilder()
     .create(entry)
     .execute({ destinationName: 'S4HANA' });
 }
@@ -32,7 +33,8 @@ export function buildTimeSheetEntry(
   const isExecutedInTestRun = false;
   const operation = 'C';
 
-  return TimeSheetEntry.builder()
+  const { timeSheetEntryApi } = workforceTimesheetService();
+  return timeSheetEntryApi.entityBuilder()
     .personWorkAgreementExternalId(externalId)
     .timeSheetDataFields(timeSheetDataFields)
     .companyCode(companyCode)

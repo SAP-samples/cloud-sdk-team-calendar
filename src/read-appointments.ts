@@ -1,6 +1,6 @@
-import { TimeSheetEntry } from '@sap/cloud-sdk-vdm-workforce-timesheet-service';
+import { TimeSheetEntry, workforceTimesheetService } from './generated/workforce-timesheet-service';
 import moment from 'moment';
-import { EmployeeTime } from './generated/ec-time-off-service';
+import { EmployeeTime, ecTimeOffService } from './generated/ec-time-off-service';
 import { Appointment } from './model/appointment';
 import { Person } from './model/person';
 import { readPersons } from './read-persons';
@@ -49,12 +49,13 @@ export async function readS4AppointmentsByPerson(
   const from = moment.utc(`${year}-01-01`);
   const to = moment.utc(`${year}-12-31`);
 
-  return TimeSheetEntry.requestBuilder()
+  const { timeSheetEntryApi } = workforceTimesheetService();
+  return timeSheetEntryApi.requestBuilder()
     .getAll()
     .filter(
-      TimeSheetEntry.PERSON_WORK_AGREEMENT_EXTERNAL_ID.equals(personId),
-      TimeSheetEntry.TIME_SHEET_DATE.greaterOrEqual(from),
-      TimeSheetEntry.TIME_SHEET_DATE.lessOrEqual(to)
+      timeSheetEntryApi.schema.PERSON_WORK_AGREEMENT_EXTERNAL_ID.equals(personId),
+      timeSheetEntryApi.schema.TIME_SHEET_DATE.greaterOrEqual(from),
+      timeSheetEntryApi.schema.TIME_SHEET_DATE.lessOrEqual(to)
     )
     .execute({ destinationName: 'S4HANA' });
 }
@@ -68,22 +69,23 @@ export async function readSfsfAppointmentsByPerson(
   const from = moment.utc(`${year}-01-01`);
   const to = moment.utc(`${year}-12-31`);
 
-  return EmployeeTime.requestBuilder()
+  const { employeeTimeApi } = ecTimeOffService();
+  return employeeTimeApi.requestBuilder()
     .getAll()
     .select(
-      EmployeeTime.EXTERNAL_CODE,
-      EmployeeTime.START_TIME,
-      EmployeeTime.START_DATE,
-      EmployeeTime.END_TIME,
-      EmployeeTime.END_DATE,
-      EmployeeTime.APPROVAL_STATUS,
-      EmployeeTime.USER_ID
+      employeeTimeApi.schema.EXTERNAL_CODE,
+      employeeTimeApi.schema.START_TIME,
+      employeeTimeApi.schema.START_DATE,
+      employeeTimeApi.schema.END_TIME,
+      employeeTimeApi.schema.END_DATE,
+      employeeTimeApi.schema.APPROVAL_STATUS,
+      employeeTimeApi.schema.USER_ID
     )
     .filter(
-      EmployeeTime.TIME_TYPE.equals(timeType),
-      EmployeeTime.USER_ID.equals(personId),
-      EmployeeTime.START_DATE.greaterOrEqual(from),
-      EmployeeTime.END_DATE.lessOrEqual(to)
+      employeeTimeApi.schema.TIME_TYPE.equals(timeType),
+      employeeTimeApi.schema.USER_ID.equals(personId),
+      employeeTimeApi.schema.START_DATE.greaterOrEqual(from),
+      employeeTimeApi.schema.END_DATE.lessOrEqual(to)
     )
     .execute({ destinationName: 'SFSF' });
 }

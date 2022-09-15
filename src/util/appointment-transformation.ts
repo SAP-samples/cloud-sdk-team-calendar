@@ -1,4 +1,4 @@
-import { TimeSheetEntry } from "@sap/cloud-sdk-vdm-workforce-timesheet-service";
+import { TimeSheetEntry } from "../generated/workforce-timesheet-service";
 import { EmployeeTime } from "../generated/ec-time-off-service";
 import { Appointment } from "../model/appointment";
 import { Person } from "../model/person";

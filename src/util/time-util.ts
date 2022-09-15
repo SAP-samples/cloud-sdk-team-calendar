@@ -1,4 +1,4 @@
-import { Time } from "@sap-cloud-sdk/core";
+import { Time } from "@sap-cloud-sdk/odata-v2";
 import moment, { Moment } from "moment";
 import { Appointment } from "../model/appointment";
 

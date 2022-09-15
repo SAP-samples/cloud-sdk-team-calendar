@@ -1,24 +1,24 @@
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
 import { BigNumber } from 'bignumber.js';
-import { RequestBuilder, GetAllRequestBuilder, GetByKeyRequestBuilder, CreateRequestBuilder, UpdateRequestBuilder, DeleteRequestBuilder } from '@sap-cloud-sdk/core';
+import { DefaultDeSerializers, DeSerializers, GetAllRequestBuilder, GetByKeyRequestBuilder, CreateRequestBuilder, UpdateRequestBuilder, DeleteRequestBuilder, DeserializedType, RequestBuilder } from '@sap-cloud-sdk/odata-v2';
 import { WorkScheduleDay } from './WorkScheduleDay';
 
 /**
- * Request builder class for operations supported on the [[WorkScheduleDay]] entity.
+ * Request builder class for operations supported on the {@link WorkScheduleDay} entity.
  */
-export class WorkScheduleDayRequestBuilder extends RequestBuilder<WorkScheduleDay> {
+export class WorkScheduleDayRequestBuilder<T extends DeSerializers = DefaultDeSerializers> extends RequestBuilder<WorkScheduleDay<T>, T> {
   /**
    * Returns a request builder for retrieving one `WorkScheduleDay` entity based on its keys.
-   * @param workScheduleExternalCode Key property. See [[WorkScheduleDay.workScheduleExternalCode]].
-   * @param day Key property. See [[WorkScheduleDay.day]].
+   * @param workScheduleExternalCode Key property. See {@link WorkScheduleDay.workScheduleExternalCode}.
+   * @param day Key property. See {@link WorkScheduleDay.day}.
    * @returns A request builder for creating requests to retrieve one `WorkScheduleDay` entity based on its keys.
    */
-  getByKey(workScheduleExternalCode: string, day: BigNumber): GetByKeyRequestBuilder<WorkScheduleDay> {
-    return new GetByKeyRequestBuilder(WorkScheduleDay, {
+  getByKey(workScheduleExternalCode: DeserializedType<T, 'Edm.String'>, day: DeserializedType<T, 'Edm.Int64'>): GetByKeyRequestBuilder<WorkScheduleDay<T>, T> {
+    return new GetByKeyRequestBuilder<WorkScheduleDay<T>, T>(this.entityApi, {
       WorkSchedule_externalCode: workScheduleExternalCode,
       day: day
     });
@@ -28,8 +28,8 @@ export class WorkScheduleDayRequestBuilder extends RequestBuilder<WorkScheduleDa
    * Returns a request builder for querying all `WorkScheduleDay` entities.
    * @returns A request builder for creating requests to retrieve all `WorkScheduleDay` entities.
    */
-  getAll(): GetAllRequestBuilder<WorkScheduleDay> {
-    return new GetAllRequestBuilder(WorkScheduleDay);
+  getAll(): GetAllRequestBuilder<WorkScheduleDay<T>, T> {
+    return new GetAllRequestBuilder<WorkScheduleDay<T>, T>(this.entityApi);
   }
 
   /**
@@ -37,8 +37,8 @@ export class WorkScheduleDayRequestBuilder extends RequestBuilder<WorkScheduleDa
    * @param entity The entity to be created
    * @returns A request builder for creating requests that create an entity of type `WorkScheduleDay`.
    */
-  create(entity: WorkScheduleDay): CreateRequestBuilder<WorkScheduleDay> {
-    return new CreateRequestBuilder(WorkScheduleDay, entity);
+  create(entity: WorkScheduleDay<T>): CreateRequestBuilder<WorkScheduleDay<T>, T> {
+    return new CreateRequestBuilder<WorkScheduleDay<T>, T>(this.entityApi, entity);
   }
 
   /**
@@ -46,25 +46,25 @@ export class WorkScheduleDayRequestBuilder extends RequestBuilder<WorkScheduleDa
    * @param entity The entity to be updated
    * @returns A request builder for creating requests that update an entity of type `WorkScheduleDay`.
    */
-  update(entity: WorkScheduleDay): UpdateRequestBuilder<WorkScheduleDay> {
-    return new UpdateRequestBuilder(WorkScheduleDay, entity);
+  update(entity: WorkScheduleDay<T>): UpdateRequestBuilder<WorkScheduleDay<T>, T> {
+    return new UpdateRequestBuilder<WorkScheduleDay<T>, T>(this.entityApi, entity);
   }
 
   /**
    * Returns a request builder for deleting an entity of type `WorkScheduleDay`.
-   * @param workScheduleExternalCode Key property. See [[WorkScheduleDay.workScheduleExternalCode]].
-   * @param day Key property. See [[WorkScheduleDay.day]].
+   * @param workScheduleExternalCode Key property. See {@link WorkScheduleDay.workScheduleExternalCode}.
+   * @param day Key property. See {@link WorkScheduleDay.day}.
    * @returns A request builder for creating requests that delete an entity of type `WorkScheduleDay`.
    */
-  delete(workScheduleExternalCode: string, day: BigNumber): DeleteRequestBuilder<WorkScheduleDay>;
+  delete(workScheduleExternalCode: string, day: BigNumber): DeleteRequestBuilder<WorkScheduleDay<T>, T>;
   /**
    * Returns a request builder for deleting an entity of type `WorkScheduleDay`.
    * @param entity Pass the entity to be deleted.
    * @returns A request builder for creating requests that delete an entity of type `WorkScheduleDay` by taking the entity as a parameter.
    */
-  delete(entity: WorkScheduleDay): DeleteRequestBuilder<WorkScheduleDay>;
-  delete(workScheduleExternalCodeOrEntity: any, day?: BigNumber): DeleteRequestBuilder<WorkScheduleDay> {
-    return new DeleteRequestBuilder(WorkScheduleDay, workScheduleExternalCodeOrEntity instanceof WorkScheduleDay ? workScheduleExternalCodeOrEntity : {
+  delete(entity: WorkScheduleDay<T>): DeleteRequestBuilder<WorkScheduleDay<T>, T>;
+  delete(workScheduleExternalCodeOrEntity: any, day?: BigNumber): DeleteRequestBuilder<WorkScheduleDay<T>, T> {
+    return new DeleteRequestBuilder<WorkScheduleDay<T>, T>(this.entityApi, workScheduleExternalCodeOrEntity instanceof WorkScheduleDay ? workScheduleExternalCodeOrEntity : {
       WorkSchedule_externalCode: workScheduleExternalCodeOrEntity!,
       day: day!
     });

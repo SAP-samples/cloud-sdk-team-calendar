@@ -1,637 +1,293 @@
 /*
- * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { WorkScheduleDayModelRequestBuilder } from './WorkScheduleDayModelRequestBuilder';
-import { Moment } from 'moment';
-import { BigNumber } from 'bignumber.js';
-import { AllFields, BigNumberField, CustomField, DateField, Entity, EntityBuilderType, Link, OneToOneLink, Selectable, StringField } from '@sap-cloud-sdk/core';
+import { Entity, DefaultDeSerializers, DeSerializers, DeserializedType } from '@sap-cloud-sdk/odata-v2';
+import { WorkScheduleDayModelSegment, WorkScheduleDayModelSegmentType } from './WorkScheduleDayModelSegment';
+import { ShiftClassification, ShiftClassificationType } from './ShiftClassification';
 
 /**
- * This class represents the entity "WorkScheduleDayModel" of service "SFOData".
+ * This class represents the entity "WorkScheduleDayModel" of service "ECTimeOff".
  */
-export class WorkScheduleDayModel extends Entity implements WorkScheduleDayModelType {
+export class WorkScheduleDayModel<T extends DeSerializers = DefaultDeSerializers> extends Entity implements WorkScheduleDayModelType<T> {
   /**
    * Technical entity name for WorkScheduleDayModel.
    */
   static _entityName = 'WorkScheduleDayModel';
   /**
-   * @deprecated Since v1.0.1 Use [[_defaultServicePath]] instead.
-   * Technical service name for WorkScheduleDayModel.
-   */
-  static _serviceName = 'SFOData';
-  /**
    * Default url path for the according service.
    */
   static _defaultServicePath = '/odata/v2';
+  /**
+   * All key fields of the WorkScheduleDayModel entity
+   */
+  static _keys = ['externalCode'];
   /**
    * Country.
    * Maximum length: 128.
    * @nullable
    */
-  country?: string;
+  country?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * createdBy.
    * Maximum length: 255.
    * @nullable
    */
-  createdBy?: string;
+  createdBy?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * createdDate.
    * @nullable
    */
-  createdDate?: Moment;
+  createdDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
    * createdDate.
    * @nullable
    */
-  createdDateTime?: Moment;
+  createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   /**
    * Description.
    * @nullable
    */
-  description?: string;
+  description?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Code.
    * Maximum length: 128.
    */
-  externalCode!: string;
+  externalCode!: DeserializedType<T, 'Edm.String'>;
   /**
    * External Name.
    * Maximum length: 255.
    * @nullable
    */
-  externalNameDeDe?: string;
+  externalNameDeDe?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
    * @nullable
    */
-  externalNameDefaultValue?: string;
+  externalNameDefaultValue?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
    * @nullable
    */
-  externalNameEnGb?: string;
+  externalNameEnGb?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
    * @nullable
    */
-  externalNameEnUs?: string;
+  externalNameEnUs?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
    * @nullable
    */
-  externalNameEsEs?: string;
+  externalNameEsEs?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
    * @nullable
    */
-  externalNameFrFr?: string;
+  externalNameFrFr?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
    * @nullable
    */
-  externalNameJaJp?: string;
+  externalNameJaJp?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
    * @nullable
    */
-  externalNameKoKr?: string;
+  externalNameKoKr?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
    * @nullable
    */
-  externalNameLocalized?: string;
+  externalNameLocalized?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
    * @nullable
    */
-  externalNameNlNl?: string;
+  externalNameNlNl?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
    * @nullable
    */
-  externalNamePtBr?: string;
+  externalNamePtBr?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
    * @nullable
    */
-  externalNamePtPt?: string;
+  externalNamePtPt?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
    * @nullable
    */
-  externalNameRuRu?: string;
+  externalNameRuRu?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
    * @nullable
    */
-  externalNameZhCn?: string;
+  externalNameZhCn?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
    * @nullable
    */
-  externalNameZhTw?: string;
+  externalNameZhTw?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Planned Hours And Minutes (hh:mm).
    * Maximum length: 255.
    * @nullable
    */
-  hoursAndMinutes?: string;
+  hoursAndMinutes?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * lastModifiedBy.
    * Maximum length: 255.
    * @nullable
    */
-  lastModifiedBy?: string;
+  lastModifiedBy?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * lastModifiedDate.
    * @nullable
    */
-  lastModifiedDate?: Moment;
+  lastModifiedDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
    * lastModifiedDate.
    * @nullable
    */
-  lastModifiedDateTime?: Moment;
+  lastModifiedDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   /**
    * lastModifiedDate.
    * @nullable
    */
-  lastModifiedDateWithTz?: Moment;
+  lastModifiedDateWithTz?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   /**
    * mdfSystemEffectiveEndDate.
    * @nullable
    */
-  mdfSystemEffectiveEndDate?: Moment;
+  mdfSystemEffectiveEndDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
    * mdfSystemEffectiveStartDate.
    * @nullable
    */
-  mdfSystemEffectiveStartDate?: Moment;
+  mdfSystemEffectiveStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
    * mdfSystemEntityId.
    * Maximum length: 255.
    * @nullable
    */
-  mdfSystemEntityId?: string;
+  mdfSystemEntityId?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * mdfSystemObjectType.
    * Maximum length: 255.
    * @nullable
    */
-  mdfSystemObjectType?: string;
+  mdfSystemObjectType?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * mdfSystemRecordId.
    * Maximum length: 255.
    * @nullable
    */
-  mdfSystemRecordId?: string;
+  mdfSystemRecordId?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * mdfSystemRecordStatus.
    * Maximum length: 255.
    * @nullable
    */
-  mdfSystemRecordStatus?: string;
+  mdfSystemRecordStatus?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * mdfSystemStatus.
    * Maximum length: 255.
    * @nullable
    */
-  mdfSystemStatus?: string;
+  mdfSystemStatus?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * mdfSystemTransactionSequence.
    * @nullable
    */
-  mdfSystemTransactionSequence?: BigNumber;
+  mdfSystemTransactionSequence?: DeserializedType<T, 'Edm.Int64'> | null;
   /**
    * mdfSystemVersionId.
    * @nullable
    */
-  mdfSystemVersionId?: BigNumber;
+  mdfSystemVersionId?: DeserializedType<T, 'Edm.Int64'> | null;
   /**
    * Shift Classification.
    * Maximum length: 128.
    * @nullable
    */
-  shiftClassification?: string;
+  shiftClassification?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Time Recording Variant.
    * Maximum length: 255.
    * @nullable
    */
-  timeRecordingVariant?: string;
+  timeRecordingVariant?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Planned Hours (Decimal).
    * @nullable
    */
-  workingHours?: BigNumber;
+  workingHours?: DeserializedType<T, 'Edm.Decimal'> | null;
   /**
-   * One-to-many navigation property to the [[WorkScheduleDayModelSegment]] entity.
+   * One-to-many navigation property to the {@link WorkScheduleDayModelSegment} entity.
    */
-  segments!: WorkScheduleDayModelSegment[];
+  segments!: WorkScheduleDayModelSegment<T>[];
   /**
-   * One-to-one navigation property to the [[ShiftClassification]] entity.
+   * One-to-one navigation property to the {@link ShiftClassification} entity.
    */
-  shiftClassificationNav!: ShiftClassification;
-
-  /**
-   * Returns an entity builder to construct instances `WorkScheduleDayModel`.
-   * @returns A builder that constructs instances of entity type `WorkScheduleDayModel`.
-   */
-  static builder(): EntityBuilderType<WorkScheduleDayModel, WorkScheduleDayModelTypeForceMandatory> {
-    return Entity.entityBuilder(WorkScheduleDayModel);
-  }
-
-  /**
-   * Returns a request builder to construct requests for operations on the `WorkScheduleDayModel` entity type.
-   * @returns A `WorkScheduleDayModel` request builder.
-   */
-  static requestBuilder(): WorkScheduleDayModelRequestBuilder {
-    return new WorkScheduleDayModelRequestBuilder();
-  }
-
-  /**
-   * Returns a selectable object that allows the selection of custom field in a get request for the entity `WorkScheduleDayModel`.
-   * @param fieldName Name of the custom field to select
-   * @returns A builder that constructs instances of entity type `WorkScheduleDayModel`.
-   */
-  static customField(fieldName: string): CustomField<WorkScheduleDayModel> {
-    return Entity.customFieldSelector(fieldName, WorkScheduleDayModel);
-  }
-
-  /**
-   * Overwrites the default toJSON method so that all instance variables as well as all custom fields of the entity are returned.
-   * @returns An object containing all instance variables + custom fields.
-   */
-  toJSON(): { [key: string]: any } {
-    return { ...this, ...this._customFields };
-  }
+  shiftClassificationNav?: ShiftClassification<T> | null;
 }
 
-import { WorkScheduleDayModelSegment, WorkScheduleDayModelSegmentType } from './WorkScheduleDayModelSegment';
-import { ShiftClassification, ShiftClassificationType } from './ShiftClassification';
-
-export interface WorkScheduleDayModelType {
-  country?: string;
-  createdBy?: string;
-  createdDate?: Moment;
-  createdDateTime?: Moment;
-  description?: string;
-  externalCode: string;
-  externalNameDeDe?: string;
-  externalNameDefaultValue?: string;
-  externalNameEnGb?: string;
-  externalNameEnUs?: string;
-  externalNameEsEs?: string;
-  externalNameFrFr?: string;
-  externalNameJaJp?: string;
-  externalNameKoKr?: string;
-  externalNameLocalized?: string;
-  externalNameNlNl?: string;
-  externalNamePtBr?: string;
-  externalNamePtPt?: string;
-  externalNameRuRu?: string;
-  externalNameZhCn?: string;
-  externalNameZhTw?: string;
-  hoursAndMinutes?: string;
-  lastModifiedBy?: string;
-  lastModifiedDate?: Moment;
-  lastModifiedDateTime?: Moment;
-  lastModifiedDateWithTz?: Moment;
-  mdfSystemEffectiveEndDate?: Moment;
-  mdfSystemEffectiveStartDate?: Moment;
-  mdfSystemEntityId?: string;
-  mdfSystemObjectType?: string;
-  mdfSystemRecordId?: string;
-  mdfSystemRecordStatus?: string;
-  mdfSystemStatus?: string;
-  mdfSystemTransactionSequence?: BigNumber;
-  mdfSystemVersionId?: BigNumber;
-  shiftClassification?: string;
-  timeRecordingVariant?: string;
-  workingHours?: BigNumber;
-  segments: WorkScheduleDayModelSegmentType[];
-  shiftClassificationNav: ShiftClassificationType;
-}
-
-export interface WorkScheduleDayModelTypeForceMandatory {
-  country: string;
-  createdBy: string;
-  createdDate: Moment;
-  createdDateTime: Moment;
-  description: string;
-  externalCode: string;
-  externalNameDeDe: string;
-  externalNameDefaultValue: string;
-  externalNameEnGb: string;
-  externalNameEnUs: string;
-  externalNameEsEs: string;
-  externalNameFrFr: string;
-  externalNameJaJp: string;
-  externalNameKoKr: string;
-  externalNameLocalized: string;
-  externalNameNlNl: string;
-  externalNamePtBr: string;
-  externalNamePtPt: string;
-  externalNameRuRu: string;
-  externalNameZhCn: string;
-  externalNameZhTw: string;
-  hoursAndMinutes: string;
-  lastModifiedBy: string;
-  lastModifiedDate: Moment;
-  lastModifiedDateTime: Moment;
-  lastModifiedDateWithTz: Moment;
-  mdfSystemEffectiveEndDate: Moment;
-  mdfSystemEffectiveStartDate: Moment;
-  mdfSystemEntityId: string;
-  mdfSystemObjectType: string;
-  mdfSystemRecordId: string;
-  mdfSystemRecordStatus: string;
-  mdfSystemStatus: string;
-  mdfSystemTransactionSequence: BigNumber;
-  mdfSystemVersionId: BigNumber;
-  shiftClassification: string;
-  timeRecordingVariant: string;
-  workingHours: BigNumber;
-  segments: WorkScheduleDayModelSegmentType[];
-  shiftClassificationNav: ShiftClassificationType;
-}
-
-export namespace WorkScheduleDayModel {
-  /**
-   * Static representation of the [[country]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const COUNTRY: StringField<WorkScheduleDayModel> = new StringField('country', WorkScheduleDayModel, 'Edm.String');
-  /**
-   * Static representation of the [[createdBy]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const CREATED_BY: StringField<WorkScheduleDayModel> = new StringField('createdBy', WorkScheduleDayModel, 'Edm.String');
-  /**
-   * Static representation of the [[createdDate]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const CREATED_DATE: DateField<WorkScheduleDayModel> = new DateField('createdDate', WorkScheduleDayModel, 'Edm.DateTime');
-  /**
-   * Static representation of the [[createdDateTime]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const CREATED_DATE_TIME: DateField<WorkScheduleDayModel> = new DateField('createdDateTime', WorkScheduleDayModel, 'Edm.DateTimeOffset');
-  /**
-   * Static representation of the [[description]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const DESCRIPTION: StringField<WorkScheduleDayModel> = new StringField('description', WorkScheduleDayModel, 'Edm.String');
-  /**
-   * Static representation of the [[externalCode]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const EXTERNAL_CODE: StringField<WorkScheduleDayModel> = new StringField('externalCode', WorkScheduleDayModel, 'Edm.String');
-  /**
-   * Static representation of the [[externalNameDeDe]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const EXTERNAL_NAME_DE_DE: StringField<WorkScheduleDayModel> = new StringField('externalName_de_DE', WorkScheduleDayModel, 'Edm.String');
-  /**
-   * Static representation of the [[externalNameDefaultValue]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const EXTERNAL_NAME_DEFAULT_VALUE: StringField<WorkScheduleDayModel> = new StringField('externalName_defaultValue', WorkScheduleDayModel, 'Edm.String');
-  /**
-   * Static representation of the [[externalNameEnGb]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const EXTERNAL_NAME_EN_GB: StringField<WorkScheduleDayModel> = new StringField('externalName_en_GB', WorkScheduleDayModel, 'Edm.String');
-  /**
-   * Static representation of the [[externalNameEnUs]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const EXTERNAL_NAME_EN_US: StringField<WorkScheduleDayModel> = new StringField('externalName_en_US', WorkScheduleDayModel, 'Edm.String');
-  /**
-   * Static representation of the [[externalNameEsEs]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const EXTERNAL_NAME_ES_ES: StringField<WorkScheduleDayModel> = new StringField('externalName_es_ES', WorkScheduleDayModel, 'Edm.String');
-  /**
-   * Static representation of the [[externalNameFrFr]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const EXTERNAL_NAME_FR_FR: StringField<WorkScheduleDayModel> = new StringField('externalName_fr_FR', WorkScheduleDayModel, 'Edm.String');
-  /**
-   * Static representation of the [[externalNameJaJp]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const EXTERNAL_NAME_JA_JP: StringField<WorkScheduleDayModel> = new StringField('externalName_ja_JP', WorkScheduleDayModel, 'Edm.String');
-  /**
-   * Static representation of the [[externalNameKoKr]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const EXTERNAL_NAME_KO_KR: StringField<WorkScheduleDayModel> = new StringField('externalName_ko_KR', WorkScheduleDayModel, 'Edm.String');
-  /**
-   * Static representation of the [[externalNameLocalized]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const EXTERNAL_NAME_LOCALIZED: StringField<WorkScheduleDayModel> = new StringField('externalName_localized', WorkScheduleDayModel, 'Edm.String');
-  /**
-   * Static representation of the [[externalNameNlNl]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const EXTERNAL_NAME_NL_NL: StringField<WorkScheduleDayModel> = new StringField('externalName_nl_NL', WorkScheduleDayModel, 'Edm.String');
-  /**
-   * Static representation of the [[externalNamePtBr]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const EXTERNAL_NAME_PT_BR: StringField<WorkScheduleDayModel> = new StringField('externalName_pt_BR', WorkScheduleDayModel, 'Edm.String');
-  /**
-   * Static representation of the [[externalNamePtPt]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const EXTERNAL_NAME_PT_PT: StringField<WorkScheduleDayModel> = new StringField('externalName_pt_PT', WorkScheduleDayModel, 'Edm.String');
-  /**
-   * Static representation of the [[externalNameRuRu]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const EXTERNAL_NAME_RU_RU: StringField<WorkScheduleDayModel> = new StringField('externalName_ru_RU', WorkScheduleDayModel, 'Edm.String');
-  /**
-   * Static representation of the [[externalNameZhCn]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const EXTERNAL_NAME_ZH_CN: StringField<WorkScheduleDayModel> = new StringField('externalName_zh_CN', WorkScheduleDayModel, 'Edm.String');
-  /**
-   * Static representation of the [[externalNameZhTw]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const EXTERNAL_NAME_ZH_TW: StringField<WorkScheduleDayModel> = new StringField('externalName_zh_TW', WorkScheduleDayModel, 'Edm.String');
-  /**
-   * Static representation of the [[hoursAndMinutes]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const HOURS_AND_MINUTES: StringField<WorkScheduleDayModel> = new StringField('hoursAndMinutes', WorkScheduleDayModel, 'Edm.String');
-  /**
-   * Static representation of the [[lastModifiedBy]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const LAST_MODIFIED_BY: StringField<WorkScheduleDayModel> = new StringField('lastModifiedBy', WorkScheduleDayModel, 'Edm.String');
-  /**
-   * Static representation of the [[lastModifiedDate]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const LAST_MODIFIED_DATE: DateField<WorkScheduleDayModel> = new DateField('lastModifiedDate', WorkScheduleDayModel, 'Edm.DateTime');
-  /**
-   * Static representation of the [[lastModifiedDateTime]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const LAST_MODIFIED_DATE_TIME: DateField<WorkScheduleDayModel> = new DateField('lastModifiedDateTime', WorkScheduleDayModel, 'Edm.DateTimeOffset');
-  /**
-   * Static representation of the [[lastModifiedDateWithTz]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const LAST_MODIFIED_DATE_WITH_TZ: DateField<WorkScheduleDayModel> = new DateField('lastModifiedDateWithTZ', WorkScheduleDayModel, 'Edm.DateTimeOffset');
-  /**
-   * Static representation of the [[mdfSystemEffectiveEndDate]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const MDF_SYSTEM_EFFECTIVE_END_DATE: DateField<WorkScheduleDayModel> = new DateField('mdfSystemEffectiveEndDate', WorkScheduleDayModel, 'Edm.DateTime');
-  /**
-   * Static representation of the [[mdfSystemEffectiveStartDate]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const MDF_SYSTEM_EFFECTIVE_START_DATE: DateField<WorkScheduleDayModel> = new DateField('mdfSystemEffectiveStartDate', WorkScheduleDayModel, 'Edm.DateTime');
-  /**
-   * Static representation of the [[mdfSystemEntityId]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const MDF_SYSTEM_ENTITY_ID: StringField<WorkScheduleDayModel> = new StringField('mdfSystemEntityId', WorkScheduleDayModel, 'Edm.String');
-  /**
-   * Static representation of the [[mdfSystemObjectType]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const MDF_SYSTEM_OBJECT_TYPE: StringField<WorkScheduleDayModel> = new StringField('mdfSystemObjectType', WorkScheduleDayModel, 'Edm.String');
-  /**
-   * Static representation of the [[mdfSystemRecordId]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const MDF_SYSTEM_RECORD_ID: StringField<WorkScheduleDayModel> = new StringField('mdfSystemRecordId', WorkScheduleDayModel, 'Edm.String');
-  /**
-   * Static representation of the [[mdfSystemRecordStatus]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const MDF_SYSTEM_RECORD_STATUS: StringField<WorkScheduleDayModel> = new StringField('mdfSystemRecordStatus', WorkScheduleDayModel, 'Edm.String');
-  /**
-   * Static representation of the [[mdfSystemStatus]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const MDF_SYSTEM_STATUS: StringField<WorkScheduleDayModel> = new StringField('mdfSystemStatus', WorkScheduleDayModel, 'Edm.String');
-  /**
-   * Static representation of the [[mdfSystemTransactionSequence]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const MDF_SYSTEM_TRANSACTION_SEQUENCE: BigNumberField<WorkScheduleDayModel> = new BigNumberField('mdfSystemTransactionSequence', WorkScheduleDayModel, 'Edm.Int64');
-  /**
-   * Static representation of the [[mdfSystemVersionId]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const MDF_SYSTEM_VERSION_ID: BigNumberField<WorkScheduleDayModel> = new BigNumberField('mdfSystemVersionId', WorkScheduleDayModel, 'Edm.Int64');
-  /**
-   * Static representation of the [[shiftClassification]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const SHIFT_CLASSIFICATION: StringField<WorkScheduleDayModel> = new StringField('shiftClassification', WorkScheduleDayModel, 'Edm.String');
-  /**
-   * Static representation of the [[timeRecordingVariant]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const TIME_RECORDING_VARIANT: StringField<WorkScheduleDayModel> = new StringField('timeRecordingVariant', WorkScheduleDayModel, 'Edm.String');
-  /**
-   * Static representation of the [[workingHours]] property for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const WORKING_HOURS: BigNumberField<WorkScheduleDayModel> = new BigNumberField('workingHours', WorkScheduleDayModel, 'Edm.Decimal');
-  /**
-   * Static representation of the one-to-many navigation property [[segments]] for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const SEGMENTS: Link<WorkScheduleDayModel, WorkScheduleDayModelSegment> = new Link('segments', WorkScheduleDayModel, WorkScheduleDayModelSegment);
-  /**
-   * Static representation of the one-to-one navigation property [[shiftClassificationNav]] for query construction.
-   * Use to reference this property in query operations such as 'select' in the fluent request API.
-   */
-  export const SHIFT_CLASSIFICATION_NAV: OneToOneLink<WorkScheduleDayModel, ShiftClassification> = new OneToOneLink('shiftClassificationNav', WorkScheduleDayModel, ShiftClassification);
-  /**
-   * All fields of the WorkScheduleDayModel entity.
-   */
-  export const _allFields: Array<StringField<WorkScheduleDayModel> | DateField<WorkScheduleDayModel> | BigNumberField<WorkScheduleDayModel> | Link<WorkScheduleDayModel, WorkScheduleDayModelSegment> | OneToOneLink<WorkScheduleDayModel, ShiftClassification>> = [
-    WorkScheduleDayModel.COUNTRY,
-    WorkScheduleDayModel.CREATED_BY,
-    WorkScheduleDayModel.CREATED_DATE,
-    WorkScheduleDayModel.CREATED_DATE_TIME,
-    WorkScheduleDayModel.DESCRIPTION,
-    WorkScheduleDayModel.EXTERNAL_CODE,
-    WorkScheduleDayModel.EXTERNAL_NAME_DE_DE,
-    WorkScheduleDayModel.EXTERNAL_NAME_DEFAULT_VALUE,
-    WorkScheduleDayModel.EXTERNAL_NAME_EN_GB,
-    WorkScheduleDayModel.EXTERNAL_NAME_EN_US,
-    WorkScheduleDayModel.EXTERNAL_NAME_ES_ES,
-    WorkScheduleDayModel.EXTERNAL_NAME_FR_FR,
-    WorkScheduleDayModel.EXTERNAL_NAME_JA_JP,
-    WorkScheduleDayModel.EXTERNAL_NAME_KO_KR,
-    WorkScheduleDayModel.EXTERNAL_NAME_LOCALIZED,
-    WorkScheduleDayModel.EXTERNAL_NAME_NL_NL,
-    WorkScheduleDayModel.EXTERNAL_NAME_PT_BR,
-    WorkScheduleDayModel.EXTERNAL_NAME_PT_PT,
-    WorkScheduleDayModel.EXTERNAL_NAME_RU_RU,
-    WorkScheduleDayModel.EXTERNAL_NAME_ZH_CN,
-    WorkScheduleDayModel.EXTERNAL_NAME_ZH_TW,
-    WorkScheduleDayModel.HOURS_AND_MINUTES,
-    WorkScheduleDayModel.LAST_MODIFIED_BY,
-    WorkScheduleDayModel.LAST_MODIFIED_DATE,
-    WorkScheduleDayModel.LAST_MODIFIED_DATE_TIME,
-    WorkScheduleDayModel.LAST_MODIFIED_DATE_WITH_TZ,
-    WorkScheduleDayModel.MDF_SYSTEM_EFFECTIVE_END_DATE,
-    WorkScheduleDayModel.MDF_SYSTEM_EFFECTIVE_START_DATE,
-    WorkScheduleDayModel.MDF_SYSTEM_ENTITY_ID,
-    WorkScheduleDayModel.MDF_SYSTEM_OBJECT_TYPE,
-    WorkScheduleDayModel.MDF_SYSTEM_RECORD_ID,
-    WorkScheduleDayModel.MDF_SYSTEM_RECORD_STATUS,
-    WorkScheduleDayModel.MDF_SYSTEM_STATUS,
-    WorkScheduleDayModel.MDF_SYSTEM_TRANSACTION_SEQUENCE,
-    WorkScheduleDayModel.MDF_SYSTEM_VERSION_ID,
-    WorkScheduleDayModel.SHIFT_CLASSIFICATION,
-    WorkScheduleDayModel.TIME_RECORDING_VARIANT,
-    WorkScheduleDayModel.WORKING_HOURS,
-    WorkScheduleDayModel.SEGMENTS,
-    WorkScheduleDayModel.SHIFT_CLASSIFICATION_NAV
-  ];
-  /**
-   * All fields selector.
-   */
-  export const ALL_FIELDS: AllFields<WorkScheduleDayModel> = new AllFields('*', WorkScheduleDayModel);
-  /**
-   * All key fields of the WorkScheduleDayModel entity.
-   */
-  export const _keyFields: Array<Selectable<WorkScheduleDayModel>> = [WorkScheduleDayModel.EXTERNAL_CODE];
-  /**
-   * Mapping of all key field names to the respective static field property WorkScheduleDayModel.
-   */
-  export const _keys: { [keys: string]: Selectable<WorkScheduleDayModel> } = WorkScheduleDayModel._keyFields.reduce((acc: { [keys: string]: Selectable<WorkScheduleDayModel> }, field: Selectable<WorkScheduleDayModel>) => {
-    acc[field._fieldName] = field;
-    return acc;
-  }, {});
+export interface WorkScheduleDayModelType<T extends DeSerializers = DefaultDeSerializers> {
+  country?: DeserializedType<T, 'Edm.String'> | null;
+  createdBy?: DeserializedType<T, 'Edm.String'> | null;
+  createdDate?: DeserializedType<T, 'Edm.DateTime'> | null;
+  createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
+  description?: DeserializedType<T, 'Edm.String'> | null;
+  externalCode: DeserializedType<T, 'Edm.String'>;
+  externalNameDeDe?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameDefaultValue?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameEnGb?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameEnUs?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameEsEs?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameFrFr?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameJaJp?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameKoKr?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameLocalized?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameNlNl?: DeserializedType<T, 'Edm.String'> | null;
+  externalNamePtBr?: DeserializedType<T, 'Edm.String'> | null;
+  externalNamePtPt?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameRuRu?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameZhCn?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameZhTw?: DeserializedType<T, 'Edm.String'> | null;
+  hoursAndMinutes?: DeserializedType<T, 'Edm.String'> | null;
+  lastModifiedBy?: DeserializedType<T, 'Edm.String'> | null;
+  lastModifiedDate?: DeserializedType<T, 'Edm.DateTime'> | null;
+  lastModifiedDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
+  lastModifiedDateWithTz?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
+  mdfSystemEffectiveEndDate?: DeserializedType<T, 'Edm.DateTime'> | null;
+  mdfSystemEffectiveStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
+  mdfSystemEntityId?: DeserializedType<T, 'Edm.String'> | null;
+  mdfSystemObjectType?: DeserializedType<T, 'Edm.String'> | null;
+  mdfSystemRecordId?: DeserializedType<T, 'Edm.String'> | null;
+  mdfSystemRecordStatus?: DeserializedType<T, 'Edm.String'> | null;
+  mdfSystemStatus?: DeserializedType<T, 'Edm.String'> | null;
+  mdfSystemTransactionSequence?: DeserializedType<T, 'Edm.Int64'> | null;
+  mdfSystemVersionId?: DeserializedType<T, 'Edm.Int64'> | null;
+  shiftClassification?: DeserializedType<T, 'Edm.String'> | null;
+  timeRecordingVariant?: DeserializedType<T, 'Edm.String'> | null;
+  workingHours?: DeserializedType<T, 'Edm.Decimal'> | null;
+  segments: WorkScheduleDayModelSegmentType<T>[];
+  shiftClassificationNav?: ShiftClassificationType<T> | null;
 }

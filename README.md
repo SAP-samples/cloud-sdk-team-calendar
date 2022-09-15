@@ -50,6 +50,8 @@ Ask questions at the CodeJam itself or open a ticket in GitHub or Stackoverflow.
 # License
 Copyright © 2020 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](./LICENSE) file.
 
+**Note** The [Workforce Timesheet](https://api.sap.com/api/API_MANAGE_WORKFORCE_TIMESHEET/overview) and [Time Off](https://api.sap.com/api/ECTimeOff/overview) services used in the application are licensed under the terms of [SAP API Information License](./LICENSES/LicenseRef-API-Definition-File-License.txt). This limits their use to development purposes only.
+
 ## Contributing
 If you wish to contribute code, offer fixes or improvements, please send a pull request.
 Due to legal reasons, contributors will be asked to accept a DCO when they create the first pull request to this project.

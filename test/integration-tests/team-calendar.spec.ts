@@ -12,7 +12,7 @@ describe("GET /odata/v2/TeamCalendar", function () {
   let server: Server;
 
   before(async () => {
-    server = app.listen(8080);
+    server = (await app).listen(8080);
     await new Promise(done => setTimeout(done, 1000)); // CDS needs some time to bring the services online after express itself signals that it's ready
   });
 

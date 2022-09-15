@@ -1,6 +1,6 @@
-import { TimeSheetEntry } from "@sap/cloud-sdk-vdm-workforce-timesheet-service";
+import { workforceTimesheetService } from "../../src/generated/workforce-timesheet-service";
 import moment from "moment";
-import { EmployeeTime } from "../../src/generated/ec-time-off-service";
+import { ecTimeOffService } from "../../src/generated/ec-time-off-service";
 import { Appointment } from "../../src/model/appointment";
 
 export const calendarYear = 2020;
@@ -57,7 +57,7 @@ export const mockSrv = {
 
 export const mockReadS4Appointments = () =>
   Promise.resolve([
-    TimeSheetEntry.builder()
+    workforceTimesheetService().timeSheetEntryApi.entityBuilder()
       .timeSheetRecord("1")
       .timeSheetDate(moment(calendarYear + "-08-01"))
       .timeSheetDataFields({
@@ -85,7 +85,7 @@ export const s4Appointment = {
 
 export const mockReadSfsfAppointments = () =>
   Promise.resolve([
-    EmployeeTime.builder()
+    ecTimeOffService().employeeTimeApi.entityBuilder()
       .externalCode("code")
       .startDate(moment(calendarYear + "-08-01"))
       .startTime({ hours: 0, minutes: 0, seconds: 0 })
