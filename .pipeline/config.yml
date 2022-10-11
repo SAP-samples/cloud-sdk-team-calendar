@@ -25,11 +25,12 @@
 ### Step-specific configuration
 steps:
   cloudFoundryDeploy:
-    org: '<my-trial-org>'
-    space: '<my-trial-space>'
+    org: '<my-org>'
+    space: '<my-space>'
     apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
     appName: 'team-calendar'
     manifest: 'manifest.yml'
+    deployTool: 'cf_native'
 
 ### Stage-specific configuration
 stages:
