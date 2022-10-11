@@ -10,6 +10,7 @@ dist
 deployment/
 srv/gen/
 *.db
+*.sqlite
 db/src/gen
 
 # added by cds deploy
