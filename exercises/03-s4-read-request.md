@@ -4,7 +4,7 @@ Let's write some code! The application is supposed to show appointments from thr
 
 ## Implement the read request
 
-Find the _TODO_ in the `readS4AppointmentsByPerson` function in [src/read-appointments.ts](../src/read-appointments.ts). Instead of returning an empty array, implement a request to retrieve timesheet entries from SAP S/4HANA. You can try to implement this on your own using the following hints or peek at the [solution](SOLUTION.md#implement-the-read-request) and copy the implementation.
+Find the _TODO_ in the `readS4AppointmentsByPerson` function in [src/read-appointments.ts](../src/read-appointments.ts). Instead of returning an empty array, implement a request to retrieve timesheet entries from SAP S/4HANA. You can try to implement this on your own using the following hints or peek at the [solution](SOLUTION.md#implement-the-read-request-to-sap-s/4hana) and copy the implementation.
 
 Use the `timeSheetEntryApi.requestBuilder()` to create a request to get all TimeSheetEntries. Create the request by using the predefined variables and the following filters:
 

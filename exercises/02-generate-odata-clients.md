@@ -6,7 +6,7 @@ There are many scenarios where you have either your own OData service or want to
 
 Download the service specification file for [SAP S/4HANA Cloud Workforce Timesheet service](https://api.sap.com/api/API_MANAGE_WORKFORCE_TIMESHEET/overview) and [SAP SuccessFactors Employee Central Time Off service](https://api.sap.com/api/ECTimeOff/overview) from the SAP Business API Hub and put it into the [resources/service-specs](../resources/service-specs/).
 
-In this directory, you will also find the [service mapping file](../resources/service-specs/service-mapping.json), which contains some extra configuration for the generated service(s), like the directory name and service path for the service.
+In this directory, you will also find the [service mapping file](../resources/service-mapping.json), which contains some extra configuration for the generated service(s), like the directory name and service path for the service.
 
 ## Run the generation
 To generate the OData clients, just run an npm script:
