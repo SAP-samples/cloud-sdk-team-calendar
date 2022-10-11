@@ -101,4 +101,4 @@ In the SAP BTP cockpit, go to the _Spaces_ tab on the left and select the space 
 
 **Congratulations**, you deployed an extension to SAP S/4HANA to the SAP BTP!
 
-## Next step: [Automate deployment](06-deploy-to-cf.md)
+## Next step: [Automate deployment](07-automate-deployment.md)

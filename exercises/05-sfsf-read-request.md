@@ -29,4 +29,4 @@ Reload your locally deployed application in the browser and check, whether there
 
 ![Read SFSF](images/read-sfsf.png)
 
-## Next step: [Deploy your application to Cloud Foundry](07-automate-deployment.md)
+## Next step: [Deploy your application to Cloud Foundry](06-deploy-to-cf.md)
