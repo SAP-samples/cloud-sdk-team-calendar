@@ -12,6 +12,7 @@ srv/gen/
 *.db
 *.sqlite
 db/src/gen
+resources/service-specs/*
 
 # added by cds deploy
 default-env.json
