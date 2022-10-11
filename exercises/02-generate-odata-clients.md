@@ -1,4 +1,4 @@
-# Generate your own OData client
+# Generate your own OData clients
 
 There are many scenarios where you have either your own OData service or want to integrate with another SAP OData service. For those cases, you can generate your own OData client as described in the following.
 
