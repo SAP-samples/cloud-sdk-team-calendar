@@ -84,7 +84,7 @@ export async function writeTimeSheetEntry(
 
 ## Implement the read request to SAP SuccessFactors
 
-Solution to [this exercise](06-sfsf-read-request.md#create-a-request-with-your-own-odata-client)
+Solution to [this exercise](05-sfsf-read-request.md#implement-the-request)
 
 ```ts
 export async function readSfsfAppointmentsByPerson(
