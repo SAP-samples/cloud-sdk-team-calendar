@@ -51,7 +51,7 @@
     "@sap-cloud-sdk/odata-v2": "^2.9.0",
     "@sap-cloud-sdk/util": "^2.9.0",
     "@sap/cds": "^6.2.1",
-    "@sap/cds-dk": "^6.1.5",
+    "@sap/cds-dk": "^6.2.1",
     "@sap/cds-services": "^1.27.2",
     "@sap/hana-client": "^2.14.18",
     "@sap/xssec": "^3.2.13",
