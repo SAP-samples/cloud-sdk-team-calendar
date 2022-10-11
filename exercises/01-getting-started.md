@@ -53,13 +53,13 @@ Let's check that everything works and run the application locally. First, open t
 npm install
 ```
 
-Build a local database (locally we use SQLite):
+Build a local database:
 
 ```sh
 npm run cds-build
 ```
 
-Deploy a local database
+Deploy a local database (locally we use SQLite):
 
 ```sh
 npm run cds-deploy
