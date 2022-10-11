@@ -31,11 +31,11 @@ You will learn how to:
 ## Exercises
 
 * Exercise 1: [Getting started](exercises/01-getting-started.md)
-* Exercise 2: [Create a read request to SAP S/4HANA](exercises/02-s4-read-request.md)
-* Exercise 3: [Create a write request to SAP S/4HANA](exercises/03-s4-write-request.md)
-* Exercise 4: [Deploy your application to Cloud Foundry](exercises/04-deploy-to-cf.md)
-* Exercise 5: [Generate your own OData client](exercises/05-generate-odata-client.md)
-* Exercise 6: [Create a request with your own OData client](exercises/06-use-odata-client.md)
+* Exercise 2: [Generate your own OData clients](exercises/02-generate-odata-clients.md)
+* Exercise 3: [Create a read request to SAP S/4HANA](exercises/03-s4-read-request.md)
+* Exercise 4: [Create a write request to SAP S/4HANA](exercises/04-s4-write-request.md)
+* Exercise 5: [Create a read request to SAP SuccessFactors](exercises/05-sfsf-read-request.md)
+* Exercise 6: [Deploy your application to Cloud Foundry](exercises/06-deploy-to-cf.md)
 * Exercise 7: [Automate deployment](exercises/07-automate-deployment.md)
 
 # Download and installation
