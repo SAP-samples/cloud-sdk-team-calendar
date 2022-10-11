@@ -1,6 +1,6 @@
 # Getting started
 
-In the following we describe how to get started with this project.
+In the following, we describe how to get started with this project.
 You will create a new **private** repository based on this repository and run the application locally to get familiar with it.
 
 > In the original session, the participants were handed out a participantId. If you go through the tasks on your own, make up your own id. We recommend to refrain from using personal data.
@@ -15,7 +15,7 @@ Fill in the name of your new repository (e. g. _cloud-sdk-team-calendar_) and ma
 
 > ### Why private?
 >
-> We recommend to create your project as a private repository due to licensing constraints. In [exercise 5](05-generate-odata-client.md) we will generate an OData client for SAP SuccessFactors, that is subject to SAP intellectual property and should not be made available as open source. As long as you don't publish these changes, feel free to create a public repository as well.
+> We recommend to create your project as a private repository due to licensing constraints. In [exercise 2](02-generate-odata-clients.md) we will generate OData clients for SAP S/4HANA and SAP SuccessFactors, that is subject to SAP intellectual property and should not be made available as open source. As long as you don't publish these changes, feel free to create a public repository as well.
 
 ## Clone your repository
 
@@ -29,7 +29,9 @@ git clone https://github.com/<your-github-username>/cloud-sdk-team-calendar.git
 
 > Note: If you have access to real SAP S/4HANA Cloud and SAP SuccessFactors (SFSF) Cloud systems, you may be able to skip this step.
 
-Follow these [instructions](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server#how-to-run-the-server) on how to setup your SAP S/4HANA and SFSF mock server and deploy it on SAP Business Technology Platform (SAP BTP), Cloud Foundry environment.
+Follow these [instructions](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server#how-to-run-the-server) on how to set up your SAP S/4HANA and SAP SuccessFactors mock server and deploy it on the SAP Business Technology Platform (SAP BTP), Cloud Foundry environment. 
+
+**Please checkout the branch [`mock-server-update-data`](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server-update-data) for this tutorial instead of the branch [`mock-server`](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server) as it is described in the instructions.** The branch has the latest date data as opposed to the branch `mock-server`.
 
 ## Setup the destinations environment variable
 
@@ -41,7 +43,7 @@ Replace the URL placeholders for the `S4HANA` and `SFSF` destinations in the [`.
 
 ## Start the application locally
 
-Open the project in your IDE. For the remainder of this course we will assume you are using Visual Studio Code. Please adapt accordingly if you are using a different IDE.
+Open the project in your IDE. For the remainder of this tutorial, we will assume you are using Visual Studio Code. Please adapt accordingly if you are using a different IDE.
 
 To open the project go to _File > Open..._ and select the folder you just cloned from GitHub.
 
@@ -51,10 +53,15 @@ Let's check that everything works and run the application locally. First, open t
 npm install
 ```
 
-Deploy a local database (locally we use sqlite):
+Deploy a local database (locally we use SQLite):
 
 ```sh
 npm run cds-deploy
+```
+
+Start the local database:
+```sh
+npm run cds-watch
 ```
 
 And start the application in watch mode, so that every change you implement subsequently is reflected immediately:
@@ -65,7 +72,6 @@ npm run watch:local
 
 Now, you should find your application running at http://localhost:8080.
 
-All data is in September:
 ![Local Deployment](images/local-deployment.png)
 
-## Next step: [reate a read request to SAP S/4HANA](02-s4-read-request.md)
+## Next step: [Generate your own OData clients](02-generate-odata-clients.md)

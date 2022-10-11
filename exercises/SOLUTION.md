@@ -1,8 +1,8 @@
 # Create a read request to SAP S/4HANA
 
-## Implement the read request
+## Implement the read request to SAP S/4HANA
 
-Solution to [this exercise](02-s4-read-request.md#implement-the-read-request)
+Solution to [this exercise](03-s4-read-request.md#implement-the-read-request)
 
 ```ts
 export async function readS4AppointmentsByPerson(
@@ -13,12 +13,13 @@ export async function readS4AppointmentsByPerson(
   const from = moment.utc(`${year}-01-01`);
   const to = moment.utc(`${year}-12-31`);
 
-  return TimeSheetEntry.requestBuilder()
+  const { timeSheetEntryApi } = workforceTimesheetService();
+  return timeSheetEntryApi.requestBuilder()
     .getAll()
     .filter(
-      TimeSheetEntry.PERSON_WORK_AGREEMENT_EXTERNAL_ID.equals(personId),
-      TimeSheetEntry.TIME_SHEET_DATE.greaterOrEqual(from),
-      TimeSheetEntry.TIME_SHEET_DATE.lessOrEqual(to)
+      timeSheetEntryApi.schema.PERSON_WORK_AGREEMENT_EXTERNAL_ID.equals(personId),
+      timeSheetEntryApi.schema.TIME_SHEET_DATE.greaterOrEqual(from),
+      timeSheetEntryApi.schema.TIME_SHEET_DATE.lessOrEqual(to)
     )
     .execute({ destinationName: 'S4HANA' });
 }
@@ -28,7 +29,7 @@ export async function readS4AppointmentsByPerson(
 
 ## Build a TimeSheetEntry
 
-Solution to [this exercise](03-s4-write-request.md#build-a-timesheetentry)
+Solution to [this exercise](04-s4-write-request.md#build-a-timesheetentry)
 
 ```ts
 export function buildTimeSheetEntry(
@@ -50,7 +51,8 @@ export function buildTimeSheetEntry(
   const isExecutedInTestRun = false;
   const operation = 'C';
 
-  return TimeSheetEntry.builder()
+  const { timeSheetEntryApi } = workforceTimesheetService();
+  return timeSheetEntryApi.entityBuilder()
     .personWorkAgreementExternalId(externalId)
     .timeSheetDataFields(timeSheetDataFields)
     .companyCode(companyCode)
@@ -65,21 +67,24 @@ export function buildTimeSheetEntry(
 
 ## Write a TimeSheetEntry
 
-Solution to [this exercise](03-s4-write-request.md#write-a-timesheetentry)
+Solution to [this exercise](04-s4-write-request.md#write-a-timesheetentry)
 
 ```ts
 export async function writeTimeSheetEntry(
   entry: TimeSheetEntry
 ): Promise<TimeSheetEntry> {
-  return TimeSheetEntry.requestBuilder()
+  const { timeSheetEntryApi } = workforceTimesheetService();
+  return timeSheetEntryApi.requestBuilder()
     .create(entry)
     .execute({ destinationName: 'S4HANA' });
 }
 ```
 
-# Create a request with your own OData client
+# Create a read request to SAP SuccessFactors
 
-Solution to [this exercise](06-use-odata-client.md#create-a-request-with-your-own-odata-client)
+## Implement the read request to SAP SuccessFactors
+
+Solution to [this exercise](06-sfsf-read-request.md#create-a-request-with-your-own-odata-client)
 
 ```ts
 export async function readSfsfAppointmentsByPerson(
@@ -91,22 +96,23 @@ export async function readSfsfAppointmentsByPerson(
   const from = moment.utc(`${year}-01-01`);
   const to = moment.utc(`${year}-12-31`);
 
-  return EmployeeTime.requestBuilder()
+  const { employeeTimeApi } = ecTimeOffService();
+  return employeeTimeApi.requestBuilder()
     .getAll()
     .select(
-      EmployeeTime.EXTERNAL_CODE,
-      EmployeeTime.START_TIME,
-      EmployeeTime.START_DATE,
-      EmployeeTime.END_TIME,
-      EmployeeTime.END_DATE,
-      EmployeeTime.APPROVAL_STATUS,
-      EmployeeTime.USER_ID
+      employeeTimeApi.schema.EXTERNAL_CODE,
+      employeeTimeApi.schema.START_TIME,
+      employeeTimeApi.schema.START_DATE,
+      employeeTimeApi.schema.END_TIME,
+      employeeTimeApi.schema.END_DATE,
+      employeeTimeApi.schema.APPROVAL_STATUS,
+      employeeTimeApi.schema.USER_ID
     )
     .filter(
-      EmployeeTime.TIME_TYPE.equals(timeType),
-      EmployeeTime.USER_ID.equals(personId),
-      EmployeeTime.START_DATE.greaterOrEqual(from),
-      EmployeeTime.END_DATE.lessOrEqual(to)
+      employeeTimeApi.schema.TIME_TYPE.equals(timeType),
+      employeeTimeApi.schema.USER_ID.equals(personId),
+      employeeTimeApi.schema.START_DATE.greaterOrEqual(from),
+      employeeTimeApi.schema.END_DATE.lessOrEqual(to)
     )
     .execute({ destinationName: 'SFSF' });
 }
