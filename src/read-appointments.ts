@@ -49,15 +49,8 @@ export async function readS4AppointmentsByPerson(
   const from = moment.utc(`${year}-01-01`);
   const to = moment.utc(`${year}-12-31`);
 
-  const { timeSheetEntryApi } = workforceTimesheetService();
-  return timeSheetEntryApi.requestBuilder()
-    .getAll()
-    .filter(
-      timeSheetEntryApi.schema.PERSON_WORK_AGREEMENT_EXTERNAL_ID.equals(personId),
-      timeSheetEntryApi.schema.TIME_SHEET_DATE.greaterOrEqual(from),
-      timeSheetEntryApi.schema.TIME_SHEET_DATE.lessOrEqual(to)
-    )
-    .execute({ destinationName: 'S4HANA' });
+  // TODO: Retrieve TimeSheetEntries from SAP S/4HANA here. Use the above variables for filtering.
+  return [];
 }
 
 export async function readSfsfAppointmentsByPerson(
@@ -69,25 +62,8 @@ export async function readSfsfAppointmentsByPerson(
   const from = moment.utc(`${year}-01-01`);
   const to = moment.utc(`${year}-12-31`);
 
-  const { employeeTimeApi } = ecTimeOffService();
-  return employeeTimeApi.requestBuilder()
-    .getAll()
-    .select(
-      employeeTimeApi.schema.EXTERNAL_CODE,
-      employeeTimeApi.schema.START_TIME,
-      employeeTimeApi.schema.START_DATE,
-      employeeTimeApi.schema.END_TIME,
-      employeeTimeApi.schema.END_DATE,
-      employeeTimeApi.schema.APPROVAL_STATUS,
-      employeeTimeApi.schema.USER_ID
-    )
-    .filter(
-      employeeTimeApi.schema.TIME_TYPE.equals(timeType),
-      employeeTimeApi.schema.USER_ID.equals(personId),
-      employeeTimeApi.schema.START_DATE.greaterOrEqual(from),
-      employeeTimeApi.schema.END_DATE.lessOrEqual(to)
-    )
-    .execute({ destinationName: 'SFSF' });
+  // TODO: Retrieve EmployeeTime from SAP SuccessFactors here. Use the above variables for filtering.
+  return [];
 }
 
 export async function readLocalAppointments(srv): Promise<Appointment[]> {
