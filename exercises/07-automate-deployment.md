@@ -12,7 +12,7 @@ In a production environment, you will probably rather use a Jenkins server as of
 
 ## Adjust pipeline configuration
 
-Go to the [.pipeline/config.yml](../.pipeline/config.yml) file and adjust it to your project. Set the org and space for the `cloudFoundryDeploy` step as you have done before when logging in to Cloud Foundry (if you don't remember run `cf target` on the command line to get a summary).
+Go to the [.pipeline/config.yml](../.pipeline/config.yml) file and adjust it to your project. Set the org and space for the `cloudFoundryDeploy` step as you have done before when logging in to Cloud Foundry (if you don't remember, run `cf target` on the command line to get a summary).
 
 ## Set credentials for deployment
 

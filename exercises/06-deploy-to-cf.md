@@ -90,6 +90,8 @@ SAP SuccessFactors destination:
 > Authentication: <SFSF-authentication-type>
 > ```
 
+Please refer [.env](../.env) file if you don't remember the `URL` and `Authentication` as you defined them in [exercise 1](01-getting-started.md#setup-the-destinations-environment-variable).
+
 This is what the configured destinations should look like in the SAP BTP cockpit:
 ![SCP Destinations](images/scp-destinations.png)
 

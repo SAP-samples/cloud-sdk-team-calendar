@@ -35,7 +35,7 @@ Follow these [instructions](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-s
 
 ## Setup the destinations environment variable
 
-Replace the URL placeholders for the `S4HANA` and `SFSF` destinations in the [`.env`](../.env) file with the URL(s) of your mock server or your SAP S/4HANA and SAP SuccessFactors systems. If you are using the mock server, the URLs for both destinations are the same, because the mock server acts as both, a mocked SAP S4/HANA system and a mocked SAP SuccessFactors system.
+Replace the URL placeholders for the `S4HANA` and `SFSF` destinations in the [`.env`](../.env) file with the URL(s) of your mock server or your SAP S/4HANA and SAP SuccessFactors systems. If you are using the mock server, the URLs for both destinations are the same, because the mock server acts as both, a mocked SAP S4/HANA system and a mocked SAP SuccessFactors system. The mock server has no authentication to access it by default. Please set the authentication type `NoAuthentication` when you use the mock server.
 
 > ### How to find your mock server's URL
 >
