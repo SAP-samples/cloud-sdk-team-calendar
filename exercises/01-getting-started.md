@@ -55,7 +55,7 @@ npm install
 deploy a local database with these 3 steps: 
 
 1. create a local database (we use SQLite)
-2. drops existing tables and views, and re-creates them according to [the CDS model](../db/data-model.cds)
+2. drops existing tables and views, and re-creates them according to [your CDS model](../db/data-model.cds)
 3. deploy CSV files with initial data
 
 SAP CAP provides a command to do the 3 steps at once. run:
