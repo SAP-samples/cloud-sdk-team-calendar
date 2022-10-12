@@ -94,7 +94,7 @@ This is what the configured destinations should look like in the SAP BTP cockpit
 
 ## Find your application running on SAP BTP
 
-In the SAP BTP cockpit, go to the _Spaces_ tab on the left and select the space that you logged in to on the command line before. Select your application _team-calendar_ and click on the application route to see the application running.
+In the SAP BTP cockpit, go to the _Spaces_ tab on the left and select the space that you logged into on the command line before. Select your application _team-calendar_ and click on the application route to see the application running.
 
 ![SCP Application](images/scp-application.png)
 
