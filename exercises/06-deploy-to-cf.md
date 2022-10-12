@@ -11,7 +11,7 @@ You need to login to Cloud Foundry in SAP Business Technology Platform using the
 Copy the URL and paste it into the following command in your command line (if you haven't logged in before):
 
 ```sh
-cf login -a https://api.cf.<region>.hana.ondemand.com
+cf login -a https://api.cf.YOUR_REGION.hana.ondemand.com
 ```
 
 Enter your credentials and choose an organization and space if necessary.
@@ -41,12 +41,7 @@ cf create-service destination lite my-destination
 ```
 
 This is what the service instances should look like in the SAP BTP cockpit:
-![SCP Services](images/scp-services.png)
-
-## Adjust the manifest.yml file
-
-Let's adjust the [manifest.yml](../manifest.yml), the configuration file for your Cloud Foundry application.
-Take a look at the services section, where we reference the previously created service instances.
+![BTP Services](images/scp-services.png)
 
 ## Build and push your application
 
@@ -77,9 +72,9 @@ SAP S/4HANA destination:
 > ```
 > Name: S4HANA
 > Type: HTTP
-> URL: <S4-server-url>
+> URL: S4_SERVER_URL
 > Proxy type: Internet
-> Authentication: <S4-authentication-type>
+> Authentication: S4_AUTHENTICATION_TYPE
 > ```
 
 SAP SuccessFactors destination:
@@ -87,9 +82,9 @@ SAP SuccessFactors destination:
 > ```
 > Name: SFSF
 > Type: HTTP
-> URL: <SFSF-server-url>
+> URL: SFSF_SERVER_URL
 > Proxy type: Internet
-> Authentication: <SFSF-authentication-type>
+> Authentication: SFSF_AUTHENTICATION_TYPE
 > ```
 
 Please refer [.env](../.env) file if you don't remember the `URL` and `Authentication` as you defined them in [exercise 1](01-getting-started.md#setup-the-destinations-environment-variable).
