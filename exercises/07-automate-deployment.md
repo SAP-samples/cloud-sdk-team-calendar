@@ -17,7 +17,7 @@ Go to the [.pipeline/config.yml](../.pipeline/config.yml) file and adjust it to 
 ## Set credentials for deployment
 
 Take a look at the `build.yml` file. The `Deploy` step will deploy your application to the SAP BTP. This step needs credentials.
-To set your credentials in Github go to "Settings" and then "Secrets":
+To set your credentials in Github go to `Settings` and then `Secrets`:
 ![Github Secrets](images/github-secrets.png)
 
 Create two new secrets _CF_USER_ with your user name and _CF_PASSWORD_ with your password. Note that even though your credentials are visible while you are entering them, later on they will be hidden.
