@@ -9,6 +9,7 @@ dist
 /s4hana_pipeline
 deployment/
 srv/gen/
+srv/external/
 *.db
 *.sqlite
 db/src/gen
