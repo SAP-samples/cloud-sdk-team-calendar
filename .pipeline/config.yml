@@ -27,7 +27,7 @@ steps:
   cloudFoundryDeploy:
     org: '<my-org>'
     space: '<my-space>'
-    apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
+    apiEndpoint: '<my-api-endpoint>'
     appName: 'team-calendar'
     manifest: 'manifest.yml'
     deployTool: 'cf_native'
