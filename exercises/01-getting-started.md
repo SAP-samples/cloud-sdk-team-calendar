@@ -1,6 +1,5 @@
 # Getting started
 
-In the following, we describe how to get started with this project.
 You will create a new **private** repository based on this repository and run the application locally to get familiar with it.
 
 > In the original session, the participants were handed out a participantId. If you go through the tasks on your own, make up your own id. We recommend to refrain from using personal data.
