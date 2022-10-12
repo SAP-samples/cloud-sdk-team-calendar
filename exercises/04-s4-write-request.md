@@ -32,4 +32,4 @@ Execute this request against the destination with the `destinationName` _S4HANA_
 Refresh your application in the browser and try to approve a request. This request should now be written to SAP S/4HANA.
 ![Local Write](images/approve.png)
 
-## Next step: [Create a read request to SAP SuccessFactors HANA](05-sfsf-read-request.md)
+## Next step: [Create a read request to SAP SuccessFactors](05-sfsf-read-request.md)
