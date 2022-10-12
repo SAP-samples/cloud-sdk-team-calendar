@@ -1,7 +1,4 @@
 ###
-# This file configures the SAP Cloud SDK Continuous Delivery pipeline of your project.
-# For a reference of the configuration concept and available options, please have a look into its documentation.
-#
 # We aim to keep the pipeline configuration as stable as possible. However, major changes might also imply breaking
 # changes in the configuration. Before doing an update, please check the the release notes of all intermediate releases
 # and adapt this file if necessary.
