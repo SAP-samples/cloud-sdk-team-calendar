@@ -19,10 +19,10 @@ Fill in the name of your new repository (e. g. _cloud-sdk-team-calendar_) and ma
 
 ## Clone your repository
 
-On your laptop open a command line and enter the following command. Don't forget to replace your username (and repository name should you have chosen a different one):
+On your laptop open a command line and enter the following command.
 
 ```sh
-git clone https://github.com/<your-github-username>/cloud-sdk-team-calendar.git
+git clone https://github.com/YOUR_GITHUB_USERNAME/cloud-sdk-team-calendar.git
 ```
 
 ## Deploy the SAP S/4HANA and SAP SuccessFactors mock server (Optional)

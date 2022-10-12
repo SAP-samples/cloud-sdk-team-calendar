@@ -14,9 +14,9 @@
 ### Step-specific configuration
 steps:
   cloudFoundryDeploy:
-    org: '<my-org>'
-    space: '<my-space>'
-    apiEndpoint: '<my-api-endpoint>'
+    org: MY_ORG
+    space: MY_SPACE
+    apiEndpoint: MY_API_ENDPOINT
     appName: 'team-calendar'
     manifest: 'manifest.yml'
     deployTool: 'cf_native'
