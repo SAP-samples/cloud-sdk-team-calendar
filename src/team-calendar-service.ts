@@ -8,7 +8,7 @@ import { buildTimeSheetEntry, writeTimeSheetEntry } from './write-appointments';
 import cds from '@sap/cds';
 const { SELECT } = cds.ql;
 
-export function serviceHandler(srv) {
+export function serviceHandler(srv): void {
   srv.on('READ', 'TeamCalendar', (req) => {
     // enfore presence of key (for now)
     const year: number = req.data.year;
