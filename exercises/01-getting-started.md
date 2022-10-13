@@ -55,7 +55,7 @@ npm install
 Deploy a local database with these steps: 
 
 1. create a local database (we use SQLite)
-2. drops existing tables and views, and re-creates them according to [your CDS model](../db/data-model.cds)
+2. drop existing tables and views, and re-create them according to [your CDS model](../db/data-model.cds)
 3. deploy CSV files with initial data
 
 In your [`package.json`](../package.json), you have already installed `@sap/cds-dk` (SAP Cloud Application Programming Model). The application programming model provides a command to do the 3 steps at once. deploy a local database with the command:
