@@ -4,14 +4,16 @@ sap.ui.define(
     'com/sap/team-calendar/util/converter'
   ],
   function (http, converter) {
-    const host = '';
-    const servicePath = '/odata/v2/TimesheetService';
-    const baseUrl = host + servicePath;
+    'use strict';
+
+    var host = '';
+    var servicePath = '/odata/v2/TimesheetService';
+    var baseUrl = host + servicePath;
 
     // http.setCSRFPrefilter(baseUrl);
 
     return {
-      getPersons () {
+      getPersons: function () {
         return http.get(baseUrl + '/Person').then(function (response) {
           return response.hasOwnProperty('d')
             ? converter.getResults(converter.getD(response))
@@ -19,7 +21,7 @@ sap.ui.define(
         });
       },
 
-      getAppointments () {
+      getAppointments: function () {
         return http
           .get(baseUrl + '/TeamCalendar(' + new Date().getFullYear() + ')', {
             $expand: 'appointments',
@@ -32,10 +34,10 @@ sap.ui.define(
           });
       },
 
-      createAppointment (appointment, personid) {
-        const startDate = converter.serializeDate(appointment.start);
-        const endDate = converter.serializeDate(appointment.end);
-        const appointmentData = {
+      createAppointment: function (appointment, personid) {
+        var startDate = converter.serializeDate(appointment.start);
+        var endDate = converter.serializeDate(appointment.end);
+        var appointmentData = {
           start_date: startDate,
           start_time: converter.serializeTime(true),
           end_date: endDate,
@@ -55,7 +57,7 @@ sap.ui.define(
           });
       },
 
-      updateAppointment (appointmentid, payload) {
+      updateAppointment: function (appointmentid, payload) {
         if (payload.start) {
           payload.start_date = converter.serializeDate(payload.start);
           delete payload.start;
@@ -70,7 +72,7 @@ sap.ui.define(
         );
       },
 
-      approveTimeOff (appointmentid) {
+      approveTimeOff: function (appointmentid) {
         return this.updateAppointment(appointmentid, { status: 'APPROVED' });
       }
     };

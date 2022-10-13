@@ -1,6 +1,6 @@
-import { resolve } from 'path';
 import cds from '@sap/cds';
 import express from 'express';
+import { resolve } from 'path';
 import { serviceHandler } from './team-calendar-service';
 
 class App {

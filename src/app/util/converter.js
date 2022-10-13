@@ -1,30 +1,32 @@
 sap.ui.define([], function () {
+  "use strict";
+
   function getTime(isStartDate) {
     return isStartDate ? [0, 0, 0] : [23, 59, 59];
   }
 
   return {
-    getResults (data) {
+    getResults: function (data) {
       return data && data.results ? data.results : [];
     },
 
-    getValue (data) {
+    getValue: function (data) {
       return data && data.value ? data.value : [];
     },
 
-    getD (data) {
+    getD: function (data) {
       return data && data.d ? data.d : {};
     },
 
-    serializeTime (isStartDate) {
-      const timeParts = getTime(isStartDate).map(function (part) {
-        return part < 10 ? '0' + part : part;
+    serializeTime: function (isStartDate) {
+      var timeParts = getTime(isStartDate).map(function (part) {
+        return part < 10 ? "0" + part : part;
       });
 
-      return timeParts.join(':');
+      return timeParts.join(":");
     },
 
-    serializeDate (date) {
+    serializeDate: function (date) {
       return new Date(
         Date.UTC(date.getFullYear(), date.getMonth(), date.getDate())
       )
@@ -32,16 +34,16 @@ sap.ui.define([], function () {
       .slice(0, 10);
     },
 
-    deserializeDate (date, isStartDate) {
-      if (date.indexOf('Date') >= 0) {
-        const utcDateString = new Date(
-          parseInt(date.replace('/Date(', '').replace(')/', ''))
+    deserializeDate: function (date, isStartDate) {
+      if (date.indexOf("Date") >= 0) {
+        var utcDateString = new Date(
+          parseInt(date.replace("/Date(", "").replace(")/", ""))
         ).toISOString();
         return this.deserializeDate(utcDateString, isStartDate);
       }
-      let dateParts = date
+      var dateParts = date
         .slice(0, 10)
-        .split('-')
+        .split("-")
         .map(p => parseInt(p));
       // month starts at 0
       dateParts[1] = dateParts[1] - 1;

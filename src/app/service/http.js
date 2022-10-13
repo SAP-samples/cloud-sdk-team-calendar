@@ -1,4 +1,6 @@
-sap.ui.define(['jquery.sap.global'], function (jQuery) {
+sap.ui.define(["jquery.sap.global"], function (jQuery) {
+  "use strict";
+
   // function setCSRFPrefilter(baseUrl) {
   //   return jQuery.ajax({
   //     url: baseUrl + "/csrf",
@@ -17,29 +19,29 @@ sap.ui.define(['jquery.sap.global'], function (jQuery) {
   // }
 
   return {
-    get (url, data) {
-      if (typeof data === 'undefined') {
+    get: function (url, data) {
+      if (typeof data === "undefined") {
         data = {};
       }
 
-      data = jQuery.extend({}, { $format: 'json' }, data);
-      return this.request(url, data, 'GET');
+      data = jQuery.extend({}, { $format: "json" }, data);
+      return this.request(url, data, "GET");
     },
 
-    post (url, data) {
-      return this.request(url, data, 'POST');
+    post: function (url, data) {
+      return this.request(url, data, "POST");
     },
 
-    patch (url, data) {
-      return this.request(url, data, 'PATCH');
+    patch: function (url, data) {
+      return this.request(url, data, "PATCH");
     },
 
-    request (url, data, method) {
+    request: function (url, data, method) {
       return jQuery.ajax({
-        url,
-        method,
-        data: method === 'GET' ? data : JSON.stringify(data),
-        contentType: 'application/json'
+        url: url,
+        method: method,
+        data: method === "GET" ? data : JSON.stringify(data),
+        contentType: "application/json"
       });
     }
   };
