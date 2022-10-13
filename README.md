@@ -39,13 +39,13 @@ You will learn how to:
 * Exercise 7: [Automate deployment](exercises/07-automate-deployment.md)
 
 # Download and installation
-You do not need to download this repository nor install anything from it. You can just follow the exercises by visiting each of them as listed in the [exercises](#exercises) section.
+You do not need to download this repository or install anything from it. You can just follow the exercises by visiting each of them as listed in the [exercises](#exercises) section.
 
 # Known Issues
 All known issues will be listed here.
 
 # How to obtain support
-Ask questions at the CodeJam itself or open a ticket in GitHub or Stackoverflow.
+Open a ticket in GitHub or Stackoverflow.
 
 # License
 Copyright © 2020 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](./LICENSE) file.
@@ -54,8 +54,8 @@ Copyright © 2020 SAP SE or an SAP affiliate company. All rights reserved. This 
 
 ## Contributing
 If you wish to contribute code, offer fixes or improvements, please send a pull request.
-Due to legal reasons, contributors will be asked to accept a DCO when they create the first pull request to this project.
+Due to legal reasons, contributors will be asked to accept a DCO when they create the first pull request for this project.
 This happens in an automated fashion during the submission process. SAP uses [the standard DCO text of the Linux Foundation](https://developercertificate.org/).
 
 ## Code of Conduct
-For this repository the [code of conduct](./CODE_OF_CONDUCT.md) of the samples repository applies.
+For this repository, the [code](./CODE_OF_CONDUCT.md) of conduct](./CODE_OF_CONDUCT.md) of the samples repository applies.
