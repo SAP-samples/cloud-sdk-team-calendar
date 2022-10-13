@@ -54,7 +54,7 @@ npm install
 
 Deploy a local database with these steps: 
 
-1. create a local database (we use SQLite)
+1. create a local database with SQLite
 2. drop existing tables and views, and re-create them according to [your CDS model](../db/data-model.cds)
 3. deploy CSV files with initial data
 
