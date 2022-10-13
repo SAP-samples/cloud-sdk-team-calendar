@@ -9,7 +9,7 @@ You will create a new **private** repository based on this repository and run th
 Click `Use this template` on the top of the GitHub page.
 ![Use Template](images/use-template.png)
 
-Fill in the name of your new repository (e. g. _cloud-sdk-team-calendar_) and make sure to create a **private** repository. Click on _Create repository_.
+Fill in the name of your new repository (e. g. _cloud-sdk-team-calendar_) and make sure to create a **private** repository. Click on `Create repository`.
 ![Create New](images/create-new.png)
 
 > ### Why private?
@@ -30,7 +30,7 @@ git clone https://github.com/YOUR_GITHUB_USERNAME/cloud-sdk-team-calendar.git
 
 Follow these [instructions](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server#how-to-run-the-server) on how to set up your SAP S/4HANA and SAP SuccessFactors mock server and deploy it on the SAP Business Technology Platform (SAP BTP), Cloud Foundry environment. 
 
-**Please checkout the branch [`mock-server-update-data`](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server-update-data) for this tutorial instead of the branch [`mock-server`](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server) as it is described in the instructions.** The branch has the latest date data as opposed to the branch `mock-server`.
+**Please checkout the branch [mock-server-update-data](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server-update-data) for this tutorial instead of the branch [mock-server](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server) as it is described in the instructions.** The branch has the latest date data as opposed to the branch mock-server.
 
 ## Setup the destinations environment variable
 
@@ -44,26 +44,26 @@ Replace the URL placeholders for the `S4HANA` and `SFSF` destinations in the [`.
 
 Open the project in your IDE. For the remainder of this tutorial, we will assume you are using Visual Studio Code. Please adapt accordingly if you are using a different IDE.
 
-To open the project go to _File > Open..._ and select the folder you just cloned from GitHub.
+To open the project go to `File` > `Open...` and select the folder you just cloned from GitHub.
 
-Let's check that everything works and run the application locally. First, open the command line with _Terminal > New Terminal_. Then, install the dependencies:
+Let's check that everything works and run the application locally. First, open the command line with `Terminal` > `New Terminal`. Then, install the dependencies:
 
 ```sh
 npm install
 ```
 
-deploy a local database with these 3 steps: 
+Deploy a local database with these steps: 
 
 1. create a local database (we use SQLite)
 2. drops existing tables and views, and re-creates them according to [your CDS model](../db/data-model.cds)
 3. deploy CSV files with initial data
 
-SAP CAP provides a command to do the 3 steps at once. run:
+In your [`package.json`](../package.json), you have already installed `@sap/cds-dk` (SAP Cloud Application Programming Model (CAP)). SAP CAP provides a command to do the 3 steps at once. deploy a local database with the command:
 ```sh
 npm run cds-deploy
 ```
 
-Start the local database with [a custom logic](../src/team-calendar-service.ts):
+Start the local database with a [custom logic](../src/team-calendar-service.ts) that we defined for the table. SAP CAP also provides a command for this step. start the local database with the command:
 ```sh
 npm run cds-watch
 ```

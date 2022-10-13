@@ -5,14 +5,14 @@ In a real-world scenario, you would only deploy your changes, once they have bee
 
 Let's take a look at some configuration files:
 
-- [.pipeline/config.yml](../.pipeline/config.yml): Configure the steps of your pipeline.
-- [.github/workflows/build.yml](../.github/workflows/build.yml): Arrange steps for your pipeline.
+- [`.pipeline/config.yml`](../.pipeline/config.yml): Configure the steps of your pipeline.
+- [`.github/workflows/build.yml`](../.github/workflows/build.yml): Arrange steps for your pipeline.
 
 In a production environment, you will probably rather use a Jenkins server as of today. For this, you would load the pipeline through a Jenkins file and would not need to arrange your steps in the `build.yml`.
 
 ## Adjust pipeline configuration
 
-Go to the [.pipeline/config.yml](../.pipeline/config.yml) file and adjust it to your project. Set the org and space for the `cloudFoundryDeploy` step as you have done before when logging in to Cloud Foundry (if you don't remember, run `cf target` on the command line to get a summary).
+Go to the [`.pipeline/config.yml`](../.pipeline/config.yml) file and adjust it to your project. Set the org and space for the `cloudFoundryDeploy` step as you have done before when logging in to Cloud Foundry (if you don't remember, run `cf target` on the command line to get a summary).
 
 ## Set credentials for deployment
 
@@ -20,7 +20,7 @@ Take a look at the `build.yml` file. The `Deploy` step will deploy your applicat
 To set your credentials in Github go to `Settings` and then `Secrets`:
 ![Github Secrets](images/github-secrets.png)
 
-Create two new secrets _CF_USER_ with your user name and _CF_PASSWORD_ with your password. Note that even though your credentials are visible while you are entering them, later on they will be hidden.
+Create two new secrets `CF_USER` with your user name and `CF_PASSWORD` with your password. Note that even though your credentials are visible while you are entering them, later on, they will be hidden.
 
 ## Publish your changes
 

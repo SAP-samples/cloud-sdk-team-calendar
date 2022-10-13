@@ -4,7 +4,7 @@ Now, that you made some progress locally, let's make this application available 
 
 ## Login to Cloud Foundry
 
-You need to login to Cloud Foundry in SAP Business Technology Platform using the cf CLI.First, you need to set an API endpoint. The exact URL of this API endpoint depends on the region your _subaccount_ is in. Open the [SAP Business Technology Platform Cockpit](https://account.hana.ondemand.com/) and navigate to the subaccount you are planning to deploy your application. Click on _Overview_ on the left and you can see the URL of the API endpoint.
+You need to login to Cloud Foundry in SAP Business Technology Platform using the cf CLI. First, you need to set an API endpoint. The exact URL of this API endpoint depends on the region your `subaccount` is in. Open the [SAP Business Technology Platform Cockpit](https://account.hana.ondemand.com/) and navigate to the subaccount you are planning to deploy your application. Click on `Overview` on the left and you can see the URL of the API endpoint.
 
 ![SAP BTP Cockpit Overview](https://sap.github.io/cloud-sdk/img/subaccount_api_endpoint.png)
 
@@ -61,7 +61,7 @@ As this will take a moment, proceed to the next step in the meantime.
 
 ## Configure Destinations on SAP BTP
 
-Login to the [SAP BTP cockpit](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trialhome) and find your subaccount. Check the _Connectivity_ tab on the left. Here you will find your configuration for connectivity services: **destinations** and **cloud connectors**.
+Login to the [SAP BTP cockpit](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trialhome) and find your subaccount. Check the `Connectivity` tab on the left. Here you will find your configuration for connectivity services: **destinations** and **cloud connectors**.
 You will need to [configure a cloud connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e6c7616abb5710148cfcf3e75d96d596.html) when you want to connect to an on-premise system. 
 
 As we will retrieve data from SAP S/4HANA and SAP SuccessFactors, we have to configure those systems as destinations.
@@ -87,14 +87,14 @@ SAP SuccessFactors destination:
 > Authentication: SFSF_AUTHENTICATION_TYPE
 > ```
 
-Please refer [.env](../.env) file if you don't remember the `URL` and `Authentication` as you defined them in [exercise 1](01-getting-started.md#setup-the-destinations-environment-variable).
+Please refer [`.env`](../.env) file if you don't remember the `URL` and `Authentication` as you defined them in [exercise 1](01-getting-started.md#setup-the-destinations-environment-variable).
 
 This is what the configured destinations should look like in the SAP BTP cockpit:
 ![SCP Destinations](images/scp-destinations.png)
 
 ## Find your application running on SAP BTP
 
-In the SAP BTP cockpit, go to the _Spaces_ tab on the left and select the space that you logged into on the command line before. Select your application _team-calendar_ and click on the application route to see the application running.
+In the SAP BTP cockpit, go to the `Spaces` tab on the left and select the space that you logged into on the command line before. Select your application `team-calendar` and click on the application route to see the application running.
 
 ![SCP Application](images/scp-application.png)
 
