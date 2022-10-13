@@ -13,7 +13,7 @@ import {
 
 export async function readAppointments(
   year: number,
-  srv,
+  srv: any,
   readS4AppointmentsByPersonFn = readS4AppointmentsByPerson,
   readSfsfAppointmentsByPersonFn = readSfsfAppointmentsByPerson
 ): Promise<[{ year: number; appointments: Appointment[] }]> {
@@ -68,7 +68,7 @@ export async function readSfsfAppointmentsByPerson(
   return [];
 }
 
-export async function readLocalAppointments(srv): Promise<Appointment[]> {
+export async function readLocalAppointments(srv: any): Promise<Appointment[]> {
   return srv
     .read('Appointment')
     .then((appointments: Appointment[]) =>
