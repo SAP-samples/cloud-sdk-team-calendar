@@ -55,19 +55,17 @@ module.exports = {
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
-        // "ecmaVersion": "latest",
         project: {
             extends: 'tsconfig.json',
             include: [
-                '**/*.ts',
-                '**/*.js'
+                '**/*.ts'
             ],
             exclude: [
-                '**/node_modules/**/*',
-                'src/generated/**/*',
+                '**/dist/**/*',
+                '**/node_modules/**/*'
             ]
         },
-        'sourceType': 'module',
+        'sourceType': 'module'
     },
     ignorePatterns: [
         'dist',
