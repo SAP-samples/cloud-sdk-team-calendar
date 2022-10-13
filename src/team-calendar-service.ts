@@ -1,8 +1,9 @@
+/* eslint-disable spaced-comment */
+/* eslint-disable import/order */
 import { Appointment } from './model/appointment';
 import { readAppointments } from './read-appointments';
 import { splitAppointmentIntoDays } from './util/time-util';
 import { buildTimeSheetEntry, writeTimeSheetEntry } from './write-appointments';
-
 //useful for the backend unit test
 import cds from '@sap/cds';
 const { SELECT } = cds.ql;
@@ -53,9 +54,7 @@ export function serviceHandler(srv) {
         .map((day) => buildTimeSheetEntry(appointment, person, day))
         .map(writeTimeSheetEntry)
     )
-      .then(() => {
-        return appointment;
-      })
+      .then(() => appointment)
       .catch((error) => {
         throw Error(`Failed to create appointment! ${error.message}`);
       });

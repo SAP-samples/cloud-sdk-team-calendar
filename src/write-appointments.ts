@@ -1,3 +1,5 @@
+/* eslint-disable unused-imports/no-unused-imports-ts */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { BigNumber } from 'bignumber.js';
 import { Moment } from 'moment';
 import { TimeSheetEntry, workforceTimesheetService } from './generated/workforce-timesheet-service';
