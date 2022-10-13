@@ -1,15 +1,15 @@
-import { Time } from "@sap-cloud-sdk/odata-v2";
-import moment, { Moment } from "moment";
-import { Appointment } from "../model/appointment";
+import { Time } from '@sap-cloud-sdk/odata-v2';
+import moment, { Moment } from 'moment';
+import { Appointment } from '../model/appointment';
 
 export function timeToString(time: Time): string | null {
   return time
-    ? `${time.hours.toString().padStart(2, "0")}:${time.minutes.toString().padStart(2, "0")}:${time.seconds.toString().padStart(2, "0")}`
+    ? `${time.hours.toString().padStart(2, '0')}:${time.minutes.toString().padStart(2, '0')}:${time.seconds.toString().padStart(2, '0')}`
     : null;
 }
 
 export function dateToString(date: Moment): string | null {
-  return date ? date.format("YYYY-MM-DD") : null;
+  return date ? date.format('YYYY-MM-DD') : null;
 }
 
 export function splitAppointmentIntoDays(appointment: Appointment): moment.Moment[] {
@@ -23,7 +23,7 @@ export function splitAppointmentIntoDays(appointment: Appointment): moment.Momen
 function enumerateDays(start: Moment, end: Moment): Moment[] {
   const dates = [];
   for (let i = 0; i <= numberOfDays(start, end); i++) {
-    dates.push(start.clone().add(i, "d"));
+    dates.push(start.clone().add(i, 'd'));
   }
 
   return dates;

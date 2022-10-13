@@ -1,5 +1,5 @@
-import { expect } from "chai";
-import { readAppointments } from "../../src/read-appointments";
+import { expect } from 'chai';
+import { readAppointments } from '../../src/read-appointments';
 import {
   calendarYear,
   localAppointment,
@@ -8,10 +8,10 @@ import {
   mockSrv,
   s4Appointment,
   sfsfAppointment
-} from "../test-util/mock-data";
+} from '../test-util/mock-data';
 
-describe("readAppointments", () => {
-  it("gets appointments by person", done => {
+describe('readAppointments', () => {
+  it('gets appointments by person', done => {
     const expected = [
       {
         year: calendarYear,

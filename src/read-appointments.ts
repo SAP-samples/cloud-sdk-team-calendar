@@ -1,6 +1,6 @@
-import { TimeSheetEntry, workforceTimesheetService } from './generated/workforce-timesheet-service';
 import moment from 'moment';
-import { EmployeeTime, ecTimeOffService } from './generated/ec-time-off-service';
+import { TimeSheetEntry } from './generated/workforce-timesheet-service';
+import { EmployeeTime } from './generated/ec-time-off-service';
 import { Appointment } from './model/appointment';
 import { Person } from './model/person';
 import { readPersons } from './read-persons';
@@ -78,8 +78,7 @@ function readRemoteAppointments<T>(
   readFn: (person: Person, year: number) => Promise<T[]>,
   transformFn: (appointment: T, person: Person, year: number) => Appointment
 ): (persons: Person[], year: number) => Promise<Appointment[]> {
-  return (persons: Person[], year: number) => {
-    return Promise.all(
+  return (persons: Person[], year: number) => Promise.all(
       persons.map((person) =>
         readFn(person, year).then((appointments: T[]) =>
           appointments.map((appointment) =>
@@ -96,5 +95,4 @@ function readRemoteAppointments<T>(
         []
       )
     );
-  };
 }

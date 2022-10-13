@@ -8,7 +8,7 @@ export interface Appointment {
   project?: string;
   start_date: string;
   start_time: string | null;
-  status: "LOCAL" | "APPROVED";
+  status: 'LOCAL' | 'APPROVED';
   title: string | null;
   type: string | null;
 }

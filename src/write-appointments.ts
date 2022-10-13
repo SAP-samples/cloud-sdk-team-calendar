@@ -1,6 +1,6 @@
-import { TimeSheetEntry, workforceTimesheetService } from './generated/workforce-timesheet-service';
 import { BigNumber } from 'bignumber.js';
 import { Moment } from 'moment';
+import { TimeSheetEntry } from './generated/workforce-timesheet-service';
 import { Appointment } from './model/appointment';
 import { Person } from './model/person';
 import { S4AppointmentStatus } from './model/s4-appointment-status';

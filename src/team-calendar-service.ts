@@ -1,10 +1,10 @@
+import cds from '@sap/cds';
 import { Appointment } from './model/appointment';
 import { readAppointments } from './read-appointments';
 import { splitAppointmentIntoDays } from './util/time-util';
 import { buildTimeSheetEntry, writeTimeSheetEntry } from './write-appointments';
 
-//useful for the backend unit test
-import cds from '@sap/cds';
+// useful for the backend unit test
 const { SELECT } = cds.ql;
 
 export function serviceHandler(srv) {
@@ -30,7 +30,7 @@ export function serviceHandler(srv) {
   });
 
   srv.after('UPDATE', 'Appointment', async (payload: Appointment, req) => {
-    //the transaction joins the previous read request
+    // the transaction joins the previous read request
     console.log(JSON.stringify(payload, null, 2));
     const tx = srv.transaction(req);
     const [appointment] = await tx.run(
@@ -53,9 +53,7 @@ export function serviceHandler(srv) {
         .map((day) => buildTimeSheetEntry(appointment, person, day))
         .map(writeTimeSheetEntry)
     )
-      .then(() => {
-        return appointment;
-      })
+      .then(() => appointment)
       .catch((error) => {
         throw Error(`Failed to create appointment! ${error.message}`);
       });

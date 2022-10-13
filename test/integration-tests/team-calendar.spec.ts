@@ -1,12 +1,12 @@
-import axios from "axios";
-import chai, { expect } from "chai";
-import chaiHttp from "chai-http";
-import { Server } from "http";
-import app from "../../src/application";
+import { Server } from 'http';
+import axios from 'axios';
+import chai, { expect } from 'chai';
+import chaiHttp from 'chai-http';
+import app from '../../src/application';
 
 chai.use(chaiHttp);
 
-describe("GET /odata/v2/TeamCalendar", function () {
+describe('GET /odata/v2/TeamCalendar', function () {
   this.timeout(4000);
 
   let server: Server;
@@ -20,9 +20,9 @@ describe("GET /odata/v2/TeamCalendar", function () {
     server.close();
   });
 
-  it("returns all appointments for a given year", done => {
+  it('returns all appointments for a given year', done => {
     axios
-      .get("http://localhost:8080/odata/v2/TimesheetService/TeamCalendar(2020)")
+      .get('http://localhost:8080/odata/v2/TimesheetService/TeamCalendar(2020)')
       .then(resp => {
         expect(resp.data.year).to.equal(2020);
         done();

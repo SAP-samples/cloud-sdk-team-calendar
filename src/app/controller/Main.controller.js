@@ -23,13 +23,11 @@ sap.ui.define(
     setBusy,
     timeSheetService
   ) {
-    'use strict';
-
     return Controller.extend('com.sap.team-calendar.controller.Main', {
-      formatter: formatter,
+      formatter,
 
-      onInit: function () {
-        var that = this;
+      onInit () {
+        const that = this;
         setBusy(
           this.getView(),
           this.initModels().then(function () {
@@ -38,8 +36,8 @@ sap.ui.define(
         );
       },
 
-      initModels: function () {
-        var model = new JSONModel({
+      initModels () {
+        const model = new JSONModel({
           startDate: new Date(),
           people: []
         });
@@ -54,8 +52,8 @@ sap.ui.define(
         );
       },
 
-      initPersons: function (model) {
-        var imageMapping = {
+      initPersons (model) {
+        const imageMapping = {
           1: '/images/rubenjohnson.jpg',
           2: '/images/janemiller.jpg',
           3: '/images/peterparker.jpg',
@@ -63,8 +61,8 @@ sap.ui.define(
         };
 
         return timeSheetService.getPersons().then(function (persons) {
-          var modelData = persons.map(function (person) {
-            var personData = {
+          const modelData = persons.map(function (person) {
+            const personData = {
               pic: imageMapping[person.ID],
               userid: person.ID,
               role: person.role,
@@ -94,9 +92,9 @@ sap.ui.define(
         });
       },
 
-      initAppointments: function (model) {
+      initAppointments (model) {
         return timeSheetService.getAppointments().then(function (appointments) {
-          var modelData = appointments.reduce(function (
+          const modelData = appointments.reduce(function (
             groupedAppointments,
             appointment
           ) {
@@ -127,14 +125,14 @@ sap.ui.define(
         });
       },
 
-      setAppointmentsToApprove: function () {
-        var oCurModel = this.getView().getModel();
-        var dataByPerson = oCurModel.getData().people;
-        var aAppointmentsToApprove = [];
+      setAppointmentsToApprove () {
+        const oCurModel = this.getView().getModel();
+        const dataByPerson = oCurModel.getData().people;
+        const aAppointmentsToApprove = [];
         if (Object.keys(dataByPerson)) {
           Object.keys(dataByPerson).forEach(function (userid) {
-            var sPersonName = dataByPerson[userid].name;
-            var appointmentsToApprove = Object.values(
+            const sPersonName = dataByPerson[userid].name;
+            const appointmentsToApprove = Object.values(
               dataByPerson[userid].appointments
             ).filter(function (el) {
               return el.tentative;
@@ -151,24 +149,24 @@ sap.ui.define(
         oCurModel.setProperty('/appointmentsToApprove', aAppointmentsToApprove);
       },
 
-      handleAppointmentSelect: function (oEvent) {
-        var oAppointment = oEvent.getParameter('appointment');
+      handleAppointmentSelect (oEvent) {
+        const oAppointment = oEvent.getParameter('appointment');
 
         if (oAppointment) {
           this._handleSingleAppointment(oAppointment);
         }
       },
 
-      handleOkButton: function () {
-        var that = this;
-        var oFrag = sap.ui.core.Fragment;
-        var oStartValue = oFrag
+      handleOkButton () {
+        const that = this;
+        const oFrag = sap.ui.core.Fragment;
+        const oStartValue = oFrag
           .byId('myPopoverFrag', 'startDate')
           .getDateValue();
-        var oEndValue = oFrag.byId('myPopoverFrag', 'endDate').getDateValue();
-        var sInfoValue = oFrag.byId('myPopoverFrag', 'moreInfo').getText();
-        var sAppointmentPath = this._oDetailsPopover.getBindingContext().sPath;
-        var appointmentid = sAppointmentPath.split('/').pop();
+        const oEndValue = oFrag.byId('myPopoverFrag', 'endDate').getDateValue();
+        const sInfoValue = oFrag.byId('myPopoverFrag', 'moreInfo').getText();
+        const sAppointmentPath = this._oDetailsPopover.getBindingContext().sPath;
+        const appointmentid = sAppointmentPath.split('/').pop();
 
         setBusy(
           this.getView(),
@@ -193,15 +191,15 @@ sap.ui.define(
         );
       },
 
-      handleOKButton: function () {
+      handleOKButton () {
         this._oDetailsPopover.close();
       },
 
-      handleAppointmentCreate: function () {
-        var oFrag = sap.ui.core.Fragment,
-          oDateTimePickerStart,
-          oDateTimePickerEnd,
-          oBeginButton;
+      handleAppointmentCreate () {
+        const oFrag = sap.ui.core.Fragment;
+          let oDateTimePickerStart;
+          let oDateTimePickerEnd;
+          let oBeginButton;
 
         this._createDialog();
 
@@ -226,19 +224,19 @@ sap.ui.define(
         this.oNewAppointmentDialog.open();
       },
 
-      handleAppointmentAddWithContext: function (oEvent) {
-        var oFrag = sap.ui.core.Fragment,
-          currentRow,
-          sPersonName,
-          oSelect,
-          oSelectedItem,
-          oSelectedIntervalStart,
-          oStartDate,
-          oSelectedIntervalEnd,
-          oEndDate,
-          oDateTimePickerStart,
-          oDateTimePickerEnd,
-          oBeginButton;
+      handleAppointmentAddWithContext (oEvent) {
+        const oFrag = sap.ui.core.Fragment;
+          let currentRow;
+          let sPersonName;
+          let oSelect;
+          let oSelectedItem;
+          let oSelectedIntervalStart;
+          let oStartDate;
+          let oSelectedIntervalEnd;
+          let oEndDate;
+          let oDateTimePickerStart;
+          let oDateTimePickerEnd;
+          let oBeginButton;
 
         this._createDialog();
 
@@ -273,7 +271,7 @@ sap.ui.define(
         this.oNewAppointmentDialog.open();
       },
 
-      _validateDateTimePicker: function (sValue, oDateTimePicker) {
+      _validateDateTimePicker (sValue, oDateTimePicker) {
         if (sValue === '') {
           oDateTimePicker.setValueState('Error');
         } else {
@@ -281,12 +279,12 @@ sap.ui.define(
         }
       },
 
-      updateButtonEnabledState: function (
+      updateButtonEnabledState (
         oDateTimePickerStart,
         oDateTimePickerEnd,
         oButton
       ) {
-        var bEnabled =
+        const bEnabled =
           oDateTimePickerStart.getValueState() !== 'Error' &&
           oDateTimePickerStart.getValue() !== '' &&
           oDateTimePickerEnd.getValue() !== '' &&
@@ -295,11 +293,11 @@ sap.ui.define(
         oButton.setEnabled(bEnabled);
       },
 
-      handleDetailsChange: function (oEvent) {
-        var oFrag = sap.ui.core.Fragment,
-          oDTPStart = oFrag.byId('myPopoverFrag', 'startDate'),
-          oDTPEnd = oFrag.byId('myPopoverFrag', 'endDate'),
-          oOKButton = oFrag.byId('myPopoverFrag', 'OKButton');
+      handleDetailsChange (oEvent) {
+        const oFrag = sap.ui.core.Fragment;
+          const oDTPStart = oFrag.byId('myPopoverFrag', 'startDate');
+          const oDTPEnd = oFrag.byId('myPopoverFrag', 'endDate');
+          const oOKButton = oFrag.byId('myPopoverFrag', 'OKButton');
 
         this._validateDateTimePicker(
           oEvent.getParameter('value'),
@@ -308,11 +306,11 @@ sap.ui.define(
         this.updateButtonEnabledState(oDTPStart, oDTPEnd, oOKButton);
       },
 
-      handleCreateChange: function (oEvent) {
-        var oFrag = sap.ui.core.Fragment,
-          oDateTimePickerStart = oFrag.byId('myFrag', 'startDate'),
-          oDateTimePickerEnd = oFrag.byId('myFrag', 'endDate'),
-          oBeginButton = this.oNewAppointmentDialog.getBeginButton();
+      handleCreateChange (oEvent) {
+        const oFrag = sap.ui.core.Fragment;
+          const oDateTimePickerStart = oFrag.byId('myFrag', 'startDate');
+          const oDateTimePickerEnd = oFrag.byId('myFrag', 'endDate');
+          const oBeginButton = this.oNewAppointmentDialog.getBeginButton();
 
         this._validateDateTimePicker(
           oEvent.getParameter('value'),
@@ -326,18 +324,18 @@ sap.ui.define(
         );
       },
 
-      _createDialog: function () {
-        var oFrag = sap.ui.core.Fragment,
-          that = this,
-          oStartDate,
-          oEndDate,
-          sTitle,
-          sPersonID,
-          sInfoResponse,
-          oNewAppointment,
-          oModel,
-          sPath,
-          oPersonAppointments;
+      _createDialog () {
+        const oFrag = sap.ui.core.Fragment;
+          const that = this;
+          let oStartDate;
+          let oEndDate;
+          let sTitle;
+          let sPersonID;
+          let sInfoResponse;
+          let oNewAppointment;
+          let oModel;
+          let sPath;
+          let oPersonAppointments;
 
         if (!that.oNewAppointmentDialog) {
           that.oNewAppointmentDialog = new Dialog({
@@ -352,7 +350,7 @@ sap.ui.define(
             beginButton: new Button({
               text: 'Create',
               enabled: false,
-              press: function () {
+              press () {
                 oStartDate = oFrag.byId('myFrag', 'startDate').getDateValue();
                 oEndDate = oFrag.byId('myFrag', 'endDate').getDateValue();
                 oEndDate.setHours(23);
@@ -401,7 +399,7 @@ sap.ui.define(
             }),
             endButton: new Button({
               text: 'Close',
-              press: function () {
+              press () {
                 that.oNewAppointmentDialog.close();
               }
             })
@@ -412,12 +410,12 @@ sap.ui.define(
         }
       },
 
-      _handleSingleAppointment: function (oAppointment) {
-        var oFrag = sap.ui.core.Fragment,
-          oAppBC,
-          oDateTimePickerStart,
-          oDateTimePickerEnd,
-          oInfoInput;
+      _handleSingleAppointment (oAppointment) {
+        const oFrag = sap.ui.core.Fragment;
+          let oAppBC;
+          let oDateTimePickerStart;
+          let oDateTimePickerEnd;
+          let oInfoInput;
 
         if (!this._oDetailsPopover) {
           this._oDetailsPopover = sap.ui.xmlfragment(
@@ -447,30 +445,30 @@ sap.ui.define(
         this._oDetailsPopover.openBy(oAppointment);
       },
 
-      handleAppointmentDragEnter: function (oEvent) {
+      handleAppointmentDragEnter (oEvent) {
         // if (this.isAppointmentOverlap(oEvent, oEvent.getParameter("calendarRow"))) {
         // 	oEvent.preventDefault();
         // }
       },
 
-      handleAppointmentDrop: function (oEvent) {
-        var that = this;
-        var oAppointment = oEvent.getParameter('appointment');
-        var oStartDate = oEvent.getParameter('startDate');
-        var oEndDate = oEvent.getParameter('endDate');
-        var oCalendarRow = oEvent.getParameter('calendarRow');
-        var bCopy = oEvent.getParameter('copy');
-        var oModel = this.getView().getModel();
-        var oAppBindingContext = oAppointment.getBindingContext();
-        var oRowBindingContext = oCalendarRow.getBindingContext();
-        var person = oRowBindingContext.getObject();
-        var appointment = oAppBindingContext.getObject();
-        var aPath = oAppBindingContext.getPath().split('/');
-        var sRowAppointmentsPath = aPath.join('/');
+      handleAppointmentDrop (oEvent) {
+        const that = this;
+        const oAppointment = oEvent.getParameter('appointment');
+        const oStartDate = oEvent.getParameter('startDate');
+        const oEndDate = oEvent.getParameter('endDate');
+        const oCalendarRow = oEvent.getParameter('calendarRow');
+        const bCopy = oEvent.getParameter('copy');
+        const oModel = this.getView().getModel();
+        const oAppBindingContext = oAppointment.getBindingContext();
+        const oRowBindingContext = oCalendarRow.getBindingContext();
+        const person = oRowBindingContext.getObject();
+        const appointment = oAppBindingContext.getObject();
+        const aPath = oAppBindingContext.getPath().split('/');
+        const sRowAppointmentsPath = aPath.join('/');
 
         // "copy" appointment
         if (bCopy) {
-          var oProps = jQuery.extend({}, appointment);
+          const oProps = jQuery.extend({}, appointment);
           oProps.start = oStartDate;
           oProps.end = oEndDate;
 
@@ -517,14 +515,14 @@ sap.ui.define(
         oModel.refresh(true);
       },
 
-      handleAppointmentResize: function (oEvent) {
-        var oAppointment = oEvent.getParameter('appointment'),
-          oStartDate = oEvent.getParameter('startDate'),
-          oEndDate = oEvent.getParameter('endDate');
+      handleAppointmentResize (oEvent) {
+        const oAppointment = oEvent.getParameter('appointment');
+          const oStartDate = oEvent.getParameter('startDate');
+          const oEndDate = oEvent.getParameter('endDate');
 
         oAppointment.setStartDate(oStartDate).setEndDate(oEndDate);
 
-        var bc = oAppointment.getBindingContext();
+        const bc = oAppointment.getBindingContext();
 
         setBusy(
           this.getView(),
@@ -535,10 +533,10 @@ sap.ui.define(
         );
       },
 
-      onApproveHours: function (oEvent) {
-        var that = this;
-        var bc = oEvent.getSource().getBindingContext();
-        var appointment = bc.getObject();
+      onApproveHours (oEvent) {
+        const that = this;
+        const bc = oEvent.getSource().getBindingContext();
+        const appointment = bc.getObject();
 
         this.getView()
           .getModel()
