@@ -6,10 +6,10 @@ You will create a new **private** repository based on this repository and run th
 
 ## Create a new repository based on this template
 
-Click `Use this template` on the top of the GitHub page.
+Click **Use this template** on the top of the GitHub page.
 ![Use Template](images/use-template.png)
 
-Fill in the name of your new repository (e. g. _cloud-sdk-team-calendar_) and make sure to create a **private** repository. Click on `Create repository`.
+Fill in the name of your new repository (e. g. _cloud-sdk-team-calendar_) and make sure to create a **private** repository. Click on **Create repository**.
 ![Create New](images/create-new.png)
 
 > ### Why private?
@@ -44,9 +44,9 @@ Replace the URL placeholders for the `S4HANA` and `SFSF` destinations in the [`.
 
 Open the project in your IDE. For the remainder of this tutorial, we will assume you are using Visual Studio Code. Please adapt accordingly if you are using a different IDE.
 
-To open the project go to `File` > `Open...` and select the folder you just cloned from GitHub.
+To open the project go to **File** > **Open...** and select the folder you just cloned from GitHub.
 
-Let's check that everything works and run the application locally. First, open the command line with `Terminal` > `New Terminal`. Then, install the dependencies:
+Let's check that everything works and run the application locally. First, open the command line with **Terminal** > **New Terminal**. Then, install the dependencies:
 
 ```sh
 npm install
@@ -58,12 +58,12 @@ Deploy a local database with these steps:
 2. drops existing tables and views, and re-creates them according to [your CDS model](../db/data-model.cds)
 3. deploy CSV files with initial data
 
-In your [`package.json`](../package.json), you have already installed `@sap/cds-dk` (SAP Cloud Application Programming Model (CAP)). SAP CAP provides a command to do the 3 steps at once. deploy a local database with the command:
+In your [`package.json`](../package.json), you have already installed `@sap/cds-dk` (SAP Cloud Application Programming Model). The application programming model provides a command to do the 3 steps at once. deploy a local database with the command:
 ```sh
 npm run cds-deploy
 ```
 
-Start the local database with a [custom logic](../src/team-calendar-service.ts) that we defined for the table. SAP CAP also provides a command for this step. start the local database with the command:
+Start the local database with a [custom logic](../src/team-calendar-service.ts) that we defined for the table. The application programming model also provides a command for this step. start the local database with the command:
 ```sh
 npm run cds-watch
 ```
