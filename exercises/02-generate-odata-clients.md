@@ -37,6 +37,6 @@ To find out more about the options run:
 npx generate-odata-client -h
 ```
 
-The options are described in [our documentation](https://sap.github.io/cloud-sdk/docs/js/features/odata/generate-odata-client#options) as well.
+The options are described in [the documentation](https://sap.github.io/cloud-sdk/docs/js/features/odata/generate-odata-client#options).
 
 ## Next step: [Create a read request to SAP S/4HANA](03-s4-read-request.md)
