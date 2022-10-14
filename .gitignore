@@ -13,6 +13,7 @@ srv/external/
 *.db
 *.sqlite
 db/src/gen
+scripts/*.js
 
 # added by cds deploy
 default-env.json
