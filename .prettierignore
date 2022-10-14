@@ -1,0 +1,6 @@
+.nyc_output/
+dist/
+node_modules/
+deployment
+src/app
+src/generated
