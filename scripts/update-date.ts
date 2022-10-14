@@ -17,8 +17,8 @@ async function updateDateLatest(dateFormat, path) {
 }
 
 Promise.all([
-  updateDateLatest('YYYY-MM', appointmentFilePath).then(
-    () => updateDateLatest('YYYY', appointmentFilePath)
+  updateDateLatest('YYYY-MM', appointmentFilePath).then(() =>
+    updateDateLatest('YYYY', appointmentFilePath)
   ),
-  updateDateLatest('YYYY', teamCalendarFilePath),
+  updateDateLatest('YYYY', teamCalendarFilePath)
 ]);

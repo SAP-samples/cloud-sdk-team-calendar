@@ -1,7 +1,7 @@
 /* eslint-disable unused-imports/no-unused-imports-ts */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { BigNumber } from 'bignumber.js';
-import { Moment } from 'moment';
+import moment from 'moment';
 import {
   TimeSheetEntry,
   workforceTimesheetService
@@ -20,7 +20,7 @@ export async function writeTimeSheetEntry(
 export function buildTimeSheetEntry(
   appointment: Appointment,
   person: Person,
-  day: Moment
+  day: moment.Moment
 ): TimeSheetEntry {
   const timeSheetDataFields = {
     activityType: 'T001',
