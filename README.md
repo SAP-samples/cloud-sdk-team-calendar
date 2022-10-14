@@ -25,7 +25,7 @@ You will learn how to:
 - [Install git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
   - When working on Windows, make sure you have the Git Bash installed and configured to be used with npm
     ```
-    npm set config script-shell <P:\ath\to\your\bash.exe>
+    npm set config script-shell <Path\to\your\bash.exe>
     ```
 - [Install Visual Studio Code](https://code.visualstudio.com/download) or your favorite IDE for TypeScript
 - [Install the Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html)
