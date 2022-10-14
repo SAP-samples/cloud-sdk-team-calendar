@@ -31,7 +31,7 @@ export function serviceHandler(srv: any): void {
   });
 
   srv.after('UPDATE', 'Appointment', async (payload: Appointment, req) => {
-    //the transaction joins the previous read request
+    // the transaction joins the previous read request
     console.log(JSON.stringify(payload, null, 2));
     const tx = srv.transaction(req);
     const [appointment] = await tx.run(
