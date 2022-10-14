@@ -13,6 +13,6 @@ async function updateDateLatest(target, dateFormat, path) {
     await promises.writeFile(filePath, updatedFileContent, 'utf8');
 }
 
-updateDateLatest('2000-10', 'YYYY-MM', appointmentFilePath);
-updateDateLatest('2000', 'YYYY', appointmentFilePath);
-updateDateLatest('2000', 'YYYY', teamCalendarFilePath);
+updateDateLatest('2022-10', 'YYYY-MM', appointmentFilePath);
+updateDateLatest('2022', 'YYYY', appointmentFilePath);
+updateDateLatest('2022', 'YYYY', teamCalendarFilePath);
