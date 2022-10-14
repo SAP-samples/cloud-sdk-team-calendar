@@ -4,7 +4,7 @@ Now, that you made some progress locally, let's make this application available 
 
 ## Login to Cloud Foundry
 
-You need to login to Cloud Foundry in SAP Business Technology Platform using the Cloud Foundry CLI. First, you need to set an API endpoint. The exact URL of this API endpoint depends on the region your **subaccount** is in. Open the [SAP Business Technology Platform Cockpit](https://account.hana.ondemand.com/) and navigate to the subaccount you are planning to deploy your application. Click on `Overview` on the left and you can see the URL of the API endpoint.
+You need to log in to Cloud Foundry in SAP Business Technology Platform using the Cloud Foundry CLI. First, you need to set an API endpoint. The exact URL of this API endpoint depends on the region your **subaccount** is in. Open the [SAP Business Technology Platform Cockpit](https://account.hana.ondemand.com/) and navigate to the subaccount you are planning to deploy your application. Click on `Overview` on the left and you can see the URL of the API endpoint.
 
 ![SAP BTP Cockpit Overview](https://sap.github.io/cloud-sdk/img/subaccount_api_endpoint.png)
 
