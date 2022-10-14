@@ -9,7 +9,7 @@ import cds from '@sap/cds';
 const { SELECT } = cds.ql;
 
 export function serviceHandler(srv: any): void {
-  srv.on('READ', 'TeamCalendar', (req) => {
+  srv.on('READ', 'TeamCalendar', req => {
     // enfore presence of key (for now)
     const year: number = req.data.year;
 
@@ -21,8 +21,8 @@ export function serviceHandler(srv: any): void {
     }
 
     return readAppointments(year, srv)
-      .then((data) => req.reply(data))
-      .catch((error) => {
+      .then(data => req.reply(data))
+      .catch(error => {
         req.reject(
           500,
           'An error occured while trying to read appointments: ' + error.message
@@ -51,11 +51,11 @@ export function serviceHandler(srv: any): void {
     // split into multiple days and write in parallel
     return Promise.all(
       splitAppointmentIntoDays(appointment)
-        .map((day) => buildTimeSheetEntry(appointment, person, day))
+        .map(day => buildTimeSheetEntry(appointment, person, day))
         .map(writeTimeSheetEntry)
     )
       .then(() => appointment)
-      .catch((error) => {
+      .catch(error => {
         throw Error(`Failed to create appointment! ${error.message}`);
       });
   });

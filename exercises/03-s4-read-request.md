@@ -17,6 +17,7 @@ Execute this request against the destination with a `destinationName` - `S4HANA`
 Reload your application in the browser and check, whether there are new appointments.
 
 ![Local Read](images/local-read.png)
+
 > ### Where is the data coming from?
 >
 > Go back to the [`.env`](../.env) file. It is used to set the `destinations` environment variable, that provides technical information on remote systems we want to connect to (SAP S/4HANA and SAP SuccessFactors in our case).

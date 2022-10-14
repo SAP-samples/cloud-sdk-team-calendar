@@ -48,7 +48,8 @@ export const mockSrv = {
   read: (entity: string) => {
     if (entity === 'Person') {
       return Promise.resolve([person]);
-    } if (entity === 'Appointment') {
+    }
+    if (entity === 'Appointment') {
       return Promise.resolve([localAppointment]);
     }
     throw new Error(`No mock for ${entity}`);
@@ -57,7 +58,8 @@ export const mockSrv = {
 
 export const mockReadS4Appointments = () =>
   Promise.resolve([
-    workforceTimesheetService().timeSheetEntryApi.entityBuilder()
+    workforceTimesheetService()
+      .timeSheetEntryApi.entityBuilder()
       .timeSheetRecord('1')
       .timeSheetDate(moment(calendarYear + '-08-01'))
       .timeSheetDataFields({
@@ -85,7 +87,8 @@ export const s4Appointment = {
 
 export const mockReadSfsfAppointments = () =>
   Promise.resolve([
-    ecTimeOffService().employeeTimeApi.entityBuilder()
+    ecTimeOffService()
+      .employeeTimeApi.entityBuilder()
       .externalCode('code')
       .startDate(moment(calendarYear + '-08-01'))
       .startTime({ hours: 0, minutes: 0, seconds: 0 })

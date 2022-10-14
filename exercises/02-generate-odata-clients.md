@@ -9,26 +9,34 @@ Download the service specification file for [SAP S/4HANA Cloud Workforce Timeshe
 In this directory, you will also find the [service mapping file](../resources/service-mapping.json), which contains some extra configuration for the generated service(s), like the directory name and service path for the service.
 
 ## Run the generation
+
 To generate the OData clients, just run an npm script:
+
 ```sh
 npm run generate
 ```
+
 Once this is completed you should find some generated code, your OData clients, in the [`src/generated`](../src/generated/). We will use this code for OData requests to SAP S/4HANA and SAP SuccessFactors.
 
 ### Under the food: What does the script actually do?
+
 The script runs the following command:
+
 ```sh
 npx generate-odata-client -c generator-config.json
 ```
-In your [`package.json`](../package.json), you have already installed the `@sap/cloud-sdk-generator`. 
+
+In your [`package.json`](../package.json), you have already installed the `@sap/cloud-sdk-generator`.
 The command runs the generator with configuration option `-c` which points to [`generator-config.json`](../generator-config.json). We specify [input](../resources/service-specs/) and [output](../src/generated/) directories along with some other options for the generation in the file.
 
 The generator creates clients for all service definitions found in the input directory. The options given in the config are applied to each individual service.
 
 To find out more about the options run:
+
 ```sh
 npx generate-odata-client -h
 ```
+
 The options are described in [our documentation](https://sap.github.io/cloud-sdk/docs/js/features/odata/generate-odata-client#options) as well.
 
 ## Next step: [Create a read request to SAP S/4HANA](03-s4-read-request.md)

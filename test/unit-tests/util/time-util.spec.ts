@@ -1,7 +1,11 @@
 import chai, { expect } from 'chai';
 import sinonChai from 'sinon-chai';
 import moment = require('moment');
-import { dateToString, splitAppointmentIntoDays, timeToString } from '../../../src/util/time-util';
+import {
+  dateToString,
+  splitAppointmentIntoDays,
+  timeToString
+} from '../../../src/util/time-util';
 import { multiDayAppointment } from '../../test-util/mock-data';
 
 chai.use(sinonChai);

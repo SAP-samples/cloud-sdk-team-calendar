@@ -1,4 +1,5 @@
 # Automate deployment
+
 In a real-world scenario, you would only deploy your changes, once they have been tested for quality. You would execute the tests and checks as well as the deployment automatically. We will use GitHub Actions as a lightweight solution in this tutorial.
 
 ## Review the CI / CD configuration

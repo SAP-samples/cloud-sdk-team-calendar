@@ -14,10 +14,13 @@ export async function readS4AppointmentsByPerson(
   const to = moment.utc(`${year}-12-31`);
 
   const { timeSheetEntryApi } = workforceTimesheetService();
-  return timeSheetEntryApi.requestBuilder()
+  return timeSheetEntryApi
+    .requestBuilder()
     .getAll()
     .filter(
-      timeSheetEntryApi.schema.PERSON_WORK_AGREEMENT_EXTERNAL_ID.equals(personId),
+      timeSheetEntryApi.schema.PERSON_WORK_AGREEMENT_EXTERNAL_ID.equals(
+        personId
+      ),
       timeSheetEntryApi.schema.TIME_SHEET_DATE.greaterOrEqual(from),
       timeSheetEntryApi.schema.TIME_SHEET_DATE.lessOrEqual(to)
     )
@@ -52,7 +55,8 @@ export function buildTimeSheetEntry(
   const operation = 'C';
 
   const { timeSheetEntryApi } = workforceTimesheetService();
-  return timeSheetEntryApi.entityBuilder()
+  return timeSheetEntryApi
+    .entityBuilder()
     .personWorkAgreementExternalId(externalId)
     .timeSheetDataFields(timeSheetDataFields)
     .companyCode(companyCode)
@@ -74,7 +78,8 @@ export async function writeTimeSheetEntry(
   entry: TimeSheetEntry
 ): Promise<TimeSheetEntry> {
   const { timeSheetEntryApi } = workforceTimesheetService();
-  return timeSheetEntryApi.requestBuilder()
+  return timeSheetEntryApi
+    .requestBuilder()
     .create(entry)
     .execute({ destinationName: 'S4HANA' });
 }
@@ -97,7 +102,8 @@ export async function readSfsfAppointmentsByPerson(
   const to = moment.utc(`${year}-12-31`);
 
   const { employeeTimeApi } = ecTimeOffService();
-  return employeeTimeApi.requestBuilder()
+  return employeeTimeApi
+    .requestBuilder()
     .getAll()
     .select(
       employeeTimeApi.schema.EXTERNAL_CODE,

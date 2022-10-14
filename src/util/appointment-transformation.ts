@@ -5,7 +5,11 @@ import { Person } from '../model/person';
 import { S4AppointmentStatus } from '../model/s4-appointment-status';
 import { dateToString, timeToString } from './time-util';
 
-export function transformS4Appointment(timeSheetEntry: TimeSheetEntry, person: Person, year: number): Appointment {
+export function transformS4Appointment(
+  timeSheetEntry: TimeSheetEntry,
+  person: Person,
+  year: number
+): Appointment {
   return {
     ID: timeSheetEntry.timeSheetRecord,
     start_date: dateToString(timeSheetEntry.timeSheetDate),
@@ -15,14 +19,21 @@ export function transformS4Appointment(timeSheetEntry: TimeSheetEntry, person: P
     title: timeSheetEntry.timeSheetDataFields.timeSheetNote,
     project: timeSheetEntry.timeSheetDataFields.wbsElement,
     info: 'Retrieved from SAP S/4HANA',
-    status: timeSheetEntry.timeSheetStatus === S4AppointmentStatus.APPROVED ? 'APPROVED' : 'LOCAL',
+    status:
+      timeSheetEntry.timeSheetStatus === S4AppointmentStatus.APPROVED
+        ? 'APPROVED'
+        : 'LOCAL',
     person_ID: person.ID,
     calendar_year: year,
     type: 'Project'
   };
 }
 
-export function transformSfsfAppointment(eymployeeTime: EmployeeTime, person: Person, year: number): Appointment {
+export function transformSfsfAppointment(
+  eymployeeTime: EmployeeTime,
+  person: Person,
+  year: number
+): Appointment {
   return {
     ID: eymployeeTime.externalCode,
     start_date: dateToString(eymployeeTime.startDate),

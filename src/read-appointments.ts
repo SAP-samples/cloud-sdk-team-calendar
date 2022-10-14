@@ -1,8 +1,14 @@
 /* eslint-disable unused-imports/no-unused-imports-ts */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import moment from 'moment';
-import { TimeSheetEntry, workforceTimesheetService } from './generated/workforce-timesheet-service';
-import { EmployeeTime, ecTimeOffService } from './generated/ec-time-off-service';
+import {
+  TimeSheetEntry,
+  workforceTimesheetService
+} from './generated/workforce-timesheet-service';
+import {
+  EmployeeTime,
+  ecTimeOffService
+} from './generated/ec-time-off-service';
 import { Appointment } from './model/appointment';
 import { Person } from './model/person';
 import { readPersons } from './read-persons';
@@ -18,7 +24,7 @@ export async function readAppointments(
   readSfsfAppointmentsByPersonFn = readSfsfAppointmentsByPerson
 ): Promise<[{ year: number; appointments: Appointment[] }]> {
   return readPersons(srv)
-    .then((persons) =>
+    .then(persons =>
       Promise.all([
         readLocalAppointments(srv),
         readRemoteAppointments(
@@ -72,7 +78,7 @@ export async function readLocalAppointments(srv: any): Promise<Appointment[]> {
   return srv
     .read('Appointment')
     .then((appointments: Appointment[]) =>
-      appointments.filter((appointment) => appointment.status !== 'APPROVED')
+      appointments.filter(appointment => appointment.status !== 'APPROVED')
     );
 }
 
@@ -80,10 +86,11 @@ function readRemoteAppointments<T>(
   readFn: (person: Person, year: number) => Promise<T[]>,
   transformFn: (appointment: T, person: Person, year: number) => Appointment
 ): (persons: Person[], year: number) => Promise<Appointment[]> {
-  return (persons: Person[], year: number) => Promise.all(
-      persons.map((person) =>
+  return (persons: Person[], year: number) =>
+    Promise.all(
+      persons.map(person =>
         readFn(person, year).then((appointments: T[]) =>
-          appointments.map((appointment) =>
+          appointments.map(appointment =>
             transformFn(appointment, person, year)
           )
         )

@@ -19,7 +19,12 @@ describe('readAppointments', () => {
       }
     ];
 
-    readAppointments(calendarYear, mockSrv, mockReadS4Appointments, mockReadSfsfAppointments)
+    readAppointments(
+      calendarYear,
+      mockSrv,
+      mockReadS4Appointments,
+      mockReadSfsfAppointments
+    )
       .then(result => {
         expect(result).to.deep.equal(expected);
         done();

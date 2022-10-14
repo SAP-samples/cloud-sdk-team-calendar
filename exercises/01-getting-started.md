@@ -28,7 +28,7 @@ git clone https://github.com/YOUR_GITHUB_USERNAME/cloud-sdk-team-calendar.git
 
 > Note: If you have access to real SAP S/4HANA Cloud and SAP SuccessFactors Cloud systems, you may be able to skip this step.
 
-Follow these [instructions](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server#how-to-run-the-server) on how to set up your SAP S/4HANA and SAP SuccessFactors mock server and deploy it on the SAP Business Technology Platform (SAP BTP), Cloud Foundry environment. 
+Follow these [instructions](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server#how-to-run-the-server) on how to set up your SAP S/4HANA and SAP SuccessFactors mock server and deploy it on the SAP Business Technology Platform (SAP BTP), Cloud Foundry environment.
 
 **Please checkout the branch [mock-server-update-data](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server-update-data) for this tutorial instead of the branch [mock-server](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server) as it is described in the instructions.** The branch has the latest date data as opposed to the branch mock-server.
 
@@ -52,18 +52,20 @@ Let's check that everything works and run the application locally. First, open t
 npm install
 ```
 
-Deploy a local database with these steps: 
+Deploy a local database with these steps:
 
 1. create a local database with SQLite
 2. drop existing tables and views, and re-create them according to [your CDS model](../db/data-model.cds)
 3. deploy CSV files with initial data
 
 In your [`package.json`](../package.json), you have already installed `@sap/cds-dk` (SAP Cloud Application Programming Model). The application programming model provides a command to do the 3 steps at once. deploy a local database with the command:
+
 ```sh
 npm run cds-deploy
 ```
 
 Start the local database with a [custom logic](../src/team-calendar-service.ts) that we defined for the table. The application programming model also provides a command for this step. start the local database with the command:
+
 ```sh
 npm run cds-watch
 ```
