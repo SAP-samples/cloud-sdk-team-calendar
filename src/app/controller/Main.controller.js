@@ -1,15 +1,13 @@
 sap.ui.define([
   "sap/m/Button",
   "sap/m/Dialog",
-  "sap/m/Label",
-  "sap/m/Popover",
   "sap/ui/core/mvc/Controller",
   "sap/ui/model/json/JSONModel",
   "com/sap/timesheet/model/formatter",
   "com/sap/timesheet/util/converter",
   "com/sap/timesheet/util/setBusy",
   "com/sap/timesheet/service/time-sheet.service"
-], function (Button, Dialog, Label, Popover, Controller, JSONModel, formatter, converter, setBusy, timeSheetService) {
+], function (Button, Dialog, Controller, JSONModel, formatter, converter, setBusy, timeSheetService) {
   "use strict";
 
   return Controller.extend("com.sap.timesheet.controller.Main", {
