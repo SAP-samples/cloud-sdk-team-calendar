@@ -21,4 +21,4 @@ Promise.all([
     () => updateDateLatest('YYYY', appointmentFilePath)
   ),
   updateDateLatest('YYYY', teamCalendarFilePath),
-])
+]);

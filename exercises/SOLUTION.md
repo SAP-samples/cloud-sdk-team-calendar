@@ -42,7 +42,7 @@ export function buildTimeSheetEntry(
 ): TimeSheetEntry {
   const timeSheetDataFields = {
     activityType: 'T001',
-    wbsElement: 'Teched2019.1.1',
+    wbsElement: 'Teched',
     workItem: 'P002',
     recordedHours: new BigNumber(8),
     timeSheetNote: appointment.title
