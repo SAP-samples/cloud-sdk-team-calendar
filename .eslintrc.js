@@ -60,7 +60,7 @@ module.exports = {
   parserOptions: {
     project: {
       extends: 'tsconfig.json',
-      include: ['**/*.ts'],
+      include: ['**/*.ts', '**/*.js'],
       exclude: ['**/dist/**/*', '**/node_modules/**/*']
     },
     sourceType: 'module'
