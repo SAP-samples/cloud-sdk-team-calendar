@@ -4,8 +4,8 @@
   "description": "Team Calender app using the SAP Cloud SDK and CAP",
   "main": "src/index.ts",
   "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint . && npx prettier . -c",
+    "lint:fix": "eslint . --fix && npx prettier . -w",
     "clean": "rm -f package-lock.json && find . -name \"node_modules\" -exec rm -rf '{}' + && find db/src -name \"gen\" -exec rm -rf '{}' + && find . -name \"sqlite.db\" -exec rm -rf '{}' + && npm i",
     "init": "npm i && node initialize.js",
     "preinstall": "rm -rf node_modules/@sap/cds-services",
