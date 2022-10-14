@@ -38,7 +38,7 @@ Solution to [this exercise](04-s4-write-request.md#build-a-timesheetentry)
 export function buildTimeSheetEntry(
   appointment: Appointment,
   person: Person,
-  day: Moment
+  day: moment.Moment
 ): TimeSheetEntry {
   const timeSheetDataFields = {
     activityType: 'T001',
