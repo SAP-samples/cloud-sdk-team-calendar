@@ -44,7 +44,7 @@ Replace the URL placeholders for the `S4HANA` and `SFSF` destinations in the [`.
 
 Open the project in your IDE. For the remainder of this tutorial, we will assume you are using Visual Studio Code. Please adapt accordingly if you are using a different IDE.
 
-To open the project go to **File** > **Open...** and select the folder you just cloned from GitHub.
+To open the project, go to **File > Open Folder...** and select the folder you just cloned from GitHub.
 
 Let's check that everything works and run the application locally. First, open the command line with **Terminal** > **New Terminal**. Then, install the dependencies:
 
