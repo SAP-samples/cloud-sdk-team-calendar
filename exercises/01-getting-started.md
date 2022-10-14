@@ -30,7 +30,7 @@ git clone https://github.com/YOUR_GITHUB_USERNAME/cloud-sdk-team-calendar.git
 
 Follow these [instructions](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server#how-to-run-the-server) on how to set up your SAP S/4HANA and SAP SuccessFactors mock server and deploy it on the SAP Business Technology Platform (SAP BTP), Cloud Foundry environment.
 
-**Please checkout the branch [mock-server-update-data](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server-update-data) for this tutorial instead of the branch [mock-server](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server) as it is described in the instructions.** The branch has the latest date data as opposed to the branch mock-server.
+**Checkout the branch [mock-server-update-data](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server-update-data) for this tutorial instead of the branch [mock-server](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server) as it is described in the instructions.** The branch has the latest date data as opposed to the branch mock-server.
 
 ## Setup the destinations environment variable
 
