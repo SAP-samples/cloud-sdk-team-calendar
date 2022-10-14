@@ -13,10 +13,7 @@ module.exports = {
   parserOptions: {
     project: {
       extends: 'tsconfig.json',
-      include: [
-        '**/*.ts',
-        '**/*.js'
-      ],
+      include: ['**/*.ts', '**/*.js'],
       exclude: [
         '**/dist/**/*',
         '**/node_modules/**/*',
@@ -26,17 +23,8 @@ module.exports = {
     },
     sourceType: 'module'
   },
-  ignorePatterns: [
-    'dist',
-    'node_modules',
-    'deployment',
-    'resources'
-  ],
-  plugins: [
-    '@typescript-eslint',
-    'header',
-    'import',
-    'prettier'],
+  ignorePatterns: ['dist', 'node_modules', 'deployment', 'resources'],
+  plugins: ['@typescript-eslint', 'header', 'import', 'prettier'],
   rules: {
     'jsdoc/require-jsdoc': 'off',
     'no-console': 'off'
