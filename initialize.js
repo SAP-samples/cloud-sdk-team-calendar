@@ -4,7 +4,7 @@ const yaml = require('js-yaml');
 
 if (process.argv.length !== 3) {
   console.error(
-    'You have not provided a name to set. Usage: npm run init -- <YOUR-APPNAME>'
+    'You have not provided a name to set. Usage: npm run init -- YOUR_APPNAME'
   );
   process.exit(1);
 }
