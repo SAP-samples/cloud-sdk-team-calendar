@@ -1,7 +1,7 @@
 {
   "_version": "1.8.0",
   "sap.app": {
-    "id": "com.sap.team-calendar",
+    "id": "com.sap.timesheet",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -29,12 +29,15 @@
       "tablet": true,
       "phone": true
     },
-    "supportedThemes": ["sap_hcb", "sap_belize"],
+    "supportedThemes": [
+      "sap_hcb",
+      "sap_belize"
+    ],
     "fullWidth": true
   },
   "sap.ui5": {
     "rootView": {
-      "viewName": "com.sap.team-calendar.view.Main",
+      "viewName": "com.sap.timesheet.view.Main",
       "type": "XML"
     },
     "dependencies": {
@@ -53,7 +56,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "com.sap.team-calendar.i18n.i18n"
+          "bundleName": "com.sap.timesheet.i18n.i18n"
         }
       }
     },
@@ -69,7 +72,7 @@
         "routerClass": "sap.m.routing.Router",
         "viewType": "XML",
         "async": true,
-        "viewPath": "com.sap.team-calendar.view",
+        "viewPath": "com.sap.timesheet.view",
         "controlAggregation": "pages",
         "controlId": "idAppControl",
         "clearControlAggregation": false
@@ -78,7 +81,9 @@
         {
           "name": "RouteMain",
           "pattern": "RouteMain",
-          "target": ["TargetMain"]
+          "target": [
+            "TargetMain"
+          ]
         }
       ],
       "targets": {

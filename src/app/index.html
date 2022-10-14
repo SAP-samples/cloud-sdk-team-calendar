@@ -1,34 +1,36 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-  <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta charset="UTF-8" />
 
-    <title>team-calendar</title>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta charset="UTF-8">
 
-    <script
-      id="sap-ui-bootstrap"
-      src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
-      data-sap-ui-async="true"
-      data-sap-ui-libs="sap.m"
-      data-sap-ui-theme="sap_fiori_3"
-      data-sap-ui-compatVersion="edge"
-      data-sap-ui-resourceroots='{"com.sap.team-calendar": "./"}'
-    ></script>
+		<title>timesheet</title>
 
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script id="sap-ui-bootstrap"
+			src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+			data-sap-ui-async="true"
+			data-sap-ui-libs="sap.m"
+			data-sap-ui-theme="sap_fiori_3"
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-resourceroots='{"com.sap.timesheet": "./"}'>
+		</script>
 
-    <script>
-      sap.ui.getCore().attachInit(function () {
-        new sap.m.Shell({
-          app: new sap.ui.core.ComponentContainer({
-            height: '100%',
-            name: 'com.sap.team-calendar'
-          })
-        }).placeAt('content');
-      });
-    </script>
-  </head>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 
-  <body class="sapUiBody" id="content"></body>
+		<script>
+			sap.ui.getCore().attachInit(function() {
+				new sap.m.Shell({
+					app: new sap.ui.core.ComponentContainer({
+						height : "100%",
+						name : "com.sap.timesheet"
+					})
+				}).placeAt("content");
+			});
+		</script>
+	</head>
+
+	<body class="sapUiBody" id="content">
+	</body>
+
 </html>
