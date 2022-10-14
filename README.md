@@ -66,4 +66,4 @@ This happens in an automated fashion during the submission process. SAP uses [th
 
 ## Code of Conduct
 
-For this repository, the [code](./CODE_OF_CONDUCT.md) of conduct](./CODE_OF_CONDUCT.md) of the samples repository applies.
+For this repository, the [code of conduct](./CODE_OF_CONDUCT.md) of the samples repository applies.
