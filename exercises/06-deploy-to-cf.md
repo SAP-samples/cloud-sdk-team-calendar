@@ -2,7 +2,7 @@
 
 Now, that you made some progress locally, let's make this application available in the cloud.
 
-## Login to Cloud Foundry
+## Log in to Cloud Foundry
 
 You need to log in to Cloud Foundry in SAP Business Technology Platform using the Cloud Foundry CLI. First, you need to set an API endpoint. The exact URL of this API endpoint depends on the region your **subaccount** is in. Open the [SAP Business Technology Platform Cockpit](https://account.hana.ondemand.com/) and navigate to the subaccount you are planning to deploy your application. Click on `Overview` on the left and you can see the URL of the API endpoint.
 
