@@ -26,12 +26,9 @@ The script runs the following command:
 npx generate-odata-client -c generator-config.json
 ```
 
-In your [`package.json`](../package.json), you have already installed the `@sap/cloud-sdk-generator`.
-The command runs the generator with configuration option `-c` which points to [`generator-config.json`](../generator-config.json). We specify [input](../resources/service-specs/) and [output](../src/generated/) directories along with some other options for the generation in the file.
+In your [`package.json`](../package.json), you have already installed the `@sap/cloud-sdk-generator`.The command runs the generator with configuration option `-c` which points to [`generator-config.json`](../generator-config.json). We specify [input](../resources/service-specs/) and [output](../src/generated/) directories along with some other options for the generation in the file.
 
-The generator creates clients for all service definitions found in the input directory. The options given in the config are applied to each individual service.
-
-To find out more about the options run:
+The generator creates clients for all service definitions found in the input directory. The options given in the config are applied to each individual service. To find out more about the options run:
 
 ```sh
 npx generate-odata-client -h
