@@ -9,7 +9,7 @@ You will create a new **private** repository based on this repository and run th
 Click **Use this template** on the top of the GitHub page.
 ![Use Template](images/use-template.png)
 
-Fill in the name of your new repository (e. g. _cloud-sdk-team-calendar_) and make sure to create a **private** repository. Click on **Create repository**.
+Fill in the name of your new repository (e. g. _cloud-sdk-team-calendar_) and make sure to create a **private** repository. Click **Create repository**.
 ![Create New](images/create-new.png)
 
 > ### Why private?
