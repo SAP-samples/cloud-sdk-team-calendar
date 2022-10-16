@@ -5,3 +5,4 @@ deployment
 src/app
 src/generated
 scripts/*.js
+package.json
