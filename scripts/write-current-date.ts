@@ -5,7 +5,10 @@ import moment from 'moment';
 const appointmentFilePath = '../db/csv/my.timesheet-Appointment.csv';
 const teamCalendarFilePath = '../db/csv/my.timesheet-TeamCalendar.csv';
 
-async function updateDateLatest(dateFormat, path) {
+async function writeCurrentDate(
+  path: string,
+  dateFormat: string
+): Promise<void> {
   const filePath = resolve(__dirname, path);
   const fileContent = await promises.readFile(filePath, { encoding: 'utf8' });
   const pattern = new RegExp(dateFormat, 'g');
@@ -17,8 +20,8 @@ async function updateDateLatest(dateFormat, path) {
 }
 
 Promise.all([
-  updateDateLatest('YYYY-MM', appointmentFilePath).then(() =>
-    updateDateLatest('YYYY', appointmentFilePath)
+  writeCurrentDate(appointmentFilePath, 'YYYY').then(() =>
+    writeCurrentDate(appointmentFilePath, 'MM')
   ),
-  updateDateLatest('YYYY', teamCalendarFilePath)
+  writeCurrentDate(teamCalendarFilePath, 'YYYY')
 ]);

@@ -1,6 +1,6 @@
 import chai, { expect } from 'chai';
 import sinonChai from 'sinon-chai';
-import moment = require('moment');
+import moment from 'moment';
 import {
   dateToString,
   splitAppointmentIntoDays,
