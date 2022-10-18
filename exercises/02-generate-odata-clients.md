@@ -10,7 +10,7 @@ In this directory, you will also find the [service mapping file](../resources/se
 
 ## Run the generation
 
-To generate the OData clients, just run an npm script:
+To generate the OData clients, run the following npm script:
 
 ```sh
 npm run generate
