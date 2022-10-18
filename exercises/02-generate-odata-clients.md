@@ -16,7 +16,7 @@ To generate the OData clients, run the following npm script:
 npm run generate
 ```
 
-Once this is completed you should find some generated code, your OData clients, in the [`src/generated`](../src/generated/). We will use this code for OData requests to SAP S/4HANA and SAP SuccessFactors.
+Once this is completed you should find your generated OData clients in the [`src/generated`](../src/generated/). We will use this code for OData requests to SAP S/4HANA and SAP SuccessFactors.
 
 ### Under the food: What does the script actually do?
 
