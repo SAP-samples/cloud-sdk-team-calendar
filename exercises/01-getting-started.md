@@ -39,9 +39,9 @@ Replace the URL placeholders for the `S4HANA` and `SFSF` destinations in the [`.
 Since the mock server acts as both a mocked SAP S4/HANA system and SAP SuccessFactors system, the URL(s) for both destinations are the same.
 Mock servers do not require authentication. If you are using the mock server, set the authentication type to `NoAuthentication`.
 
-> ### How to find your mock server's URL
->
-> Open the [SAP BTP Cockpit](https://account.hana.ondemand.com) and open the subaccount to which the mockserver was deployed. Open the space, where the mock server was deployed. You should find the URL to the mock server here.
+### How to find your mock server's URL
+
+Open the [SAP BTP Cockpit](https://account.hana.ondemand.com) and open the subaccount to which the mockserver was deployed. Open the space, where the mock server was deployed. You should find the URL to the mock server here.
 
 ## Start the application locally
 
