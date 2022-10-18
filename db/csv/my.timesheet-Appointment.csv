@@ -1,5 +1,5 @@
 ID,START_DATE,START_TIME,END_DATE,END_TIME,TITLE,PROJECT,INFO,STATUS,TYPE,CALENDAR_YEAR,PERSON_ID
-1,YYYY-MM-18,08:00:00,YYYY-MM-20,10:00:00,Consultancy,Automotive Company Limited,Process Improvement,LOCAL,Project,YYYY,1
-2,YYYY-MM-18,08:00:00,YYYY-MM-23,12:00:00,Quality check,Gas Industry AG,Software Quality Checks,LOCAL,Project,YYYY,3
-3,YYYY-MM-16,08:30:00,YYYY-MM-18,10:30:00,Consultancy,IT Security SE,Business Process Analytics,LOCAL,Project,YYYY,4
-4,YYYY-MM-23,13:00:00,YYYY-MM-24,18:00:00,Administration,Aircraft Manufacturing Corp.,,LOCAL,Project,YYYY,4
+1,2022-10-18,08:00:00,2022-10-20,10:00:00,Consultancy,Automotive Company Limited,Process Improvement,LOCAL,Project,2022,1
+2,2022-10-18,08:00:00,2022-10-23,12:00:00,Quality check,Gas Industry AG,Software Quality Checks,LOCAL,Project,2022,3
+3,2022-10-16,08:30:00,2022-10-18,10:30:00,Consultancy,IT Security SE,Business Process Analytics,LOCAL,Project,2022,4
+4,2022-10-23,13:00:00,2022-10-24,18:00:00,Administration,Aircraft Manufacturing Corp.,,LOCAL,Project,2022,4
