@@ -12,7 +12,7 @@ Use the `timeSheetEntryApi.requestBuilder()` to create a request to get all Time
 - `timeSheetEntryApi.schema..TIME_SHEET_DATE` should be greater or equal to `from`
 - `timeSheetEntryApi.schema..TIME_SHEET_DATE` should be less or equal to `to`
 
-Execute this request against the destination with a `destinationName` - `S4HANA`.
+Execute this request against the destination by setting the `destinationName` to `S4HANA`.
 
 Reload your application in the browser and check, whether there are new appointments.
 
