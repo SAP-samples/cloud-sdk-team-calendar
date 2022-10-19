@@ -69,23 +69,23 @@ Click on the destinations and add two new destinations:
 
 SAP S/4HANA destination:
 
-> ```
-> Name: S4HANA
-> Type: HTTP
-> URL: S4_SERVER_URL
-> Proxy type: Internet
-> Authentication: S4_AUTHENTICATION_TYPE
-> ```
+```
+Name: S4HANA
+Type: HTTP
+URL: S4_SERVER_URL
+Proxy type: Internet
+Authentication: S4_AUTHENTICATION_TYPE
+```
 
 SAP SuccessFactors destination:
 
-> ```
-> Name: SFSF
-> Type: HTTP
-> URL: SFSF_SERVER_URL
-> Proxy type: Internet
-> Authentication: SFSF_AUTHENTICATION_TYPE
-> ```
+```
+Name: SFSF
+Type: HTTP
+URL: SFSF_SERVER_URL
+Proxy type: Internet
+Authentication: SFSF_AUTHENTICATION_TYPE
+```
 
 Refer [`.env`](../.env) file if you don't remember the `URL` and `Authentication` as you defined them in [exercise 1](01-getting-started.md#setup-the-destinations-environment-variable).
 

@@ -10,9 +10,9 @@ Click **Use this template** on the top of the GitHub page.
 Fill in the name of your new repository (e. g. _cloud-sdk-team-calendar_) and make sure to create a **private** repository. Click **Create repository**.
 ![Create New](images/create-new.png)
 
-> ### Why private?
->
-> We recommend to create your project as a private repository due to licensing constraints. In [exercise 2](02-generate-odata-clients.md) we will generate OData clients for SAP S/4HANA and SAP SuccessFactors, that is subject to SAP intellectual property and should not be made available as open source. As long as you don't publish these changes, feel free to create a public repository as well.
+### Why private?
+
+We recommend to create your project as a private repository due to licensing constraints. In [exercise 2](02-generate-odata-clients.md) we will generate OData clients for SAP S/4HANA and SAP SuccessFactors, that is subject to SAP intellectual property and should not be made available as open source. As long as you don't publish these changes, feel free to create a public repository as well.
 
 ## Clone your repository
 
@@ -24,7 +24,7 @@ git clone https://github.com/YOUR_GITHUB_USERNAME/cloud-sdk-team-calendar.git
 
 ## Deploy the SAP S/4HANA and SAP SuccessFactors mock server (Optional)
 
-> Note: If you have access to real SAP S/4HANA Cloud and SAP SuccessFactors Cloud systems, you may be able to skip this step.
+Note: If you have access to real SAP S/4HANA Cloud and SAP SuccessFactors Cloud systems, you may be able to skip this step.
 
 Follow these [instructions](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server#how-to-run-the-server) on how to set up your SAP S/4HANA and SAP SuccessFactors mock server and deploy it on the SAP Business Technology Platform (SAP BTP), Cloud Foundry environment.
 
