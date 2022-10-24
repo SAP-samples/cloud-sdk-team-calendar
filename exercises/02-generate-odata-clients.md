@@ -39,5 +39,3 @@ npx generate-odata-client -h
 The options are described in [the documentation](https://sap.github.io/cloud-sdk/docs/js/features/odata/generate-odata-client#options).
 
 ## Next step: [Create a read request to SAP S/4HANA](03-s4-read-request.md)
-
-clients for SAP S/4HANA and SAP SuccessFactors, that is subject to SAP intellectual property and should not be made available as open source.
