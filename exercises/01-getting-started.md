@@ -1,6 +1,6 @@
 # Getting started
 
-Let's create an application integrated with SAP S/4HANA and SAP SuccessFactors with the SAP Cloud SDK for Javascript. First, You will run the application locally to get familiar with it.
+Let's create an application integrated with SAP S/4HANA and SAP SuccessFactors with the SAP Cloud SDK for Javascript. First, you will run the application locally to get familiar with it.
 
 ## Clone the repository
 
