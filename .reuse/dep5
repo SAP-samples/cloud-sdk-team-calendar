@@ -27,3 +27,8 @@ Disclaimer: The code in this project may include calls to APIs (“API Calls”)
 Files: *
 Copyright:  2019-2020 SAP SE or an SAP affiliate company and cloud-sdk-team-calendar
 License: Apache-2.0
+
+Files: resources/service-specs/*.edmx
+Copyright: 2019-2020 SAP SE or an SAP affiliate company and cloud-sdk-team-calendar
+License: LicenseRef-API-Definition-File-License
+

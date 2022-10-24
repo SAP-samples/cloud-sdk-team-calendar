@@ -1,7 +1,7 @@
-import cds from "@sap/cds";
-import express from "express";
-import { resolve } from "path";
-import { serviceHandler } from "./team-calendar-service";
+import { resolve } from 'path';
+import cds from '@sap/cds';
+import express from 'express';
+import { serviceHandler } from './team-calendar-service';
 
 class App {
   public app: express.Application;
@@ -14,11 +14,11 @@ class App {
 
   private config(): void {
     // make sure to NOT register this stuff on paths where CDS services are hosted!
-    this.app.use("/api", express.json());
-    this.app.use("/api", express.urlencoded({ extended: false }));
-    console.log("Serving static files");
-    console.log(resolve(__dirname, "app"));
-    this.app.use(express.static(resolve(__dirname, "app")));
+    this.app.use('/api', express.json());
+    this.app.use('/api', express.urlencoded({ extended: false }));
+    console.log('Serving static files');
+    console.log(resolve(__dirname, 'app'));
+    this.app.use(express.static(resolve(__dirname, 'app')));
   }
 
   private routes(): void {
@@ -26,16 +26,19 @@ class App {
   }
 }
 
-const setupApp = () => {
+const setupApp = async () => {
   const _app = new App().app;
 
-  cds.connect.to("db");
+  const csn = await cds.load('*');
+  cds.model = (cds.compile.for as any).nodejs(csn);
+
+  await cds.connect.to('db');
 
   // keep srv folder for now, so that serve defaults work and that we can simply copy it over to the deployment folder
-  cds
-    .serve("TimesheetService") // by default from srv/
-    .to("odata")
-    .at("odata/v2/TimesheetService")
+  await cds
+    .serve('TimesheetService') // by default from srv/
+    .to('odata')
+    .at('odata/v2/TimesheetService')
     .with(serviceHandler)
     .in(_app);
 

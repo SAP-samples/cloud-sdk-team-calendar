@@ -1,0 +1,8 @@
+.nyc_output/
+dist/
+node_modules/
+deployment
+src/app
+src/generated
+scripts/*.js
+package.json

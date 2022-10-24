@@ -1,3 +1,4 @@
+using { Currency, managed, sap } from '@sap/cds/common';
 namespace my.timesheet;
 
 entity Appointment {
@@ -15,7 +16,7 @@ entity Appointment {
   person: Association to Person;
 }
 
-entity Person {
+entity Person: managed {
   key ID: String;
   name: String;
   role: String;

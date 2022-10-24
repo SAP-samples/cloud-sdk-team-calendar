@@ -4,7 +4,6 @@ sap.ui.define([
 ], function (http, converter) {
   "use strict";
 
-  // var host = "https://teched2019-caa365-teched2019-teched-timesheet-srv-i824643.cfapps.eu10.hana.ondemand.com";
   var host = "";
   var servicePath = "/odata/v2/TimesheetService";
   var baseUrl = host + servicePath;

@@ -1,63 +1,70 @@
 # Getting started
-In the following we describe how to get started with this project.
-You will create a new **private** repository based on this repository and run the application locally to get familiar with it.
 
-> In the original session, the participants were handed out a participantId. If you go through the tasks on your own, make up your own id. We recommend to refrain from using personal data.
+Let's create an application integrated with SAP S/4HANA and SAP SuccessFactors with the SAP Cloud SDK for Javascript. First, you will run the application locally to get familiar with it.
 
-## Create a new repository based on this template
-Click the *Use this template* button on the top of the GitHub page.
-![Use Template](images/use-template.png)
+## Clone the repository
 
-Fill in the name of your new repository (e. g. *cloud-sdk-team-calendar*) and make sure to create a **private** repository. Click on *Create repository*.
-![Create New](images/create-new.png)
+On your laptop open a command line and enter the following command.
 
-> ### Why private?
-> We recommend to create your project as a private repository due to licensing constraints. In [exercise 5](05-generate-odata-client.md) we will generate an OData client for SAP SuccessFactors, that is subject to SAP intellectual property and should not be made available as open source. As long as you don't publish these changes, feel free to create a public repository as well.
-
-## Clone your repository
-On your laptop open a command line and enter the following command. Don't forget to replace your username (and repository name should you have chosen a different one):
 ```sh
-git clone https://github.com/<your-github-username>/cloud-sdk-team-calendar.git
+git clone https://github.com/SAP-samples/cloud-sdk-team-calendar.git
 ```
 
 ## Deploy the SAP S/4HANA and SAP SuccessFactors mock server (Optional)
 
->Note: If you have access to real SAP S/4HANA Cloud and SAP SuccessFactors (SFSF) Cloud systems, you may be able to skip this step.
+Note: If you have access to real SAP S/4HANA Cloud and SAP SuccessFactors Cloud systems, you may be able to skip this step.
 
-Follow these [instructions](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server#how-to-run-the-server) on how to setup your SAP S/4HANA and SFSF mock server and deploy it on SAP Business Technology Platform (SAP BTP), Cloud Foundry environment.
+Follow these [instructions](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server#how-to-run-the-server) on how to set up your SAP S/4HANA and SAP SuccessFactors mock server and deploy it on the SAP Business Technology Platform (SAP BTP), Cloud Foundry environment.
 
 ## Setup the destinations environment variable
 
-Replace the URL placeholders for the `S4HANA` and `SFSF` destinations in the [`.env`](../.env) file with the URL(s) of your mock server or your SAP S/4HANA and SAP SuccessFactors systems. If you are using the mock server, the URLs for both destinations are the same, because the mock server acts as both, a mocked SAP S4/HANA system and a mocked SAP SuccessFactors system.
+Replace the URL placeholders for the `S4HANA` and `SFSF` destinations in the [`.env`](../.env) file with the URL(s) of your mock server or your SAP S/4HANA and SAP SuccessFactors systems.
 
+Since the mock server acts as both a mocked SAP S4/HANA system and SAP SuccessFactors system, the URL(s) for both destinations are the same.
+Mock servers do not require authentication. If you are using the mock server, set the authentication type to `NoAuthentication`.
 
-> ### How to find your mock server's URL
-> Open the [SAP BTP Cockpit](https://account.hana.ondemand.com) and open the subaccount to which the mockserver was deployed. Open the space, where the mock server was deployed. You should find the URL to the mock server here.
+### How to find your mock server's URL
+
+Open the [SAP BTP Cockpit](https://account.hana.ondemand.com) and open the subaccount to which the mockserver was deployed. Open the space, where the mock server was deployed. You should find the URL to the mock server here.
 
 ## Start the application locally
-Open the project in your IDE. For the remainder of this course we will assume you are using Visual Studio Code. Please adapt accordingly if you are using a different IDE.
 
-To open the project go to *File > Open...* and select the folder you just cloned from GitHub.
+Open the project in your IDE. For the remainder of this tutorial, we will assume you are using Visual Studio Code. Please adapt accordingly if you are using a different IDE.
 
-Let's check that everything works and run the application locally. First, open the command line with *Terminal > New Terminal*. Then, install the dependencies:
+To open the project, go to **File > Open Folder...** and select the folder you just cloned from GitHub.
+
+Let's check that everything works and run the application locally. First, open the command line with **Terminal > New Terminal**. Then, install the dependencies:
 
 ```sh
 npm install
 ```
 
-Deploy a local database (locally we use sqlite):
+Deploy a local database with these steps:
+
+1. create a local database with SQLite
+2. drop existing tables and views, and re-create them according to [your CDS model](../db/data-model.cds)
+3. deploy CSV files with initial data
+
+In your [`package.json`](../package.json), you have already installed `@sap/cds-dk` (SAP Cloud Application Programming Model). The application programming model provides a command to do the 3 steps at once. deploy a local database with the command:
+
 ```sh
-npm run cds-deploy:local
+npm run cds-deploy
+```
+
+Start the local database with a [custom logic](../src/team-calendar-service.ts) that we defined for the table. The application programming model also provides a command for this step. start the local database with the command:
+
+```sh
+npm run cds-watch
 ```
 
 And start the application in watch mode, so that every change you implement subsequently is reflected immediately:
+
 ```sh
 npm run watch:local
 ```
 
 Now, you should find your application running at http://localhost:8080.
 
-All data is in September:
 ![Local Deployment](images/local-deployment.png)
 
-## Next step: [reate a read request to SAP S/4HANA](02-s4-read-request.md)
+## Next step: [Generate your own OData clients](02-generate-odata-clients.md)

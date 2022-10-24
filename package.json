@@ -1,16 +1,17 @@
 {
-  "name": "cloud-sdk-timesheet-app",
+  "name": "cloud-sdk-team-calendar-app",
   "version": "1.0.0",
-  "description": "Timesheet app using the SAP Cloud SDK and Express.js",
+  "description": "Team Calender app using the SAP Cloud SDK and CAP",
   "main": "src/index.ts",
   "scripts": {
-    "lint": "tslint -c tslint.json 'api/src/**/*.ts' 'app/src/**/*.ts'",
-    "lint:fix": "tslint -c tslint.json --fix 'api/src/**/*.ts' 'app/src/**/*.ts'",
+    "lint": "eslint . && prettier . -c",
+    "lint:fix": "eslint . --fix && prettier . -w",
     "clean": "rm -f package-lock.json && find . -name \"node_modules\" -exec rm -rf '{}' + && find db/src -name \"gen\" -exec rm -rf '{}' + && find . -name \"sqlite.db\" -exec rm -rf '{}' + && npm i",
     "init": "npm i && node initialize.js",
     "preinstall": "rm -rf node_modules/@sap/cds-services",
-    "cds-build": "npx cds build/all --clean",
-    "cds-deploy": "npx cds deploy --to sqlite",
+    "local-data": "ts-node ./scripts/generate-local-data.ts",
+    "cds-build": "npm run local-data && npx cds build/all --clean",
+    "cds-deploy": "npm run local-data && npx cds deploy --to sqlite",
     "cds-watch": "npx cds watch",
     "generate": "npx generate-odata-client -c generator-config.json",
     "test": "nyc mocha -r ts-node/register -r dotenv/config --exit test/**/*.spec.ts",
@@ -19,49 +20,62 @@
     "watch:local": "nodemon -e ts -w ./src -x npm run serve-debug",
     "serve-debug": "node -r ts-node/register -r dotenv/config --inspect src/index.ts",
     "ci-build": "npx tsc && npm run cds-deploy && cp -r src/app db srv dist/",
-    "ci-package": "mkdir -p deployment/ && cp -r dist package.json package-lock.json index.html dist/db dist/srv sqlite.db deployment/",
+    "ci-package": "mkdir -p deployment/ && cp -r dist package.json package-lock.json index.html dist/db dist/srv db.sqlite deployment/",
     "ci-backend-unit-test": "nyc --extension .ts --report-dir ./s4hana_pipeline/reports/coverage-reports/backend-unit/ --reporter cobertura mocha -r ts-node/register -r dotenv/config test/unit-tests/**/*.spec.ts test/unit-tests/*.spec.ts --reporter mocha-junit-reporter --reporter-options mochaFile=./s4hana_pipeline/reports/backend-unit/results.xml",
     "ci-it-backend": "npm run cds-deploy && nyc --extension .ts --report-dir ./s4hana_pipeline/reports/coverage-reports/backend-integration/ --reporter cobertura mocha -r ts-node/register -r dotenv/config test/integration-tests/**/*.spec.ts --reporter mocha-junit-reporter --reporter-options mochaFile=./s4hana_pipeline/reports/backend-integration/results.xml",
     "ci-lint": "npm run lint"
   },
   "author": "",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "devDependencies": {
-    "@istanbuljs/nyc-config-typescript": "^1.0.1",
-    "@sap-cloud-sdk/generator": "1.18.1",
-    "@types/chai": "^4.2.12",
-    "@types/express": "^4.17.7",
-    "@types/mocha": "^8.0.3",
-    "@types/sinon": "^9.0.5",
-    "@types/sinon-chai": "^3.2.4",
-    "chai": "^4.2.0",
+    "@istanbuljs/nyc-config-typescript": "^1.0.2",
+    "@sap-cloud-sdk/eslint-config": "^2.9.0",
+    "@sap-cloud-sdk/generator": "^2.9.0",
+    "@types/chai": "^4.3.3",
+    "@types/express": "^4.17.14",
+    "@types/mocha": "^10.0.0",
+    "@types/sinon": "^10.0.13",
+    "@types/sinon-chai": "^3.2.8",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
+    "chai": "^4.3.6",
     "chai-http": "^4.3.0",
-    "dotenv": "^8.2.0",
-    "js-yaml": "^3.14.0",
-    "mocha": "^8.1.2",
-    "mocha-junit-reporter": "^2.0.0",
-    "node-mocks-http": "^1.9.0",
-    "nodemon": "^2.0.4",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.25.0",
+    "eslint-plugin-header": "^3.1.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsdoc": "^39.3.6",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-regex": "^1.10.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "js-yaml": "^4.1.0",
+    "mocha": "^10.0.0",
+    "mocha-junit-reporter": "^2.1.0",
+    "node-mocks-http": "^1.11.0",
+    "nodemon": "^2.0.20",
     "nyc": "^15.1.0",
-    "sinon": "^9.0.3",
-    "sinon-chai": "^3.5.0",
-    "tslint": "^6.1.3"
+    "prettier": "^2.7.1",
+    "sinon": "^14.0.1",
+    "sinon-chai": "^3.7.0"
   },
   "dependencies": {
-    "@sap/cds": "^3.34.2",
-    "@sap/cds-dk": "^1.8.1",
-    "@sap/cds-services": "1.14.0",
-    "@sap/cloud-sdk-vdm-workforce-timesheet-service": "1.18.0",
-    "@sap/hana-client": "^2.5.105",
-    "bignumber.js": "8.1.1",
-    "express": "^4.17.1",
-    "moment": "^2.27.0",
-    "sqlite3": "^5.0.0",
-    "ts-node": "^9.0.0",
-    "typescript": "^4.0.2"
+    "@sap-cloud-sdk/odata-v2": "^2.9.0",
+    "@sap-cloud-sdk/util": "^2.9.0",
+    "@sap/cds": "^6.2.1",
+    "@sap/cds-dk": "^6.2.1",
+    "@sap/cds-services": "^1.27.2",
+    "@sap/hana-client": "^2.13.22",
+    "@sap/xssec": "^3.2.13",
+    "bignumber.js": "^9.1.0",
+    "express": "^4.18.2",
+    "moment": "^2.29.4",
+    "passport": "^0.6.0",
+    "sqlite3": "^5.1.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
   },
   "engines": {
-    "node": "^12.0.0"
+    "node": "^16.0.0"
   },
   "cds": {
     "build": {
@@ -91,7 +105,13 @@
     },
     "requires": {
       "db": {
-        "kind": "sqlite"
+        "kind": "sqlite",
+        "credentials": {
+          "database": "db.sqlite"
+        }
+      },
+      "auth": {
+        "kind": "dummy-auth"
       }
     }
   }
