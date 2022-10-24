@@ -1,13 +1,21 @@
 # Getting started
 
-Let's create an application integrated with SAP S/4HANA and SAP SuccessFactors with the SAP Cloud SDK for Javascript. First, you will run the application locally to get familiar with it.
+You will create a new repository based on this repository and run the application locally to get familiar with it.
 
-## Clone the repository
+## Create a new repository based on this template
 
-On your laptop open a command line and enter the following command.
+Click the **Use this template** on the top of the GitHub page.
+![Use Template](images/use-template.png)
+
+Fill in the name of your new repository (e. g. _cloud-sdk-team-calendar_). Click **Create repository**.
+![Create New](images/create-new.png)
+
+## Clone your repository
+
+On your laptop open a command line and enter the following command. Don't forget to replace your username (and repository name should you have chosen a different one):
 
 ```sh
-git clone https://github.com/SAP-samples/cloud-sdk-team-calendar.git
+git clone https://github.com/YOUR_GITHUB_USERNAME/cloud-sdk-team-calendar.git
 ```
 
 ## Deploy the SAP S/4HANA and SAP SuccessFactors mock server (Optional)
