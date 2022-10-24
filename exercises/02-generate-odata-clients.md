@@ -8,6 +8,8 @@ Download the service specification file for [SAP S/4HANA Cloud Workforce Timeshe
 
 In this directory, you will also find the [service mapping file](../resources/service-mapping.json), which contains some extra configuration for the generated service(s), like the directory name and service path for the service.
 
+**Note** As it's described in the [License](SOLUTION.md#license), OData clients for SAP S/4HANA and SAP SuccessFactors should not be made available as open source because it is subject to SAP intellectual property.
+
 ## Run the generation
 
 To generate the OData clients, run the following npm script:
@@ -37,3 +39,5 @@ npx generate-odata-client -h
 The options are described in [the documentation](https://sap.github.io/cloud-sdk/docs/js/features/odata/generate-odata-client#options).
 
 ## Next step: [Create a read request to SAP S/4HANA](03-s4-read-request.md)
+
+clients for SAP S/4HANA and SAP SuccessFactors, that is subject to SAP intellectual property and should not be made available as open source.
